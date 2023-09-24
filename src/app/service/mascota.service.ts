@@ -108,5 +108,10 @@ export class MascotaService {
     const mascota = this.listaDeMascotas.find(o => o.ID === id)!;
     return mascota;
   }
+
+  eliminarMascota(mascota:Mascota){
+    var index = this.listaDeMascotas.indexOf(mascota)
+    this.listaDeMascotas.splice(index,1)
+  }
   
 }

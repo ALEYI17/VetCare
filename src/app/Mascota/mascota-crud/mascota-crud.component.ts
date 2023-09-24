@@ -24,6 +24,11 @@ export class MascotaCrudComponent {
       this.listaDeMascotas.push(newMascota);
       console.log('Mascota added to listaDeMascotas:', newMascota);
     }
+
+    eliminarMascota(mascota:Mascota){
+      var index = this.listaDeMascotas.indexOf(mascota)
+      this.listaDeMascotas.splice(index,1)
+    }
     
 
     ngOnInit():void{
