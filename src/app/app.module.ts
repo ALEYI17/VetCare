@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MascotaCrudComponent } from './Mascota/mascota-crud/mascota-crud.component';
+import { MascotaFindIdComponent } from './Mascota/mascota-find-id/mascota-find-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MascotaCrudComponent
+    MascotaCrudComponent,
+    MascotaFindIdComponent
   ],
   imports: [
     BrowserModule,

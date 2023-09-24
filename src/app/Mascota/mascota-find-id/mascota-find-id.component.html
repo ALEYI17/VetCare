@@ -1,0 +1,33 @@
+<p>mascota-find-id works!</p>
+<div class="container">
+    <div class="title"><h1>Información mascota</h1></div>
+    <div class="image-box">
+      <img [src]="Mascota.Foto" alt="Foto de la mascota">
+    </div>
+    <div class="user-details">
+      <div class="input-box">
+        <h2>Nombre:</h2>
+        <p>{{ Mascota.Nombre }}</p>
+      </div>
+      <div class="input-box">
+        <h2>Raza:</h2>
+        <p>{{ Mascota.Raza }}</p>
+      </div>
+      <div class="input-box">
+        <h2>Edad:</h2>
+        <p>{{ Mascota.Edad }}</p>
+      </div>
+      <div class="input-box">
+        <h2>Peso:</h2>
+        <p>{{ Mascota.Peso }}</p>
+      </div>
+      <div class="input-box">
+        <h2>Enfermedad:</h2>
+        <p>{{ Mascota.Enfermedad }}</p>
+      </div>
+      <!-- <div *ngIf="dueno != null" class="input-box">
+        <h2>Dueño:</h2>
+        <p>{{ dueno.nombre }}</p>
+      </div> -->
+    </div>
+  </div>
