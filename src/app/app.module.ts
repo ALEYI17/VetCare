@@ -8,6 +8,7 @@ import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.com
 import { FormsModule } from '@angular/forms';
 import { MascotaFindIdComponent } from './Mascota/mascota-find-id/mascota-find-id.component';
 import { LandingPageComponent } from './Landing/landing-page/landing-page.component';
+import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actualizar-mascota.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { LandingPageComponent } from './Landing/landing-page/landing-page.compon
     MascotaFindIdComponent,
     LandingPageComponent,
     CrearMascotaComponent,
+    ActualizarMascotaComponent,
   ],
   imports: [
     BrowserModule,

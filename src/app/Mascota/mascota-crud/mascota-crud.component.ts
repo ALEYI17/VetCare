@@ -15,7 +15,7 @@ export class MascotaCrudComponent {
         
     }
 
-    mostrarEstudiante(mascota: Mascota){
+    mostrarMascota(mascota: Mascota){
       this.selectedMascota = mascota;
     }
     

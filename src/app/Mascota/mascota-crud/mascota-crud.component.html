@@ -47,7 +47,7 @@
             <td>{{ mascota.Enfermedad }}</td>
             <td>{{ mascota.ID }}</td>
             <td>
-              <a class="modificar-button" [routerLink]="['/Mascota/update', mascota.ID]"><i class="far fa-edit"></i></a>
+              <a class="modificar-button" (click)="mostrarMascota(mascota)"><i class="far fa-edit"></i></a>
               <a class="delete-button" (click)="eliminarMascota(mascota)"><i class="far fa-trash-alt"></i></a>
             </td>
           </tr>
@@ -61,5 +61,6 @@
 
 <!-- <app-mascota-find-id [Mascota]="selectedMascota"></app-mascota-find-id> -->
 <app-crear-mascota (addMascotaEvent)="onMascotaAdded($event)"></app-crear-mascota>
+<app-actualizar-mascota [formMascota]="selectedMascota" (addMascotaEvent)="onMascotaAdded($event)"></app-actualizar-mascota>
 
  

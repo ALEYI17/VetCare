@@ -1,0 +1,48 @@
+<!-- src/app/app.component.html -->
+<div class="body">
+    <div class="container">
+        <div class="title"><h1>Agregar mascota</h1></div>
+        <form #mascotaForm="ngForm" (ngSubmit)="updateMascota(mascotaForm)">
+            <div class="user-details">
+                <div class="input-box">
+                    <label for="nombre">Nombre</label>
+                    <input name="Nombre" [(ngModel)]="formMascota.Nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="correo">Raza</label>
+                    <input name="Raza" [(ngModel)]="formMascota.Raza" type="text" class="form-control" id="correo" placeholder="Raza" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="carrera">Edad</label>
+                    <input name="Edad" [(ngModel)]="formMascota.Edad" type="number" class="form-control" id="carrera" placeholder="Edad" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="semestre">Peso</label>
+                    <input name="Peso" [(ngModel)]="formMascota.Peso" type="number" step="0.01" class="form-control" id="semestre" placeholder="Peso" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="Enfermedad">Enfermedad</label>
+                    <input name="Enfermedad" [(ngModel)]="formMascota.Enfermedad" type="text" class="form-control" id="Enfermedad" placeholder="Enfermedad" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="Foto">Foto</label>
+                    <input name="Foto" [(ngModel)]="formMascota.Foto" type="text" class="form-control" id="Foto" placeholder="Foto" required>
+                </div>
+                
+            </div>
+            <div class="button">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+
+
+{{formMascota.Nombre}}
