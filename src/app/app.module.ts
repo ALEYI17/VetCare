@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MascotaCrudComponent } from './Mascota/mascota-crud/mascota-crud.component';
 import { MascotaFindIdComponent } from './Mascota/mascota-find-id/mascota-find-id.component';
+import { LandingPageComponent } from './Landing/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MascotaCrudComponent,
-    MascotaFindIdComponent
+    MascotaFindIdComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

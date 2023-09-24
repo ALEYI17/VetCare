@@ -104,8 +104,9 @@ export class MascotaService {
     return this.listaDeMascotas;
   }
 
-  findById(id:number):Mascota | undefined{
-    const mascota = this.listaDeMascotas.find(o=> o.ID === id);
-    return mascota
+  findById(id: number): Mascota {
+    const mascota = this.listaDeMascotas.find(o => o.ID === id)!;
+    return mascota;
   }
+  
 }

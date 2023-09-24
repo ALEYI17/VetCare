@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+.fondo{
+    display:flex ;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, rgba(5, 50, 71, 0.5) 0%, rgba(5, 50, 71, 0.5) 100%), url(src/assets/img/2789419.jpg);
+    /* background-image:  linear-gradient(-225deg, rgba(203, 186, 204, 0.698) 0%, #257fb3b2 100% ), url(/src/assets/img/2789419.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-direction: column;
+    /* background-color: #7dd4ff; */
+}
+
+.titulo{
+    display: block;
+    font-size: 7em;
+    padding: 100px;
+}
+.container{
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    cursor: pointer;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(-225deg, rgba(203, 186, 204, 0.698) 0%, #257fb3b2 100% );
+}
+
+.container   .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    margin: 20px 0 12px 0;
+    gap: 30px;
+}
+
+.user-details .input-box{
+    margin-bottom: 20px;
+    width: calc(100%/2 - 20px);
+}
+.user-details {
+    display: flex;
+    text-align: center;
+    margin: 20px 0 12px 0;
+  }
+.container .image-box {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 378px; /* Set a fixed height for the image box */
+}
+
+.container .image-box img {
+    max-width: 100%; /* Ensure the image fits within the container */
+    max-height: 100%; /* Ensure the image fits within the container */
+    object-fit: cover;
+    border-radius: 30px; /* Add border radius to the top corners */
+}
+
+.image-box {
+    align-self: center;
+}
+.user-details .input-box p{
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+
+
+@media(max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details.input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .container form .user-details{
+        max-width: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+table.mascotas{
+    border-collapse: collapse;
+    margin: 0;
+    width: 60%;
+    border: solid #053247;
+    box-shadow: 6px 7px 26px -1px rgba(7,74,105,1);
+    margin-bottom: 5vh;
+    margin-top: 30px;
+}
+table.mascotas tr{
+    padding: .45em;
+}
+thead tr{
+    background-color: black;
+}
+thead th{
+    color: white;
+    font-size: 1.15em;
+    
+}
+tbody tr:nth-child(even){   
+    background-color: #A3BAC3;
+    color: #fff;
+    
+}
+
+th a{
+    color: #000000;
+}
+
+tbody tr:nth-child(odd){   
+    background-color: #335d818c;
+    color: #fff;
+    
+}
+table.mascotas th, table td{
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+    
+}
+
+@media (max-width:440px){
+    table.mascotas{
+        border: 3px solid #053247;
+    }
+    table.mascotas thead tr{
+        display: none;
+    }
+    table.mascotas tr{
+        display: block;
+    }
+    table.mascotas th,table.mascotas td{
+        padding: .5em;
+    }
+    table.mascotas td{
+        text-align: right;
+        display: block;
+        font-size: 1em;
+    }
+
+    table.mascota td::before{
+        content: attr(scope)": ";
+        float: left;
+    }
+    tbody tr:nth-child(even){
+        background-color: #053247;
+        color: black;
+    }
+}
+
+.tabla-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
