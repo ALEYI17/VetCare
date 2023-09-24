@@ -15,8 +15,8 @@ export class CrearMascotaComponent {
 
   sendMascota!: Mascota;
 
-  mascota: Mascota = {
-    Nombre:  "",
+  formMascota: Mascota = {
+    Nombre: "",
     Raza: "",
     Edad: 0,
     Peso: 0,
@@ -25,11 +25,12 @@ export class CrearMascotaComponent {
     ID : 0,
   }
 
-  agregarMascota(form:any){
-    //para copiar los valores
-    this.sendMascota = Object.assign({}, this.mascota);
-      
+  agregarMascota(form: any) {
+    this.sendMascota = Object.assign({}, this.formMascota);
+    console.log('Mascota added:', this.sendMascota);
     this.addMascotaEvent.emit(this.sendMascota);
+    
   }
+  
 
 }
