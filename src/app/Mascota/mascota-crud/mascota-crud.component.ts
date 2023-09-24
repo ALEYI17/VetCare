@@ -15,11 +15,20 @@ export class MascotaCrudComponent {
         
     }
 
+    mostrarEstudiante(mascota: Mascota){
+      this.selectedMascota = mascota;
+    }
+    
+    onMascotaAdded(newMascota: Mascota) {
+      // Push the new pet to the array
+      this.listaDeMascotas.push(newMascota);
+      console.log('Mascota added to listaDeMascotas:', newMascota);
+    }
+    
+
     ngOnInit():void{
         this.listaDeMascotas = this.mascotaServicio.findAll();
     }
 
-mostrarEstudiante(mascota: Mascota){
-    this.selectedMascota = mascota;
-  }
-}
+
+    }

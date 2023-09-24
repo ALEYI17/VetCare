@@ -18,5 +18,4 @@ export class AppComponent {
     // document.body.appendChild(this.myScriptElement)
   }
 
-
 }
