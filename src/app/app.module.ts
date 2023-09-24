@@ -7,15 +7,16 @@ import { MascotaCrudComponent } from './Mascota/mascota-crud/mascota-crud.compon
 import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.component';
 import { FormsModule } from '@angular/forms';
 import { MascotaFindIdComponent } from './Mascota/mascota-find-id/mascota-find-id.component';
+import { LandingPageComponent } from './Landing/landing-page/landing-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MascotaCrudComponent,
+    MascotaFindIdComponent,
+    LandingPageComponent,
     CrearMascotaComponent,
-    MascotaFindIdComponent
-
   ],
   imports: [
     BrowserModule,
