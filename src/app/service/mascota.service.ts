@@ -113,5 +113,9 @@ export class MascotaService {
     var index = this.listaDeMascotas.indexOf(mascota)
     this.listaDeMascotas.splice(index,1)
   }
+
+  agregarMascota(mascota:Mascota){
+    this.listaDeMascotas.push(mascota)
+  }
   
 }

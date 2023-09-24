@@ -110,7 +110,6 @@ form .button button:hover{
 }
 .error{
     color: red;
-    display: none;
 }
 @media(max-width: 584px){
     .container{
