@@ -6,6 +6,8 @@ import { Mascota } from '../mascota';
   styleUrls: ['./mascota-crud.component.css']
 })
 export class MascotaCrudComponent {
+
+    constructor(){}
    listaDeMascotas: Mascota[] = [
     {
         Nombre: 'Quinta',
@@ -98,4 +100,6 @@ export class MascotaCrudComponent {
         ID: 10,
     },
 ];
+
+
 }
