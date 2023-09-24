@@ -156,6 +156,8 @@ h1{
 .delete-button i {
     color: #ff5a66;
     transition: color 0.3s; /* Add a smooth transition for icon color change */
+    
+
 }
 
 .delete-button:hover {
