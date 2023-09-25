@@ -5,6 +5,7 @@ import { MascotaCrudComponent } from './Mascota/mascota-crud/mascota-crud.compon
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './Landing/landing-page/landing-page.component';
 import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actualizar-mascota.component';
+import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.component';
 
 const routes: Routes = [
   
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Home', component: LandingPageComponent },
   { path: '', pathMatch: 'full', redirectTo: 'Home' },
   { path: 'Mascota/update/:id', component: ActualizarMascotaComponent },
+  { path: 'Mascotas/add', component: CrearMascotaComponent }
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MascotaCrudComponent } from './Mascota/mascota-crud/mascota-crud.component';
 import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MascotaFindIdComponent } from './Mascota/mascota-find-id/mascota-find-id.component';
 import { LandingPageComponent } from './Landing/landing-page/landing-page.component';
 import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actualizar-mascota.component';
@@ -27,7 +27,8 @@ import { LoginComponent } from './Landing/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

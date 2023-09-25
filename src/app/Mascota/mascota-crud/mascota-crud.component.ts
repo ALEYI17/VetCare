@@ -12,6 +12,7 @@ export class MascotaCrudComponent {
     mostrarforman2:boolean = false;
     
     listaDeMascotas!: Mascota[] ;
+    
 
     constructor(private mascotaServicio: MascotaService){
         

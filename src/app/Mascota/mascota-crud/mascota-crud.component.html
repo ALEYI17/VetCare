@@ -23,7 +23,7 @@
         <div class="search-bar">
           <input type="text" id="searchInput" placeholder="Buscar mascotas">
         </div>
-        <a class="btn btn-success agregar" routerLink="/Mascota/add" (click)="mostararAnadir()"><i class="fa-solid fa-plus"></i></a>
+        <a class="btn btn-success agregar" [routerLink]="['/Mascotas/add']" ><i class="fa-solid fa-plus"></i></a>
       </div>
       <div style="width: 80%;"></div>
       <table class="mascotas" id="clientTable">
@@ -59,12 +59,12 @@
   </div>
 
 
-<!-- <app-mascota-find-id [Mascota]="selectedMascota"></app-mascota-find-id> -->
+<!-- <app-mascota-find-id [Mascota]="selectedMascota"></app-mascota-find-id>
 <div *ngIf="mostrarforman">
   <app-crear-mascota (addMascotaEvent)="onMascotaAdded($event)"></app-crear-mascota>
 </div>
 <div *ngIf="mostrarforman2">
   <app-actualizar-mascota [formMascota]="selectedMascota" (addMascotaEvent)="actualizarMascota($event)"></app-actualizar-mascota>
-</div>
+</div> -->
 
  
