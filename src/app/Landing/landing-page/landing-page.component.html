@@ -1,7 +1,7 @@
 
 <header class="Navbar ">
     <div class="Logo">
-        <img src="assets/img/logovetcare.png" alt="un lindo gato">
+        <img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="893" height=" 206" priority>
         <!-- <b>VetCare</b> -->
     </div>
     <nav>
@@ -9,7 +9,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="#servicios">Services</a></li>
             <li><a href="#doctores">Doctores</a></li>
-            <a class="pagination-pointed-button" href="/login" id="Loginbutton">Log in</a>
+            <a class="pagination-pointed-button"[routerLink]="['/login']" id="Loginbutton">Log in</a>
         </ul>
     </nav>
     
@@ -30,16 +30,16 @@
   <section class="Paralax degra">
     <!-- <img src="Proyecto nuevo (3).png" id="hola2"> -->
     <!-- <img src="./img/Proyecto nuevo(5).png" id="hola5">     -->
-    <img src="assets/img/montannas.png" id="hola6">
+    <img ngSrc="assets/img/montannas.png" id="hola6" width="1500 " height="1000" priority>
   
     <div id="text" class="Titulocentrado Textos-degra">
         <h1>Clínica VetCare</h1>
         <p >Tu hospital animal</p>
         <a href="#abajo" >Contacto</a>
     </div>
-    <img src="assets/img/Pasto.png" id="hola1">         
-    <img src="assets/img/Arbolderecho.png" id="hola4">
-    <img src="assets/img/ArbolesIzquierdos.png" id="hola3">
+    <img ngSrc="assets/img/Pasto.png" id="hola1"  width="1500" height="1000" priority>         
+    <img ngSrc="assets/img/Arbolderecho.png" id="hola4"  width="1500" height="1000" priority>
+    <img ngSrc="assets/img/ArbolesIzquierdos.png" id="hola3"  width="1500" height="1000" priority>
   </section>
   
   <section class="container " id="servicios">

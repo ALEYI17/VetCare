@@ -313,7 +313,7 @@ body{
 }
 @media(max-width:900px){
     .cards .card{
-        height: 300px;
+        height: 500px;
         width: 400px;
         margin: 20px 0 ;
     }

@@ -11,6 +11,7 @@ import { LandingPageComponent } from './Landing/landing-page/landing-page.compon
 import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actualizar-mascota.component';
 import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboard-cliente.component';
 import { LoginComponent } from './Landing/login/login.component';
+import { NgOptimizedImage } from '@angular/common';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LoginComponent } from './Landing/login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
