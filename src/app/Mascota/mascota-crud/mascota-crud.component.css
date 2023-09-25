@@ -121,7 +121,10 @@ h1{
 
 .agregar{
     font-size: 2em;
-    
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 10%;
 }
 
 

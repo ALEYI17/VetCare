@@ -39,7 +39,6 @@
           <th scope="col">Edad</th>
           <th scope="col">Peso</th>
           <th scope="col">Enfermedad</th>
-          <th scope="col">ID</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
@@ -50,7 +49,6 @@
           <td>{{ mascota.Edad }}</td>
           <td>{{ mascota.Peso }}</td>
           <td>{{ mascota.Enfermedad }}</td>
-          <td>{{ mascota.ID }}</td>
           <td>
             <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.ID]"><i class="far fa-edit"></i></a>
             <a class="delete-button" (click)="eliminarMascota(mascota)"><i class="far fa-trash-alt"></i></a>
