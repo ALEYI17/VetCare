@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { MascotaFindIdComponent } from './Mascota/mascota-find-id/mascota-find-id.component';
 import { LandingPageComponent } from './Landing/landing-page/landing-page.component';
 import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actualizar-mascota.component';
+import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboard-cliente.component';
+import { LoginComponent } from './Landing/login/login.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actuali
     LandingPageComponent,
     CrearMascotaComponent,
     ActualizarMascotaComponent,
+    DashboardClienteComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

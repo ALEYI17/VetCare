@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Mascota } from '../mascota';
+import { Mascota } from '../../Entities/mascota';
 
 
 @Component({

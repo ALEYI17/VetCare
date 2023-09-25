@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Mascota } from '../mascota';
+import { Mascota } from '../../Entities/mascota';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MascotaService } from 'src/app/service/mascota.service';
 
