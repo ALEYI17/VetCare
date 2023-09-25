@@ -1,62 +1,67 @@
 <!-- mascotas.component.html -->
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-  <div class="fondo">
-    <header class="Navbar hidden">
-        <div class="Logo">
-          <a [routerLink]="['/Home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="893" height=" 206" priority></a>
-          <!-- <b>VetCare</b> -->
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li><a routerLink="/Mascota/todas" class="pagination-pointed-button">Mascotas</a></li>
-            <li><a routerLink="/Clientes/todos">Clientes</a></li>
-          </ul>
-        </nav>
-      </header>
-    <h1 class="Titulo">Todas las mascotas</h1>
-    <a href="#Top" class="Go-top"> <i class="fa-solid fa-chevron-up"></i></a>
-    <a href="#down" class="Go-down"> <i class="fa-solid fa-chevron-down"></i></a>
-    
-    <div class="tabla-center">
-      <div class="annadidos">
-        <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Buscar mascotas">
-        </div>
-        <a class="btn btn-success agregar" [routerLink]="['/Mascotas/add']" ><i class="fa-solid fa-plus"></i></a>
-      </div>
-      <div style="width: 80%;"></div>
-      <table class="mascotas" id="clientTable">
-        <thead>
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Raza</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Peso</th>
-            <th scope="col">Enfermedad</th>
-            <th scope="col">ID</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody class="table-group-divider">
-          <tr *ngFor="let mascota of listaDeMascotas">
-            <th><a [routerLink]="['/Mascota/find', mascota.ID]">{{ mascota.Nombre }}</a></th>
-            <td>{{ mascota.Raza }}</td>
-            <td>{{ mascota.Edad }}</td>
-            <td>{{ mascota.Peso }}</td>
-            <td>{{ mascota.Enfermedad }}</td>
-            <td>{{ mascota.ID }}</td>
-            <td>
-              <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.ID]" ><i class="far fa-edit"></i></a>
-              <a class="delete-button" (click)="eliminarMascota(mascota)"><i class="far fa-trash-alt"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<div class="fondo body">
+  <header class="Navbar hidden" id="arriba">
+    <div class="Logo">
+      <a [routerLink]="['/Home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="893" height=" 206"
+          priority></a>
+      <!-- <b>VetCare</b> -->
     </div>
-    <div id="down"></div>
-    
+    <nav>
+      <ul class="nav-links">
+        <li><a routerLink="/Mascota/todas" class="pagination-pointed-button">Mascotas</a></li>
+        <li><a routerLink="/Clientes/todos">Clientes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1 class="Titulo">Todas las mascotas</h1>
+  <!-- <a href="#arriba" class="Go-top"> <i class="fa-solid fa-chevron-up"></i></a> -->
+  <a (click)="scrollToTop()" class="Go-top"><i class="fa-solid fa-chevron-up"></i></a>
+
+  <!-- <a href="#abajo" class="Go-down"> <i class="fa-solid fa-chevron-down"></i></a> -->
+  <a (click)="scrollToBottom()" class="Go-down"><i class="fa-solid fa-chevron-down"></i></a>
+
+
+  <div class="tabla-center">
+    <div class="annadidos">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar mascotas">
+      </div>
+      <a class="btn btn-success agregar" [routerLink]="['/Mascotas/add']"><i class="fa-solid fa-plus"></i></a>
+    </div>
+    <div style="width: 80%;"></div>
+    <table class="mascotas" id="clientTable">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Raza</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Enfermedad</th>
+          <th scope="col">ID</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let mascota of listaDeMascotas">
+          <th><a [routerLink]="['/Mascota/find', mascota.ID]">{{ mascota.Nombre }}</a></th>
+          <td>{{ mascota.Raza }}</td>
+          <td>{{ mascota.Edad }}</td>
+          <td>{{ mascota.Peso }}</td>
+          <td>{{ mascota.Enfermedad }}</td>
+          <td>{{ mascota.ID }}</td>
+          <td>
+            <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.ID]"><i class="far fa-edit"></i></a>
+            <a class="delete-button" (click)="eliminarMascota(mascota)"><i class="far fa-trash-alt"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <div id="abajo"></div>
+
+</div>
 
 
 <!-- <app-mascota-find-id [Mascota]="selectedMascota"></app-mascota-find-id>
@@ -66,5 +71,3 @@
 <div *ngIf="mostrarforman2">
   <app-actualizar-mascota [formMascota]="selectedMascota" (addMascotaEvent)="actualizarMascota($event)"></app-actualizar-mascota>
 </div> -->
-
- 

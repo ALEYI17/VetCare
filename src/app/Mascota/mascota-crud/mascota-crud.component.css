@@ -7,7 +7,7 @@
 html{
     scroll-behavior: smooth;
 }
-body{
+.body{
     font-family: 'Oswald', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
