@@ -117,8 +117,11 @@ export class MascotaService {
 
   }
 
-  agregarMascota(mascota:Mascota){
-    this.http.post('http://localhost:8090/Mascota/agregar',mascota).subscribe();
+  agregarMascota(mascota:Mascota, clientId: string){
+    console.log(mascota);
+    
+    this.http.post("http://localhost:8090/Mascota/agregar?clientId="+clientId,mascota).subscribe();
+    
   }
   
   updateMascota(){

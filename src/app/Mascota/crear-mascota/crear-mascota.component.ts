@@ -30,13 +30,13 @@ export class CrearMascotaComponent {
 
   constructor(private fb: FormBuilder,private mascotaService: MascotaService,private router: Router) {
     this.mascotaForm = this.fb.group({
-      Nombre: ['', Validators.required],
-      Raza: ['', Validators.required],
-      Edad: [0, [Validators.required, Validators.min(0.01)]],
-      Peso: [0, [Validators.required, Validators.min(0.01)]],
-      Enfermedad: '',
-      Foto: '',
-      clientId: [0]
+      nombre: ['', Validators.required],
+      raza: ['', Validators.required],
+      edad: [0, [Validators.required, Validators.min(0.01)]],
+      peso: [0, [Validators.required, Validators.min(0.01)]],
+      enfermedad: '',
+      foto: '',
+      clientId: [1]
     });
 
 
@@ -50,15 +50,17 @@ export class CrearMascotaComponent {
     if (this.mascotaForm.valid) {
       const mascotaData = this.mascotaForm.value;
       const mascota: Mascota = {
-        nombre: mascotaData.Nombre,
-        raza: mascotaData.Raza,
-        edad: mascotaData.Edad,
-        peso: mascotaData.Peso,
-        enfermedad: mascotaData.Enfermedad,
-        foto: mascotaData.Foto,
-        id: mascotaData.clientId // Assuming you want to use clientId as ID
-      };
-      this.mascotaService.agregarMascota(mascota);
+        nombre: mascotaData.nombre,
+        raza: mascotaData.raza,
+        edad: mascotaData.edad,
+        peso: mascotaData.peso,
+        enfermedad: mascotaData.enfermedad,
+        foto: mascotaData.foto,
+        id: 0 // Assuming you want to use clientId as ID
+      };  
+      console.log(mascota);
+      
+      this.mascotaService.agregarMascota(mascota, mascotaData.clientId);
       this.mascotaForm.reset(); // Optional: reset the form after adding the mascota
       this.isSubmited = false
       this.router.navigate(['/Mascotas/todas']);
