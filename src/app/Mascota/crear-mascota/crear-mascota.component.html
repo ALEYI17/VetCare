@@ -30,14 +30,33 @@
     
                 <div class="input-box">
                     <label for="Enfermedad">Enfermedad</label>
-                    <input formControlName="enfermedad" type="text" class="form-control" id="Enfermedad" placeholder="Enfermedad" required>
+                    <input formControlName="enfermedad" type="text" class="form-control" id="Enfermedad" placeholder="Enfermedad" >
                 </div>
     
                 <div class="input-box">
                     <label for="Foto">Foto</label>
                     <input formControlName="foto" type="text" class="form-control" id="Foto" placeholder="Foto" required>
                 </div>
-    
+
+        <div class="input-box wrapper">
+        <p class="error" *ngIf="(mascotaForm.get('clientId')?.touched || isSubmited ) && mascotaForm.get('clientId')?.invalid">Escoja un dueño</p>
+          <label for="duenno">Dueño</label>
+          <div class="select-btn" (click)="toggleWrapper()">
+            <span>Selecciona Dueño:</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          
+          <div class="content">
+            <div class="search">
+              <input type="text" placeholder="Buscar" id="searchInput" (input)="filterOptionsList()">
+            </div>
+            <ul class="options" id="clientList">
+              <li *ngFor="let cliente of clientes" [attr.data-client-id]="cliente.id" (click)="selectClient(cliente)">{{cliente.nombre}}</li>
+            </ul>
+            <input type="hidden" formControlName="clientId" id="clientId" name="clientId" value="">
+          </div>
+        </div>
+                
             </div>
             <div class="button">
                 <button type="submit">Enviar</button>
@@ -47,3 +66,7 @@
     
 
 </div>
+
+
+
+
