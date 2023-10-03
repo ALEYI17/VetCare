@@ -28,7 +28,9 @@ export class ActualizarMascotaComponent {
   ngOnInit():void{
     this.route.paramMap.subscribe(params=>{
       const id = Number(params.get("id"));
-      this.formMascota = this.MascotaService.findById(id)
+      this.MascotaService.findById(id).subscribe(
+        mascota => this.formMascota =mascota
+      )
     })
   }
   updateMascota(form: any) {

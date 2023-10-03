@@ -43,7 +43,10 @@ export class MascotaCrudComponent {
     this.mostrarforman = true
   }
   ngOnInit(): void {
-    this.listaDeMascotas = this.mascotaServicio.findAll();
+    this.mascotaServicio.findAll().subscribe(
+      mascotas => this.listaDeMascotas = mascotas
+    );
+
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const clientTable = document.getElementById('clientTable');
 

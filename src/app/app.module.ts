@@ -12,6 +12,7 @@ import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actuali
 import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboard-cliente.component';
 import { LoginComponent } from './Landing/login/login.component';
 import { NgOptimizedImage } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NgOptimizedImage } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
