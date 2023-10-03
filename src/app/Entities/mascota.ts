@@ -4,13 +4,13 @@ import { Tratamiento } from "./tratamiento";
 
 // Declara la interfaz Mascota
 export interface Mascota {
-    Nombre: string;
-    Raza: string;
-    Edad: number;
-    Peso: number;
-    Enfermedad: string;
-    Foto: string;
-    ID: number;
+    nombre: string;
+    raza: string;
+    edad: number;
+    peso: number;
+    enfermedad: string;
+    foto: string;
+    id: number;
     cliente? :Cliente
     tratamientos? : Tratamiento[]
 }

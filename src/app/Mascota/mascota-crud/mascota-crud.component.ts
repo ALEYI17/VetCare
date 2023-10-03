@@ -18,34 +18,36 @@ export class MascotaCrudComponent {
 
   }
 
-  mostrarMascota(mascota: Mascota) {
-    this.selectedMascota = mascota;
-    this.mostrarforman2 = true
-  }
+  // mostrarMascota(mascota: Mascota) {
+  //   this.selectedMascota = mascota;
+  //   this.mostrarforman2 = true
+  // }
 
-  onMascotaAdded(newMascota: Mascota) {
-    // Push the new pet to the array
-    this.listaDeMascotas.push(newMascota);
-    console.log('Mascota added to listaDeMascotas:', newMascota);
-  }
-  actualizarMascota(updateMascota: Mascota) {
-    const id = updateMascota.ID - 1
-    this.listaDeMascotas[id] = updateMascota
+  // onMascotaAdded(newMascota: Mascota) {
+  //   // Push the new pet to the array
+  //   this.listaDeMascotas.push(newMascota);
+  //   console.log('Mascota added to listaDeMascotas:', newMascota);
+  // }
+  // actualizarMascota(updateMascota: Mascota) {
+  //   const id = updateMascota.ID - 1
+  //   this.listaDeMascotas[id] = updateMascota
 
-  }
+  // }
 
-  eliminarMascota(mascota: Mascota) {
-    var index = this.listaDeMascotas.indexOf(mascota)
-    this.listaDeMascotas.splice(index, 1)
+  eliminarMascota(id :number) {
+    
+    this.mascotaServicio.eliminarMascota(id)
+    this.listaDeMascotas = this.listaDeMascotas.filter(mascota => mascota.id !== id);
   }
 
   mostararAnadir() {
     this.mostrarforman = true
   }
   ngOnInit(): void {
+
     this.mascotaServicio.findAll().subscribe(
       mascotas => this.listaDeMascotas = mascotas
-    );
+      );
 
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const clientTable = document.getElementById('clientTable');
@@ -72,6 +74,8 @@ export class MascotaCrudComponent {
       }
     }
   }
+
+
   scrollToBottom() {
     const element = document.getElementById('abajo');
     if (element) {

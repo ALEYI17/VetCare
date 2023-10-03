@@ -113,7 +113,7 @@ export class MascotaService {
 
   eliminarMascota(id:number){
 
-    this.http.get('http://localhost:8090/Mascota/delete/'+id).subscribe();
+    this.http.delete('http://localhost:8090/Mascota/delete/'+id).subscribe();
 
   }
 

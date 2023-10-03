@@ -50,13 +50,13 @@ export class CrearMascotaComponent {
     if (this.mascotaForm.valid) {
       const mascotaData = this.mascotaForm.value;
       const mascota: Mascota = {
-        Nombre: mascotaData.Nombre,
-        Raza: mascotaData.Raza,
-        Edad: mascotaData.Edad,
-        Peso: mascotaData.Peso,
-        Enfermedad: mascotaData.Enfermedad,
-        Foto: mascotaData.Foto,
-        ID: mascotaData.clientId // Assuming you want to use clientId as ID
+        nombre: mascotaData.Nombre,
+        raza: mascotaData.Raza,
+        edad: mascotaData.Edad,
+        peso: mascotaData.Peso,
+        enfermedad: mascotaData.Enfermedad,
+        foto: mascotaData.Foto,
+        id: mascotaData.clientId // Assuming you want to use clientId as ID
       };
       this.mascotaService.agregarMascota(mascota);
       this.mascotaForm.reset(); // Optional: reset the form after adding the mascota

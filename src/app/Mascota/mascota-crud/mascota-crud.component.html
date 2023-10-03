@@ -44,14 +44,14 @@
       </thead>
       <tbody class="table-group-divider">
         <tr *ngFor="let mascota of listaDeMascotas">
-          <th><a [routerLink]="['/Mascota/find', mascota.ID]">{{ mascota.Nombre }}</a></th>
-          <td>{{ mascota.Raza }}</td>
-          <td>{{ mascota.Edad }}</td>
-          <td>{{ mascota.Peso }}</td>
-          <td>{{ mascota.Enfermedad }}</td>
+          <th><a [routerLink]="['/Mascota/find', mascota.id]">{{ mascota.nombre }}</a></th>
+          <td>{{ mascota.raza }}</td>
+          <td>{{ mascota.edad }}</td>
+          <td>{{ mascota.peso }}</td>
+          <td>{{ mascota.enfermedad }}</td>
           <td>
-            <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.ID]"><i class="far fa-edit"></i></a>
-            <a class="delete-button" (click)="eliminarMascota(mascota)"><i class="far fa-trash-alt"></i></a>
+            <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.id]"><i class="far fa-edit"></i></a>
+            <a class="delete-button" (click)="eliminarMascota(mascota.id)"><i class="far fa-trash-alt"></i></a>
           </td>
         </tr>
       </tbody>
