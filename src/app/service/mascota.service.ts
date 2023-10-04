@@ -117,10 +117,10 @@ export class MascotaService {
 
   }
 
-  agregarMascota(mascota:Mascota, clientId: string){
+  agregarMascota(mascota:Mascota, clientId: string):Observable<Object>{
     console.log(mascota);
     
-    this.http.post("http://localhost:8090/Mascota/agregar?clientId="+clientId,mascota).subscribe();
+    return this.http.post("http://localhost:8090/Mascota/agregar?clientId="+clientId,mascota);
     
   }
   

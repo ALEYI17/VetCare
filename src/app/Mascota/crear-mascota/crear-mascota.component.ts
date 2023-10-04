@@ -79,10 +79,16 @@ export class CrearMascotaComponent {
       };  
       console.log(mascota);
       
-      this.mascotaService.agregarMascota(mascota, mascotaData.clientId);
-      this.mascotaForm.reset(); // Optional: reset the form after adding the mascota
-      this.isSubmited = false
-      this.router.navigate(['/Mascotas/todas']);
+      this.mascotaService.agregarMascota(mascota, mascotaData.clientId).subscribe(
+        data=>{
+          complete:{
+            this.mascotaForm.reset(); // Optional: reset the form after adding the mascota
+            this.isSubmited = false
+            this.router.navigate(['/Mascotas/todas']);
+          }
+        }
+      );
+      
     }
   }
 
