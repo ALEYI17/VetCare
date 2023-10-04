@@ -13,6 +13,11 @@ import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboar
 import { LoginComponent } from './Landing/login/login.component';
 import { NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CrudClientesComponent } from './clientes/crud-clientes/crud-clientes.component';
+import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actualizar-cliente.component';
+import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
+import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-cliente.component';
+import { NavbarCrudComponent } from './Landing/navbar-crud/navbar-crud.component';
 
 
 @NgModule({
@@ -25,6 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
     ActualizarMascotaComponent,
     DashboardClienteComponent,
     LoginComponent,
+    CrudClientesComponent,
+    ActualizarClienteComponent,
+    CrearClienteComponent,
+    MostrarClienteComponent,
+    NavbarCrudComponent,
   ],
   imports: [
     BrowserModule,

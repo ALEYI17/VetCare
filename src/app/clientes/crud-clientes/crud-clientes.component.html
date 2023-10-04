@@ -1,0 +1,59 @@
+<!-- mascotas.component.html -->
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+<div class="fondo body">
+    
+  <app-navbar-crud></app-navbar-crud>
+  
+    <h1 class="Titulo">Todos los clientes</h1>
+    <!-- <a href="#arriba" class="Go-top"> <i class="fa-solid fa-chevron-up"></i></a> -->
+    <a (click)="scrollToTop()" class="Go-top"><i class="fa-solid fa-chevron-up"></i></a>
+  
+    <!-- <a href="#abajo" class="Go-down"> <i class="fa-solid fa-chevron-down"></i></a> -->
+    <a (click)="scrollToBottom()" class="Go-down"><i class="fa-solid fa-chevron-down"></i></a>
+  
+  
+    <div class="tabla-center">
+      <div class="annadidos">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Buscar clientes">
+        </div>
+        <a class="btn btn-success agregar" [routerLink]="['/Mascotas/add']"><i class="fa-solid fa-plus"></i></a>
+      </div>
+      <div style="width: 80%;"></div>
+      <table class="mascotas" id="clientTable">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">cédula</th>
+            <th scope="col">correo</th>
+            <th scope="col">celular</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>    
+        <tbody class="table-group-divider">
+          <tr *ngFor="let cliente of listaclientes">
+            <th><a [routerLink]="['/Clientes/find', cliente.cedula]">{{ cliente.nombre }}</a></th>
+            <td>{{ cliente.cedula }}</td>
+            <td>{{ cliente.corre }}</td>
+            <td>{{ cliente.celular }}</td>
+            <td>
+                <a routerLink="/Clientes/update/{{ cliente.cedula }}" class="modificar-button"><i class="far fa-edit"></i></a>
+                <a routerLink="/Clientes/delete/{{ cliente.cedula }}" class="delete-button"><i class="far fa-trash-alt"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="abajo"></div>
+  
+  </div>
+  
+  
+  <!-- <app-mascota-find-id [Mascota]="selectedMascota"></app-mascota-find-id>
+  <div *ngIf="mostrarforman">
+    <app-crear-mascota (addMascotaEvent)="onMascotaAdded($event)"></app-crear-mascota>
+  </div>
+  <div *ngIf="mostrarforman2">
+    <app-actualizar-mascota [formMascota]="selectedMascota" (addMascotaEvent)="actualizarMascota($event)"></app-actualizar-mascota>
+  </div> -->
