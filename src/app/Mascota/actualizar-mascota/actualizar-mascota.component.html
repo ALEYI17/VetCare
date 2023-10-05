@@ -2,7 +2,7 @@
 <div class="body">
     <div class="container">
         <div class="title"><h1>Actualizar mascota</h1></div>
-        <form #mascotaForm="ngForm" (ngSubmit)="updateMascota(mascotaForm)">
+        <form #mascotaForm="ngForm" (ngSubmit)="updateMascota()">
             <div class="user-details">
                 <div class="input-box">
                     <label for="nombre">Nombre</label>
@@ -36,7 +36,7 @@
                 
             </div>
             <div class="button">
-                <a [routerLink]="['/Mascotas/todas']"><button type="submit">Enviar</button></a>
+                <button type="submit">Enviar</button>
             </div>
         </form>
     </div>

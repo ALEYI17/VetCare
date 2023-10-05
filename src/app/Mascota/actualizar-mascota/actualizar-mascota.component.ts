@@ -19,6 +19,10 @@ export class ActualizarMascotaComponent {
   @Input()
   formMascota!: Mascota; 
 
+  isSubmited : boolean = false
+
+  duenoCedula!:number;
+
   constructor(
     private MascotaService: MascotaService,
     private route:ActivatedRoute,
@@ -31,13 +35,27 @@ export class ActualizarMascotaComponent {
       this.MascotaService.findById(id).subscribe(
         mascota => this.formMascota =mascota
       )
+      this.MascotaService.findDueno(id).subscribe(
+        dueno=> this.duenoCedula = dueno
+        
+        
+      )
     })
+    
   }
-  updateMascota(form: any) {
+  updateMascota() {
     this.sendMascota = Object.assign({}, this.formMascota);
     console.log('Mascota added:', this.sendMascota);
     this.addMascotaEvent.emit(this.sendMascota);
-    
+    this.MascotaService.updateMascota(this.sendMascota,this.duenoCedula.toString()).subscribe(
+      data=>{
+        complete:{
+          
+          this.isSubmited = false
+          this.router.navigate(['/Mascotas/todas']);
+        }
+      }
+    );
   }
 
   findById(mascota:Mascota){

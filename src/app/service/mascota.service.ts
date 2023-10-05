@@ -111,6 +111,11 @@ export class MascotaService {
     return mascota;
   }
 
+  findDueno(id:number): Observable<number>{
+    const CedulaDueno = this.http.get<number>('http://localhost:8090/Mascota/find/'+id+ "/dueno");
+    return CedulaDueno;
+  }
+
   eliminarMascota(id:number){
 
     this.http.delete('http://localhost:8090/Mascota/delete/'+id).subscribe();
@@ -124,8 +129,10 @@ export class MascotaService {
     
   }
   
-  updateMascota(){
+  updateMascota(mascota:Mascota, clientId?: string):Observable<Object>{
+    console.log(mascota)
     
+    return this.http.post("http://localhost:8090/Mascota/update/"+ mascota.id+ "?cliente.id="+clientId, mascota);
   }
 
 }
