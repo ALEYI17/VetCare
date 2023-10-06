@@ -1,1 +1,48 @@
-<p>mostrar-cliente works!</p>
+<!-- informacion-cliente.component.html -->
+<div class="fondo">
+  <div class="container">
+    <div class="title"><h1>Información del cliente</h1></div>
+    <div class="user-details">
+      <div class="input-box">
+        <h3>Cédula:</h3>
+        <p>{{ cliente.cedula }}</p>
+      </div>
+      <div class="input-box">
+        <h3>Nombre:</h3>
+        <p>{{ cliente.nombre }}</p>
+      </div>
+      <div class="input-box">
+        <h3>Correo:</h3>
+        <p>{{ cliente.corre }}</p>
+      </div>
+      <div class="input-box">
+        <h3>Celular:</h3>
+        <p>{{ cliente.celular }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <table class="mascotas" id="clientTable">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Raza</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Peso</th>
+        <th scope="col">Enfermedad</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let mascota of pets">
+        <th> <a [routerLink]="['/Mascota/find', mascota.id]">{{ mascota.nombre }}</a></th>
+        <td>{{ mascota.raza }}</td>
+        <td>{{ mascota.edad }}</td>
+        <td>{{ mascota.peso }}</td>
+        <td>{{ mascota.enfermedad }}</td>
+        <td>{{ mascota.id }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

@@ -8,6 +8,7 @@ import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actuali
 import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.component';
 import { LoginComponent } from './Landing/login/login.component';
 import { CrudClientesComponent } from './clientes/crud-clientes/crud-clientes.component';
+import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-cliente.component';
 
 const routes: Routes = [
   
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'Mascota/update/:id', component: ActualizarMascotaComponent },
   { path: 'Mascotas/add', component: CrearMascotaComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'Clientes/todos', component: CrudClientesComponent }
+  { path: 'Clientes/todos', component: CrudClientesComponent },
+  { path: 'Clientes/find/:id', component: MostrarClienteComponent },
   
 ];
 
