@@ -18,7 +18,7 @@
         <div class="search-bar">
           <input type="text" id="searchInput" placeholder="Buscar clientes">
         </div>
-        <a class="btn btn-success agregar" [routerLink]="['/Mascotas/add']"><i class="fa-solid fa-plus"></i></a>
+        <a class="btn btn-success agregar" [routerLink]="['/Clientes/add']"><i class="fa-solid fa-plus"></i></a>
       </div>
       <div style="width: 80%;"></div>
       <table class="mascotas" id="clientTable">
@@ -39,7 +39,7 @@
             <td>{{ cliente.celular }}</td>
             <td>
                 <a routerLink="/Clientes/update/{{ cliente.cedula }}" class="modificar-button"><i class="far fa-edit"></i></a>
-                <a routerLink="/Clientes/delete/{{ cliente.cedula }}" class="delete-button"><i class="far fa-trash-alt"></i></a>
+                <a  (click)="eliminarMascota(cliente.cedula)" class="delete-button"><i class="far fa-trash-alt"></i></a>
             </td>
           </tr>
         </tbody>

@@ -1,1 +1,34 @@
-<p>crear-cliente works!</p>
+<!-- agregar-cliente.component.html -->
+<div class="body">
+    <div class="container">
+        <div class="title"><h1>Agregar cliente</h1></div>
+        <form [formGroup]="clienteForm" (ngSubmit)="crearCliente()">
+          <div class="user-details">
+            <div class="input-box">
+              <label for="cedula">Cédula</label>
+              <input formControlName="cedula" type="text" class="form-control" id="cedula" placeholder="Cédula">
+              <p class="error" *ngIf="(clienteForm.get('cedula')?.touched || isSubmitted) && clienteForm.get('cedula')?.invalid">Cédula no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+              <label for="nombre">Nombre</label>
+              <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+              <p class="error" *ngIf="(clienteForm.get('nombre')?.touched || isSubmitted) && clienteForm.get('nombre')?.invalid">Nombre no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+              <label for="corre">Correo</label>
+              <input formControlName="corre" type="text" class="form-control" id="corre" placeholder="Correo">
+              <p class="error" *ngIf="(clienteForm.get('corre')?.touched || isSubmitted) && clienteForm.get('corre')?.invalid">Correo no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+              <label for="celular">Celular</label>
+              <input formControlName="celular" type="text" class="form-control" id="celular" placeholder="Celular">
+              <p class="error" *ngIf="(clienteForm.get('celular')?.touched || isSubmitted) && clienteForm.get('celular')?.invalid">Celular no puede estar vacío.</p>
+            </div>
+          </div>
+          <div class="button">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </div>
+      
+</div>

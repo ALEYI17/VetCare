@@ -9,6 +9,7 @@ import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.com
 import { LoginComponent } from './Landing/login/login.component';
 import { CrudClientesComponent } from './clientes/crud-clientes/crud-clientes.component';
 import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-cliente.component';
+import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 
 const routes: Routes = [
   
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'Clientes/todos', component: CrudClientesComponent },
   { path: 'Clientes/find/:id', component: MostrarClienteComponent },
+  { path: 'Clientes/add', component: CrearClienteComponent },
   
 ];
 
