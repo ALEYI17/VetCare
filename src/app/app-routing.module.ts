@@ -9,8 +9,11 @@ import { CrearMascotaComponent } from './Mascota/crear-mascota/crear-mascota.com
 import { LoginComponent } from './Landing/login/login.component';
 import { CrudClientesComponent } from './clientes/crud-clientes/crud-clientes.component';
 import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-cliente.component';
+import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 import { LoginClienteComponent } from './Login/login-cliente/login-cliente.component';
 import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
+import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actualizar-cliente.component';
+
 
 const routes: Routes = [
   
@@ -23,7 +26,9 @@ const routes: Routes = [
   { path: 'login', component: LoginVeterinarioComponent },
   { path: 'Clientes/todos', component: CrudClientesComponent },
   { path: 'Clientes/find/:id', component: MostrarClienteComponent },
-  { path: 'login/cliente', component: LoginClienteComponent }
+  { path: 'login/cliente', component: LoginClienteComponent },
+  { path: 'Clientes/add', component: CrearClienteComponent },
+  { path: 'Clientes/update/:id', component: ActualizarClienteComponent },
   
 ];
 

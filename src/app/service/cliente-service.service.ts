@@ -19,25 +19,25 @@ export class ClienteServiceService {
     return mascota;
   }
 
-  eliminarMascota(id:number){
+  eliminarCliente(id:string){
 
-    this.http.get('http://localhost:8090/Clientes/delete/'+id).subscribe();
+    this.http.delete('http://localhost:8090/Clientes/delete/'+id).subscribe();
 
   }
 
-  agregarMascota(cliente:Cliente){
-    this.http.post('http://localhost:8090/Clientes/add',cliente).subscribe();
+  agregarCliente(cliente:Cliente):Observable<Object>{
+    return this.http.post('http://localhost:8090/Clientes/add',cliente);
   }
 
-  updateCliente(){
-
+  updateCliente(cliente:Cliente):Observable<Object>{
+    return this.http.post('http://localhost:8090/Clientes/update/'+ cliente.cedula, cliente);
   }
   
   getByCedula(){
 
   }
 
-  removerClienteByCedula(){
-    
+  removerClienteByCedula(id:string){
+    this.http.delete('http://localhost:8090/Clientes/delete/' + id).subscribe();
   }
 }

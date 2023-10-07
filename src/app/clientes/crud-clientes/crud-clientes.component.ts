@@ -9,6 +9,7 @@ import { ClienteServiceService } from 'src/app/service/cliente-service.service';
 })
 export class CrudClientesComponent {
 
+
   listaclientes!: Cliente[];
 
   constructor(private clienteservice: ClienteServiceService) {
@@ -59,5 +60,10 @@ export class CrudClientesComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  eliminarMascota(arg0: string) {
+    this.clienteservice.eliminarCliente(arg0);
+    this.listaclientes = this.listaclientes.filter(cliente=>cliente.cedula !== arg0);
   }
 }
