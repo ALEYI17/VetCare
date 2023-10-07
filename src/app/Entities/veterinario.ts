@@ -5,7 +5,7 @@ export interface Veterinario {
     contrasena: string;
     especialidad: string;
     foto: string;
-    numeroDeAtenciones: number;
+    nombre : string;
     id: number; 
     tratamientos?: Tratamiento[]; 
   }

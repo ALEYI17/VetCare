@@ -10,6 +10,5 @@ export class LoginComponent {
 onSubmit() {
 
 }
-  veterinario: Veterinario = { id: 0,cedula: '', contrasena: '', especialidad: '', foto: '', numeroDeAtenciones: 0 };
-  errorMessage: string | undefined;
+
 }
