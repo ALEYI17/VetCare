@@ -18,9 +18,9 @@ export class LoginServiceService {
 
   }
 
-  authcliente(cliente:Cliente): Observable<string>{
+  authcliente(cliente:Cliente): Observable<Cliente>{
 
-    return this.http.post<string>('http://localhost:8090/clientelogin',cliente)
+    return this.http.post<Cliente>('http://localhost:8090/clientelogin',cliente)
 
   }
 

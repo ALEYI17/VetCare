@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(src/assets/img/gatologin.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Oswald', sans-serif;
+}
+.wrapper{
+    width: 420px;
+    background: transparent;
+    color: azure;
+    border-radius: 10px;
+    padding: 30px 40px;
+    background-color: #257fb371;
+    border: 2px solid rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px rgba(0, 0, 0,.2);
+}
+
+.wrapper h1{
+    font-size: 5em;
+    text-align: center;
+}
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: #fff;
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .logincliente{
+    font-size: 1em;
+    text-align: center;
+    margin: 20px 0 15px;
+
+}
+.logincliente p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logincliente p a:hover{
+
+    text-decoration: underline;
+}
+
+
+/* Add this code to your existing CSS file */
+
+.input-box input:focus {
+    border-color: #3498db; /* Change to your desired focus color */
+}
+
+.input-box input:focus + i {
+    color: #3498db; /* Change to your desired icon color on focus */
+}
+
+.input-box input:not(:placeholder-shown) {
+    background: #257fb371; /* Change to your desired fill color */
+    transition: background 0.3s;
+}
+
+.input-box input:not(:placeholder-shown) + i {
+    color: #fff; /* Change to your desired icon color when filled */
+}
+.error-message {
+    color: red;            /* Text color for the error message */
+    font-size: 1.5em;       /* Font size for the error message */
+    margin-top: 10px;      /* Spacing from the form fields */
+    font-weight: 600px;
+    text-align: center;
+}

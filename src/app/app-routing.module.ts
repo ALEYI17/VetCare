@@ -19,10 +19,11 @@ const routes: Routes = [
   { path: 'Home', component: LandingPageComponent },
   { path: '', pathMatch: 'full', redirectTo: 'Home' },
   { path: 'Mascota/update/:id', component: ActualizarMascotaComponent },
-  { path: 'Mascotas/add', component: CrearMascotaComponent },
+  { path: 'Mascotas/add', component: CrearMascotaComponent }, 
   { path: 'login', component: LoginVeterinarioComponent },
   { path: 'Clientes/todos', component: CrudClientesComponent },
   { path: 'Clientes/find/:id', component: MostrarClienteComponent },
+  { path: 'login/cliente', component: LoginClienteComponent }
   
 ];
 
