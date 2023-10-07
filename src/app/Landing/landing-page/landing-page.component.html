@@ -73,82 +73,21 @@
     <h1 class="Doctores">Nuestros especialistas</h1>
     <button class="pre-button"><img src="assets/img/arrow-sm-right-svgrepo-com.svg" alt="flecha a la izquierda"></button>
     <button class="nest-button"><img src="assets/img/arrow-sm-right-svgrepo-com.svg" alt="flecha derecha"></button>
-    <div class="product-container ">
-        <div class="product-card ">
+    <div class="product-container">
+        <div class="product-card" *ngFor="let veterinario of veterinarios">
             <div class="product-image">
-                <!-- <span class="discount-tag">hola</span> -->
-                <img src="assets/img/doctorVerdad1.jpg" class="product-thumb" alt="foto doctor">
+                <img src="{{veterinario.foto}}" class="product-thumb" alt="foto doctor">
                 <button class="card-btn">Ver información</button>
             </div>
             <div class="product-info">
-                <h2 class="product-brand">Javier</h2>
-                <p class="product-short-description"> Veterinario apasionado por la fauna exótica y especializado en el cuidado de reptiles y aves tropicales.</p>
-                <span class="price">especialista</span> <span class="actual-price">Gatos</span>
-            </div>
-        </div>
-  
-        <div class="product-card">
-            <div class="product-image">
-                <!-- <span class="discount-tag">hola</span> -->
-                <img src="assets/img/doctorVerdad2.jpg" class="product-thumb" alt="foto doctor">
-                <button class="card-btn">Ver información</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Luis</h2>
-                <p class="product-short-description">Veterinario comprometido con la salud de mascotas, conocido por su empatía y habilidad para tranquilizar a animales nerviosos.</p>
-                <span class="price">especialista</span> <span class="actual-price">Gatos</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <!-- <span class="discount-tag">hola</span> -->
-                <img src="assets/img/doctorVerdad3.jpg" class="product-thumb" alt="foto doctor">
-                <button class="card-btn">Ver información</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Andrés</h2>
-                <p class="product-short-description"> Veterinario equino altamente capacitado en medicina de caballos de competición, reconocido por su atención meticulosa.</p>
-                <span class="price">especialista</span> <span class="actual-price">Gatos</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <!-- <span class="discount-tag">hola</span> -->
-                <img src="assets/img/doctorVerdad4.jpg" class="product-thumb" alt="foto doctor">
-                <button class="card-btn">Ver información</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Gabriel</h2>
-                <p class="product-short-description">Veterinario de vida silvestre que trabaja en la conservación de especies en peligro, colaborando con reservas naturales.</p>
-                <span class="price">especialista</span> <span class="actual-price">Gatos</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <!-- <span class="discount-tag">hola</span> -->
-                <img src="assets/img/doctorVerdad5.jpg" class="product-thumb" alt="foto doctor">
-                <button class="card-btn">Ver información</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Martina</h2>
-                <p class="product-short-description">Veterinario dedicado a la medicina preventiva, enfocado en nutrición y bienestar, con un enfoque en mascotas mayores.</p>
-                <span class="price">especialista</span> <span class="actual-price">Gatos</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <!-- <span class="discount-tag">hola</span> -->
-                <img src="/assets/img/doctorverdad6.jpg" class="product-thumb" alt="foto doctor">
-                <button class="card-btn">Ver información</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Diega</h2>
-                <p class="product-short-description">Veterinario de zoológico especializado en el cuidado de grandes felinos, conocido por su valentía y habilidades en manejo animal.</p>
-                <span class="price">especialista</span> <span class="actual-price">gatos$</span>
+                <h2 class="product-brand">{{veterinario.nombre}}</h2>
+                <!-- <p class="product-short-description">{{veterinario.especialidad}}</p> -->
+                <span class="price">especialista</span> <span class="actual-price">{{veterinario.especialidad}}</span>
             </div>
         </div>
     </div>
-  </section>
+</section>
+
   
   <footer class="foote">
     <div class="containe">

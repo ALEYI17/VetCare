@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Veterinario } from 'src/app/Entities/veterinario';
+import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class LandingPageComponent {
 
-constructor(){}
+constructor(private veterinarioServicio:VeterinarioServiceService){}
+
+    veterinarios!:Veterinario[];
 
   ngOnInit() {
     let arbolderecho: HTMLElement | null = document.getElementById("hola4");
@@ -63,6 +67,10 @@ constructor(){}
             item.scrollLeft -= containerWidth / 2;
         });
     });
+
+    this.veterinarioServicio.findAll().subscribe(
+        veterinarios=> this.veterinarios = veterinarios
+    )
     
   }
 
