@@ -12,6 +12,7 @@ import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-clie
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 import { LoginClienteComponent } from './Login/login-cliente/login-cliente.component';
 import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
+import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actualizar-cliente.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'Clientes/todos', component: CrudClientesComponent },
   { path: 'Clientes/find/:id', component: MostrarClienteComponent },
   { path: 'Clientes/add', component: CrearClienteComponent },
+  { path: 'Clientes/update/:id', component: ActualizarClienteComponent },
   
 ];
 

@@ -29,8 +29,8 @@ export class ClienteServiceService {
     return this.http.post('http://localhost:8090/Clientes/add',cliente);
   }
 
-  updateCliente(){
-
+  updateCliente(cliente:Cliente):Observable<Object>{
+    return this.http.post('http://localhost:8090/Clientes/update/'+ cliente.cedula, cliente);
   }
   
   getByCedula(){
