@@ -18,6 +18,8 @@ import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actual
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-cliente.component';
 import { NavbarCrudComponent } from './Landing/navbar-crud/navbar-crud.component';
+import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
+import { LoginClienteComponent } from './Login/login-cliente/login-cliente.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { NavbarCrudComponent } from './Landing/navbar-crud/navbar-crud.component
     CrearClienteComponent,
     MostrarClienteComponent,
     NavbarCrudComponent,
+    LoginVeterinarioComponent,
+    LoginClienteComponent,
   ],
   imports: [
     BrowserModule,

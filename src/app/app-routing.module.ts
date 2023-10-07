@@ -10,6 +10,9 @@ import { LoginComponent } from './Landing/login/login.component';
 import { CrudClientesComponent } from './clientes/crud-clientes/crud-clientes.component';
 import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-cliente.component';
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
+import { LoginClienteComponent } from './Login/login-cliente/login-cliente.component';
+import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
+
 
 const routes: Routes = [
   
@@ -19,7 +22,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'Home' },
   { path: 'Mascota/update/:id', component: ActualizarMascotaComponent },
   { path: 'Mascotas/add', component: CrearMascotaComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginVeterinarioComponent },
   { path: 'Clientes/todos', component: CrudClientesComponent },
   { path: 'Clientes/find/:id', component: MostrarClienteComponent },
   { path: 'Clientes/add', component: CrearClienteComponent },
