@@ -76,7 +76,7 @@
     <div class="product-container">
         <div class="product-card" *ngFor="let veterinario of veterinarios">
             <div class="product-image">
-                <img src="{{veterinario.foto}}" class="product-thumb" alt="foto doctor">
+                <img ngSrc="{{veterinario.foto}}" class="product-thumb" alt="foto doctor" width="250" height="350">
                 <button class="card-btn">Ver información</button>
             </div>
             <div class="product-info">
