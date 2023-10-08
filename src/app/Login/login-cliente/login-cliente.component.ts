@@ -28,6 +28,7 @@ export class LoginClienteComponent {
         this.errorMessage = 'Credenciales de inicio de sesión no válidas';
       }else{
         console.log(`/cliente/${this.respuesta.cedula}`);
+        this.router.navigate([`/cliente/${this.respuesta.cedula}`]);
         
       }
   

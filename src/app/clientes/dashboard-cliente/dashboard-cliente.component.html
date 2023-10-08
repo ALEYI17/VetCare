@@ -1,1 +1,19 @@
-<p>dashboard-cliente works!</p>
+<!-- client-dashboard.component.html -->
+<div class="body">
+    <img src="assets/img/logovetcare.png" alt="un lindo gato" class="logodashboard">
+    <h1 class="Titulo">Welcome, {{ cliente.nombre }}!</h1>
+
+    <div class="separardeltitulo">
+    <h2 class="mismascotas">Mis Mascotas:</h2>
+    <div class="container">
+        <a class="cardclik" *ngFor="let pet of cliente.misMascotas" [routerLink]="['/Mascota/find', pet.id]">
+        <div class="card">
+            <img [src]="pet.foto" alt="foto mascotas">
+            <div class="contenido">
+            <p>{{ pet.nombre }}</p>
+            </div>
+        </div>
+        </a>
+    </div>
+    </div>
+</div>
