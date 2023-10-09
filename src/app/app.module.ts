@@ -20,6 +20,7 @@ import { MostrarClienteComponent } from './clientes/mostrar-cliente/mostrar-clie
 import { NavbarCrudComponent } from './Landing/navbar-crud/navbar-crud.component';
 import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
 import { LoginClienteComponent } from './Login/login-cliente/login-cliente.component';
+import { PaginaErrorComponent } from './Error/pagina-error/pagina-error.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { LoginClienteComponent } from './Login/login-cliente/login-cliente.compo
     NavbarCrudComponent,
     LoginVeterinarioComponent,
     LoginClienteComponent,
+    PaginaErrorComponent,
   ],
   imports: [
     BrowserModule,

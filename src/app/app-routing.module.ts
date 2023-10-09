@@ -14,6 +14,7 @@ import { LoginClienteComponent } from './Login/login-cliente/login-cliente.compo
 import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
 import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actualizar-cliente.component';
 import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboard-cliente.component';
+import { PaginaErrorComponent } from './Error/pagina-error/pagina-error.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'Clientes/add', component: CrearClienteComponent },
   { path: 'Clientes/update/:id', component: ActualizarClienteComponent },
   { path: 'cliente/:id', component: DashboardClienteComponent },
+  { path: '**', component: PaginaErrorComponent },
   
 ];
 
