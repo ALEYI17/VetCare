@@ -3,6 +3,7 @@ import { Mascota } from '../../Entities/mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-mascota-find-id',
@@ -21,18 +22,36 @@ export class MascotaFindIdComponent {
     private router: Router
     ){}
 
-    ngOnInit():void{
-      this.route.paramMap.subscribe(params=>{
+    ngOnInit(): void {
+      this.route.paramMap.subscribe(params => {
         const id = Number(params.get("id"));
+    
+        // Suscripción para obtener información de la mascota
         this.MascotaService.findById(id).subscribe(
-          mascotaget=>this.Mascota= mascotaget
-        )
-
+          mascotaget => this.Mascota = mascotaget,
+          (errorResponse: HttpErrorResponse) => {
+            if (!errorResponse.ok) {
+              // Manejar el error de la solicitud de la mascota aquí
+              console.error("Error en la solicitud de la mascota:", errorResponse.status, errorResponse.statusText);
+              this.router.navigate(['/error']);
+              // Puedes mostrar un mensaje de error al usuario
+              // this.errorMessageMascota = "Ocurrió un error en la solicitud de la mascota.";
+            }
+          }
+        );
+    
+        // Suscripción para obtener información del dueño
         this.MascotaService.findDuenoCompleto(id).subscribe(
-          duenoGet=> this.dueno = duenoGet
-        )
-         
-      })
-
+          duenoGet => this.dueno = duenoGet,
+          (errorResponse: HttpErrorResponse) => {
+            if (!errorResponse.ok) {
+              // Manejar el error de la solicitud del dueño aquí
+              console.error("Error en la solicitud del dueño:", errorResponse.status, errorResponse.statusText);
+              // Puedes mostrar un mensaje de error al usuario
+              // this.errorMessageDueno = "Ocurrió un error en la solicitud del dueño.";
+            }
+          }
+        );
+      });
     }
 }
