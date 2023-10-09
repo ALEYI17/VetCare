@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Mascota } from '../Entities/mascota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Cliente } from '../Entities/cliente';
 @Injectable({
   providedIn: 'root'
 })
@@ -114,6 +115,11 @@ export class MascotaService {
   findDueno(id:number): Observable<number>{
     const CedulaDueno = this.http.get<number>('http://localhost:8090/Mascota/find/'+id+ "/dueno");
     return CedulaDueno;
+  }
+
+  findDuenoCompleto(id:number):Observable<Cliente>{
+    const dueno = this.http.get<Cliente>('http://localhost:8090/Mascota/find/'+id+ "/duenocompleto");
+    return dueno;
   }
 
   eliminarMascota(id:number){

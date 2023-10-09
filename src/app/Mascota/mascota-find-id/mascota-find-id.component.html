@@ -27,10 +27,10 @@
         <h2>Enfermedad:</h2>
         <p>{{ Mascota.enfermedad }}</p>
       </div>
-      <!-- <div *ngIf="dueno != null" class="input-box">
+      <div *ngIf="dueno != null" class="input-box">
         <h2>Dueño:</h2>
-        <p>{{ dueno.nombre }}</p>
-      </div> -->
+        <a [routerLink]="['/Clientes/find', dueno.cedula]"><p>{{ dueno.nombre }}</p></a>
+      </div>
     </div>
   </div>
 </div>
