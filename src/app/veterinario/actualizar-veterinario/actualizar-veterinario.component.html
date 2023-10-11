@@ -1,0 +1,39 @@
+<!-- editar-cliente.component.html -->
+<div class="body">
+    <div class="container">
+      <div class="title"><h1>Editar cliente</h1></div>
+      <form #ClienteForm="ngForm" (ngSubmit)="updateVeterinario()">
+        <div class="user-details">
+          <div class="input-box">
+            <label for="cedula">Cédula</label>
+            <input name="cedula" [(ngModel)]="formVeterinario.cedula" type="text" class="form-control" id="cedula" placeholder="Cédula" readonly>
+          </div>
+          <div class="input-box">
+            <label for="nombre">Nombre</label>
+            <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" [(ngModel)]="formVeterinario.nombre">
+          </div>
+          <div class="input-box">
+            <label for="Contraseña">Contraseña</label>
+            <input name="Contraseña" type="text" class="form-control" id="Contraseña" placeholder="Contraseña" [(ngModel)]="formVeterinario.contrasena">
+          </div>
+          <div class="input-box">
+            <label for="corre">Especialidad</label>
+            <input name="corre" type="text" class="form-control" id="corre" placeholder="Correo" [(ngModel)]="formVeterinario.especialidad">
+          </div>
+          <div class="input-box">
+            <label for="celular">foto</label>
+            <input name="celular" type="text" class="form-control" id="celular" placeholder="Celular" [(ngModel)]="formVeterinario.foto">
+          </div>
+          <div class="input-box">
+            <label for="id">ID</label>
+            <input name="id" type="text" class="form-control" id="id" placeholder="ID" readonly [(ngModel)]="formVeterinario.id">
+          </div>
+        </div>
+        <div class="button">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  

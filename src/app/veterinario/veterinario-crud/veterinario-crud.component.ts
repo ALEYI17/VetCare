@@ -32,7 +32,7 @@ export class VeterinarioCrudComponent {
 
           for (let i = 0; i < rows.length; i++) {
             const clientRow = rows[i];
-            const clientName = clientRow.getElementsByTagName('td')[0]?.textContent?.toLowerCase();
+            const clientName = clientRow.getElementsByTagName('th')[0]?.textContent?.toLowerCase();
 
             if (clientName && clientName.includes(searchText)) {
               clientRow.style.display = '';

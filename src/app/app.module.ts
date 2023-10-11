@@ -28,6 +28,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
+import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import {MatListModule} from '@angular/material/list';
     PaginaErrorComponent,
     VeterinarioCrudComponent,
     MostrarVeterinarioComponent,
+    ActualizarVeterinarioComponent,
+    CrearVeterinarioComponent,
   ],
   imports: [
     BrowserModule,

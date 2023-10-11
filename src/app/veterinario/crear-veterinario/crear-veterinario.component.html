@@ -1,0 +1,39 @@
+<!-- agregar-cliente.component.html -->
+<div class="body">
+    <div class="container">
+        <div class="title"><h1>Agregar cliente</h1></div>
+        <form [formGroup]="VeterinarioForm" (ngSubmit)="crearVeterinario()">
+          <div class="user-details">
+            <div class="input-box">
+              <label for="cedula">Cédula</label>
+              <input formControlName="cedula" type="text" class="form-control" id="cedula" placeholder="Cédula">
+              <p class="error" *ngIf="(VeterinarioForm.get('cedula')?.touched || isSubmitted) && VeterinarioForm.get('cedula')?.invalid">Cédula no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+              <label for="nombre">Nombre</label>
+              <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+              <p class="error" *ngIf="(VeterinarioForm.get('nombre')?.touched || isSubmitted) && VeterinarioForm.get('nombre')?.invalid">Nombre no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+              <label for="corre">especialidad</label>
+              <input formControlName="especialidad" type="text" class="form-control" id="especialidad" placeholder="especialidad">
+              <p class="error" *ngIf="(VeterinarioForm.get('especialidad')?.touched || isSubmitted) && VeterinarioForm.get('especialidad')?.invalid">especialidad no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+              <label for="contrasena">contraseña</label>
+              <input formControlName="contrasena" type="text" class="form-control" id="contrasena" placeholder="contraseña">
+              <p class="error" *ngIf="(VeterinarioForm.get('contrasena')?.touched || isSubmitted) && VeterinarioForm.get('contrasena')?.invalid">contraseña no puede estar vacío.</p>
+            </div>
+            <div class="input-box">
+                <label for="foto">Foto</label>
+                <input formControlName="foto" type="text" class="form-control" id="foto" placeholder="foto">
+                <p class="error" *ngIf="(VeterinarioForm.get('foto')?.touched || isSubmitted) && VeterinarioForm.get('foto')?.invalid">foto no puede estar vacío.</p>
+              </div>
+          </div>
+          <div class="button">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </div>
+      
+</div>

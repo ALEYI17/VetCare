@@ -32,7 +32,7 @@
                         <div class="search-bar">
                             <input type="text" id="searchInput" placeholder="Buscar veterinarios">
                         </div>
-                        <a class="btn btn-success agregar" [routerLink]="['/Clientes/add']"><i class="fa-solid fa-plus"></i></a>
+                        <a class="btn btn-success agregar" [routerLink]="['/Veterinarios/add']"><i class="fa-solid fa-plus"></i></a>
                     </div>
                     <table class="mascotas" id="clientTable">
                         <thead>
@@ -46,7 +46,7 @@
                         </thead>
                         <tbody class="table-group-divider">
                             <tr *ngFor="let veterinario of veterinarios">
-                                <td><a [routerLink]="['/Veterinarios/find', veterinario.id]">{{ veterinario.nombre }}</a></td>
+                                <th><a [routerLink]="['/Veterinarios/find', veterinario.id]">{{ veterinario.nombre }}</a></th>
                                 <td>{{ veterinario.cedula }}</td>
                                 <td>{{ veterinario.especialidad }}</td>
                                 <!-- <td>
