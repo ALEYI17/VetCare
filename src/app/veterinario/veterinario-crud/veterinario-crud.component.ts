@@ -9,6 +9,8 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
 })
 export class VeterinarioCrudComponent {
 
+  opened = false
+
   veterinarios!:Veterinario[];
 
   constructor(private veteriarioServicio:VeterinarioServiceService){}

@@ -1,44 +1,69 @@
 <!-- src/app/app.component.html -->
-<div class="fondo body">
-    <div class="tabla-center">
+
+
+    
+    <mat-sidenav-container class="sidenav-container">
         
-        <div style="width: 80%;"></div>
+        <mat-sidenav #sidenav mode="over" [(opened)]="opened" >
+        <!-- Your sidenav content goes here -->
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="">Veterinarios</a>
+            <a mat-list-item [routerLink]="">Estadisticas</a>
+            <!-- Add other navigation items as needed -->
+        </mat-nav-list>
 
-        <div class="title">
-            <h1>Listado de Veterinarios</h1>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+
+            <div class="fondo body">
+                <button class="toggle-button" (click)="sidenav.toggle()">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="tabla-center">
+                
+                    <div style="width: 80%;"></div>
+            
+            
+            
+
+                    <h1 class="Titulo">Listado de Veterinarios</h1>
+                    <div class="annadidos">
+                        <div class="search-bar">
+                            <input type="text" id="searchInput" placeholder="Buscar veterinarios">
+                        </div>
+                        <a class="btn btn-success agregar" [routerLink]="['/Clientes/add']"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <table class="mascotas" id="clientTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cédula</th>
+                                <th scope="col">Especialidad</th>
+                                <!-- <th scope="col">Foto</th> -->
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let veterinario of veterinarios">
+                                <td><a [routerLink]="['/Veterinarios/find', veterinario.id]">{{ veterinario.nombre }}</a></td>
+                                <td>{{ veterinario.cedula }}</td>
+                                <td>{{ veterinario.especialidad }}</td>
+                                <!-- <td>
+                                    <img [src]="veterinario.foto" alt="Foto del Veterinario" width="100">
+                                </td> -->
+                                <td>
+                                    <a routerLink="/Veterinarios/update/{{ veterinario.id }}" class="modificar-button"><i class="far fa-edit"></i></a>
+                                    <a  (click)="eliminarVeterinario(veterinario.id)" class="delete-button"><i class="far fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+                </div>
         </div>
-        <div class="annadidos">
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Buscar veterinarios">
-            </div>
-            <a class="btn btn-success agregar" [routerLink]="['/Clientes/add']"><i class="fa-solid fa-plus"></i></a>
-        </div>
-        <table class="mascotas" id="clientTable">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cédula</th>
-                    <th scope="col">Especialidad</th>
-                    <!-- <th scope="col">Foto</th> -->
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <tr *ngFor="let veterinario of veterinarios">
-                    <td><a [routerLink]="['/Veterinarios/find', veterinario.id]">{{ veterinario.nombre }}</a></td>
-                    <td>{{ veterinario.cedula }}</td>
-                    <td>{{ veterinario.especialidad }}</td>
-                    <!-- <td>
-                        <img [src]="veterinario.foto" alt="Foto del Veterinario" width="100">
-                    </td> -->
-                    <td>
-                        <a routerLink="/Veterinarios/update/{{ veterinario.id }}" class="modificar-button"><i class="far fa-edit"></i></a>
-                        <a  (click)="eliminarVeterinario(veterinario.id)" class="delete-button"><i class="far fa-trash-alt"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
-    </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 
-</div>
+

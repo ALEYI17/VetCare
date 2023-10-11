@@ -23,7 +23,11 @@ import { LoginClienteComponent } from './Login/login-cliente/login-cliente.compo
 import { PaginaErrorComponent } from './Error/pagina-error/pagina-error.component';
 import { VeterinarioCrudComponent } from './veterinario/veterinario-crud/veterinario-crud.component';
 import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,12 @@ import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/m
     FormsModule,
     ReactiveFormsModule,
     NgOptimizedImage,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
