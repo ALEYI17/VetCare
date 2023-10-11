@@ -1,1 +1,25 @@
-<p>mostrar-veterinario works!</p>
+
+
+<div class="fondo">
+    <div class="container">
+      <div class="title"><h1>Información mascota</h1></div>
+      <div class="image-box">
+        <img [ngSrc]="veterinario.foto" alt="Foto de la mascota" width="540" height="370" priority>
+      </div>
+      <div class="user-details">
+        <div class="input-box">
+          <h2>Nombre:</h2>
+          <p>{{ veterinario.nombre }}</p>
+        </div>
+        <div class="input-box">
+          <h2>Cédula:</h2>
+          <p>{{ veterinario.cedula }}</p>
+        </div>
+        <div class="input-box">
+          <h2>especialidad:</h2>
+          <p>{{ veterinario.especialidad }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
