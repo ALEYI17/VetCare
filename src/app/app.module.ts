@@ -21,6 +21,8 @@ import { NavbarCrudComponent } from './Landing/navbar-crud/navbar-crud.component
 import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veterinario.component';
 import { LoginClienteComponent } from './Login/login-cliente/login-cliente.component';
 import { PaginaErrorComponent } from './Error/pagina-error/pagina-error.component';
+import { VeterinarioCrudComponent } from './veterinario/veterinario-crud/veterinario-crud.component';
+import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { PaginaErrorComponent } from './Error/pagina-error/pagina-error.componen
     LoginVeterinarioComponent,
     LoginClienteComponent,
     PaginaErrorComponent,
+    VeterinarioCrudComponent,
+    MostrarVeterinarioComponent,
   ],
   imports: [
     BrowserModule,

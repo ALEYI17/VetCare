@@ -13,4 +13,13 @@ export class VeterinarioServiceService {
   findAll(): Observable<Veterinario[]>{
     return this.http.get<Veterinario[]>('http://localhost:8090/Veterinario/todos')
   }
+
+  eliminarById(id:number){
+    this.http.delete('http://localhost:8090/Veterinario/delete/'+ id).subscribe();
+  }
+
+  findByid(id:number):Observable<Veterinario>{
+    const veterinario = this.http.get<Veterinario>('http://localhost:8090/Veterinario/find/'+id);
+    return veterinario;
+  }
 }

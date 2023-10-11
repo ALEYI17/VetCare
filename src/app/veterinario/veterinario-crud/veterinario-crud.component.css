@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.body{
+    font-family: 'Oswald', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.Titulo{
+    font-size: 5em;
+    color: aliceblue;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgba(0,212,255,1),#053247);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(rgba(0,212,255,1),#053247);
+}
+.fondo{
+    background-image:  url(src/assets/img/montannas3.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    
+}
+table.mascotas{
+    border-collapse: collapse;
+    margin: 0;
+    width: 80%;
+    border: solid #053247;
+    box-shadow: 6px 7px 26px -1px rgba(7,74,105,1);
+    margin-bottom: 5vh;
+}
+table.mascotas tr{
+    padding: .45em;
+}
+thead tr{
+    background-color: black;
+}
+thead th{
+    color: white;
+    font-size: 1.15em;
+    
+}
+tbody tr:nth-child(even){   
+    background-color: #A3BAC3;
+    color: #fff;
+    
+}
+
+th a{
+    color: #000000;
+}
+
+tbody tr:nth-child(odd){   
+    background-color: #335d818c;
+    color: #fff;
+    
+}
+table.mascotas th, table td{
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+    
+}
+
+@media (max-width:440px){
+    table.mascotas{
+        border: 3px solid #053247;
+    }
+    table.mascotas thead tr{
+        display: none;
+    }
+    table.mascotas tr{
+        display: block;
+    }
+    table.mascotas th,table.mascotas td{
+        padding: .5em;
+    }
+    table.mascotas td{
+        text-align: right;
+        display: block;
+        font-size: 1em;
+    }
+
+    table.mascota td::before{
+        content: attr(scope)": ";
+        float: left;
+    }
+    tbody tr:nth-child(even){
+        background-color: #053247;
+        color: black;
+    }
+}
+
+.tabla-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    ;
+}
+
+.agregar{
+    font-size: 2em;
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 10%;
+}
+
+
+.modificar-button,
+.delete-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #000000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+.modificar-button i {
+    color: #fc981c;
+    transition: color 0.3s; /* Add a smooth transition for icon color change */
+}
+
+.modificar-button:hover {
+    background-color: #fc981c; /* Change the button background color on hover */
+}
+
+.modificar-button:hover i {
+    color: #000000; /* Change the icon color on hover */
+}
+
+
+
+.delete-button i {
+    color: #ff5a66;
+    transition: color 0.3s; /* Add a smooth transition for icon color change */
+    
+
+}
+
+.delete-button:hover {
+    background-color: #ff5a66; /* Change the button background color on hover */
+}
+
+.delete-button:hover i {
+    color: #000000; /* Change the icon color on hover */
+}
+.Go-top{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #053247;
+    bottom: 90px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+.Go-down{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #053247;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+
+.Navbar{
+    background-image: linear-gradient(180deg, rgba(5, 50, 71, 0.5) 0%, rgba(5, 50, 71, 0.5) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+.Navbar .Logo{
+    cursor: pointer;
+}
+.Logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.Navbar .Logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.2s;
+    /* border-radius: 50%; */
+}
+.Navbar .Logo b{
+    font-size: 2vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.Navbar .Logo img:hover{
+    transform: scale(1.2);
+}
+.Navbar .nav-links{
+    list-style: none;
+}
+.Navbar .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+.Navbar .nav-links li:hover{
+    transform: scale(1.1);
+
+}
+
+.Navbar .nav-links a{
+    font-size: 700;
+    color: rgba(203, 186, 204, 0.698);
+    text-decoration: none;
+}
+
+.Navbar .nav-links li a:hover{
+    color: rgba(240, 235, 240, 0.698);
+}
+
+.pagination-pointed-button{
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #2c3840;
+    color: #811212;
+    outline: 0;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    
+}
+
+.annadidos{
+    display: flex;
+    margin-right: 10%; /* Set margin to 20% of the page width */
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  #searchInput {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  #searchInput::placeholder {
+    color: #999;
+  }
+  
+  #searchInput:focus {
+    border-color: #007bff;
+  }
+
+.botonesnav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

@@ -15,6 +15,8 @@ import { LoginVeterinarioComponent } from './Login/login-veterinario/login-veter
 import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actualizar-cliente.component';
 import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboard-cliente.component';
 import { PaginaErrorComponent } from './Error/pagina-error/pagina-error.component';
+import { VeterinarioCrudComponent } from './veterinario/veterinario-crud/veterinario-crud.component';
+import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/mostrar-veterinario.component';
 
 
 const routes: Routes = [
@@ -32,7 +34,10 @@ const routes: Routes = [
   { path: 'Clientes/add', component: CrearClienteComponent },
   { path: 'Clientes/update/:id', component: ActualizarClienteComponent },
   { path: 'cliente/:id', component: DashboardClienteComponent },
+  { path: 'Veterinarios/todos', component: VeterinarioCrudComponent },
+  { path: 'Veterinarios/find/:id', component: MostrarVeterinarioComponent },
   { path: '**', component: PaginaErrorComponent },
+  
   
 ];
 
