@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Tratamiento } from 'src/app/Entities/tratamiento';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-mascota-find-id',
@@ -24,6 +25,8 @@ export class MascotaFindIdComponent {
     private route:ActivatedRoute,
     private router: Router
     ){}
+
+    
 
     ngOnInit(): void {
       this.route.paramMap.subscribe(params => {
