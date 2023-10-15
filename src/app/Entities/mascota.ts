@@ -13,4 +13,5 @@ export interface Mascota {
     id: number;
     cliente? :Cliente
     tratamientos? : Tratamiento[]
+    
 }

@@ -75,7 +75,8 @@ export class CrearMascotaComponent {
         peso: mascotaData.peso,
         enfermedad: mascotaData.enfermedad,
         foto: mascotaData.foto,
-        id: 0 
+        id: 0 ,
+        
       };  
       console.log(mascota);
       

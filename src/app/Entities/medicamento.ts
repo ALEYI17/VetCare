@@ -5,6 +5,7 @@ export interface Medicamento {
     Nombre: string;
     Precio: number;
     tratamiento?: Tratamiento; 
+    activo:boolean;
   }
   
   

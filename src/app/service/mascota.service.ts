@@ -3,6 +3,7 @@ import { Mascota } from '../Entities/mascota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cliente } from '../Entities/cliente';
+import { Tratamiento } from '../Entities/tratamiento';
 @Injectable({
   providedIn: 'root'
 })
@@ -141,4 +142,8 @@ export class MascotaService {
     return this.http.post("http://localhost:8090/Mascota/update/"+ mascota.id+ "?cliente.id="+clientId, mascota);
   }
 
+  findTratamientos(id:number):Observable<Tratamiento[]>{
+    const tratamientos = this.http.get<Tratamiento[]>('http://localhost:8090/Mascota/find/'+id+ "/tratamientos");
+    return tratamientos;
+  }
 }

@@ -4,6 +4,7 @@ import { MascotaService } from 'src/app/service/mascota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Tratamiento } from 'src/app/Entities/tratamiento';
 
 @Component({
   selector: 'app-mascota-find-id',
@@ -15,6 +16,8 @@ export class MascotaFindIdComponent {
   Mascota!:Mascota
 
   dueno!:Cliente;
+
+  tratamientos!:Tratamiento[];
 
   constructor(
     private MascotaService: MascotaService,
@@ -39,6 +42,10 @@ export class MascotaFindIdComponent {
             }
           }
         );
+
+        this.MascotaService.findTratamientos(id).subscribe(
+          tratamientGet=> this.tratamientos = tratamientGet
+        )
     
         // Suscripción para obtener información del dueño
         this.MascotaService.findDuenoCompleto(id).subscribe(
