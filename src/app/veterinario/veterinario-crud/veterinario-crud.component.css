@@ -325,6 +325,13 @@ mat-sidenav{
     width: 300px;
 }
 
+
+
+
+mat-list-item{
+    background-color: rgba(255, 255, 255, 0.479);
+}
+
 /* Existing styles... */
 
 .toggle-button {
@@ -339,6 +346,22 @@ mat-sidenav{
     font-size: 22px;
     border: none; /* Remove border if not needed */
     cursor: pointer;
+}
+
+
+
+
+
+.linksnav {
+  /* Add your styles here, for example: */
+  color: white; /* Blue color */
+  text-decoration: none; /* Remove underlines */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Style for the linksnav when hovered */
+.linksnav:hover {
+  color: #0056b3; /* Darker blue color on hover */
 }
 
 
