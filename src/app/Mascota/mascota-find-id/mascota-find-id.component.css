@@ -16,8 +16,11 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    flex-direction: column;
+    flex-direction:row ;
     /* background-color: #7dd4ff; */
+    width: 100%;
+    position: relative;
+
 }
 
 .titulo{
@@ -115,6 +118,8 @@ table.mascotas{
     box-shadow: 6px 7px 26px -1px rgba(7,74,105,1);
     margin-bottom: 5vh;
     margin-top: 30px;
+    margin-left: 5vh;
+    
 }
 table.mascotas tr{
     padding: .45em;
