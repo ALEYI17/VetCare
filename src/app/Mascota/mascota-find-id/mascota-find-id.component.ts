@@ -5,7 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Tratamiento } from 'src/app/Entities/tratamiento';
-import { DatePipe } from '@angular/common';
+import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
+
 
 @Component({
   selector: 'app-mascota-find-id',
@@ -23,7 +24,8 @@ export class MascotaFindIdComponent {
   constructor(
     private MascotaService: MascotaService,
     private route:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private tratamientoServicio:TratamientoServiceService
     ){}
 
     
@@ -63,5 +65,10 @@ export class MascotaFindIdComponent {
           }
         );
       });
+    }
+
+    eliminarTratamiento(tratamiento:Tratamiento){
+      this.tratamientoServicio.desactivar(tratamiento).subscribe();
+      this.ngOnInit()
     }
 }

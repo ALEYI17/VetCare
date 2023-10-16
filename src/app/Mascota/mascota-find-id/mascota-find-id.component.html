@@ -39,7 +39,8 @@
         <th scope="col">ID</th>
         <th scope="col">Precio</th>
         <th scope="col">Fecha</th>
-        
+        <th scope="col">Activo</th>
+        <th scope="col">Acción</th>
       </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -47,6 +48,8 @@
         <td>{{ item.id }}</td>
         <td>{{ item.precio }}</td>
         <td>{{ item.fecha  }}</td>
+        <td>{{ item.activo  }}</td>
+        <td><a class="delete-button" (click)="eliminarTratamiento(item)"><i class="fa-solid fa-minus"></i></a></td>
       </tr>
     </tbody>
   </table>
