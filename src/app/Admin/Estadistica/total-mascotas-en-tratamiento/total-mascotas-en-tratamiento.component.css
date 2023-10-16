@@ -1,0 +1,40 @@
+.numero-total {
+    font-size: 2em; /* Tamaño de fuente más grande, puedes ajustar el valor según tus preferencias */
+    font-weight: bold; /* Opcional: hacer que el número sea negrita */
+    color: #007BFF; /* Opcional: cambia el color del número */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos para el título */
+.titulo {
+    font-size: 2rem; /* Ajusta el tamaño del título según tus preferencias */
+  }
+  
+  /* Estilos para el párrafo */
+  .parrafo {
+    font-size: 1.5rem; /* Ajusta el tamaño del párrafo según tus preferencias */
+  }
+  
+  /* Estilos para el número total */
+  .numero-total {
+    font-size: 3rem; /* Ajusta el tamaño del número según tus preferencias */
+  }
+  
+  
+  /* Añade media queries para adaptar el diseño en pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+  

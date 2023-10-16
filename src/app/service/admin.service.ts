@@ -18,24 +18,24 @@ export class AdminService {
     return this.http.get<number>('http://localhost:8090/estadisticas/vetinactivos')
   }
 
-  getMascotasTotales():Observable<object>{
-    return this.http.get('http://localhost:8090/estadisticas/countmascotas')
+  getMascotasTotales():Observable<number>{
+    return this.http.get<number>('http://localhost:8090/estadisticas/countmascotas')
   }
 
-  getTratamientosUltimoMes():Observable<object>{
-    return this.http.get('http://localhost:8090/estadisticas/tratamientosmes')
+  getTratamientosUltimoMes():Observable<number>{
+    return this.http.get<number>('http://localhost:8090/estadisticas/tratamientosmes')
   }
 
   getCantidadTratamientosPorTipoEnUltimoMes():Observable<object[]>{
     return this.http.get<object[]>('http://localhost:8090/estadisticas/tratamientomedicamento')
   }
 
-  getGananciasTotales():Observable<object>{
-    return this.http.get('http://localhost:8090/estadisticas/gananciastotales')
+  getGananciasTotales():Observable<number>{
+    return this.http.get<number>('http://localhost:8090/estadisticas/gananciastotales')
   }
 
-  getVentasTotales():Observable<object>{
-    return this.http.get('http://localhost:8090/estadisticas/totalventas')
+  getVentasTotales():Observable<number>{
+    return this.http.get<number>('http://localhost:8090/estadisticas/totalventas')
   }
 
   getTratemientosActivos():Observable<object[]>{

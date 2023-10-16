@@ -38,6 +38,11 @@ import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard
 import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos.component';
 import { MedicamentosTratemientoComponent } from './Admin/Estadistica/medicamentos-tratemiento/medicamentos-tratemiento.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TotalMascotasComponent } from './Admin/Estadistica/total-mascotas/total-mascotas.component';
+import { TotalMascotasEnTratamientoComponent } from './Admin/Estadistica/total-mascotas-en-tratamiento/total-mascotas-en-tratamiento.component';
+import { TotalAventasComponent } from './Admin/Estadistica/total-aventas/total-aventas.component';
+import { TotalGananciasComponent } from './Admin/Estadistica/total-ganancias/total-ganancias.component';
+import { TratamientosUltimoMesComponent } from './Admin/Estadistica/tratamientos-ultimo-mes/tratamientos-ultimo-mes.component';
 
 
 @NgModule({
@@ -67,6 +72,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AdminDashboardComponent,
     VetActivosComponent,
     MedicamentosTratemientoComponent,
+    TotalMascotasComponent,
+    TotalMascotasEnTratamientoComponent,
+    TotalAventasComponent,
+    TotalGananciasComponent,
+    TratamientosUltimoMesComponent,
   ],
   imports: [
     BrowserModule,

@@ -124,6 +124,7 @@ mat-list-item{
     overflow: hidden; /* Ensure overflow doesn't affect the card appearance */
     width: 500px; /* Set your desired width */
     height: 350px; /* Set your desired height */
+    
 }
 
 .chart-container1 {
@@ -144,6 +145,7 @@ mat-list-item{
 
 .chart-content {
     padding: 20px;
+
 }
 
 #myChart {
@@ -154,5 +156,27 @@ mat-list-item{
 .graficas{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 /* Existing styles... */
+
+.full-width {
+    width: 100%;
+    height: 100%;
+    /* Opcional: Puedes añadir más estilos según tus necesidades */
+  }
+
+  .info-container {
+    border: 1px solid #ccc; /* Add a border for a card-like appearance */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin: 20px; /* Add margin for spacing */
+    overflow: hidden; /* Ensure overflow doesn't affect the card appearance */
+    width: 500px; /* Set your desired width */
+    height: 350px; /* Set your desired height */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
