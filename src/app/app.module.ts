@@ -31,6 +31,7 @@ import {MatListModule} from '@angular/material/list';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
 import { AgregarTratamientoComponent } from './Mascota/agregar-tratamiento/agregar-tratamiento.component';
+import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AgregarTratamientoComponent } from './Mascota/agregar-tratamiento/agreg
     ActualizarVeterinarioComponent,
     CrearVeterinarioComponent,
     AgregarTratamientoComponent,
+    LoginAdminComponent,
   ],
   imports: [
     BrowserModule,

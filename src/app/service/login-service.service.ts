@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Veterinario } from '../Entities/veterinario';
 import { Cliente } from '../Entities/cliente';
+import { admin } from '../Entities/admin';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,7 @@ export class LoginServiceService {
 
   }
 
-
+  authAdmin(admin:admin):Observable<boolean>{
+    return this.http.post<boolean>('http://localhost:8090/AdminLogin',admin);
+  }
 }
