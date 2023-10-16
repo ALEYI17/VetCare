@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { Medicamento } from '../Entities/medicamento';
 
 @Injectable({
@@ -16,6 +16,14 @@ export class AdminService {
 
   getVeterinariosIncativos():Observable<number>{
     return this.http.get<number>('http://localhost:8090/estadisticas/vetinactivos')
+  }
+
+  getVeterinariosData(): Observable<{ activos: number, inactivos: number }> {
+    const activos$ = this.http.get<number>('http://localhost:8090/estadisticas/vetactivos');
+    const inactivos$ = this.http.get<number>('http://localhost:8090/estadisticas/vetinactivos');
+
+    // Using forkJoin to combine multiple observables
+    return forkJoin({ activos: activos$, inactivos: inactivos$ });
   }
 
   getMascotasTotales():Observable<object>{
