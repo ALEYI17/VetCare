@@ -43,7 +43,7 @@
           <td>
             <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.id]"><i class="far fa-edit"></i></a>
             <a class="delete-button" (click)="eliminarMascota(mascota.id)"><i class="far fa-trash-alt"></i></a>
-            <a class="tratamiento-button"><i class="fa-solid fa-file-waveform"></i></a>
+            <a class="tratamiento-button" [routerLink]="['/Mascota/agregarTratamiento', mascota.id]"><i class="fa-solid fa-file-waveform"></i></a>
           </td>
         </tr>
       </tbody>

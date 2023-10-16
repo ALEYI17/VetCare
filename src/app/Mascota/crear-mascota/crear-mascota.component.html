@@ -39,7 +39,7 @@
                 </div>
 
         <div class="input-box wrapper">
-        <p class="error" *ngIf="(mascotaForm.get('clientId')?.touched || isSubmited ) && mascotaForm.get('clientId')?.invalid">Escoja un dueño</p>
+            <p class="error" *ngIf="(mascotaForm.get('clientId')?.touched || isSubmited ) && mascotaForm.get('clientId')?.invalid">Escoja un dueño</p>
           <label for="duenno">Dueño</label>
           <div class="select-btn" (click)="toggleWrapper()">
             <span>Selecciona Dueño:</span>

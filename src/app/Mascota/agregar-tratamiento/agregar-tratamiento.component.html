@@ -1,1 +1,91 @@
-<p>agregar-tratamiento works!</p>
+<!-- src/app/app.component.html -->
+<div class="body">
+  <div class="container">
+    <div class="title">
+      <h1>Agregar Tratamiento</h1>
+    </div>
+    <form [formGroup]="tratamientoForm" (ngSubmit)="agregarTratamiento()">
+      <div class="user-details">
+        <div class="input-box">
+          <label for="Mascota">Mascota</label>
+          <input formControlName="mascota" type="text" class="form-control" id="Mascota" [(ngModel)]="mascota.nombre"
+            required>
+          <p class="error"
+            *ngIf="(tratamientoForm.get('mascota')?.touched || isSubmited) && tratamientoForm.get('mascota')?.invalid">
+            Mascota no puede estar vacío.</p>
+        </div>
+
+
+        <div class="input-box wrapper">
+          <p class="error"
+            *ngIf="(tratamientoForm.get('medicamento')?.touched || isSubmited ) && tratamientoForm.get('medicamento')?.invalid">
+            Escoja un Medicamento</p>
+          <label for="medicamento">Medicamento</label>
+          <div class="select-btn" (click)="toggleWrapper()">
+            <span>Selecciona un Medicamento:</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+
+          <div class="content">
+            <div class="search">
+              <input type="text" placeholder="Buscar" id="searchInput" (input)="filterOptionsList()">
+            </div>
+            <ul class="options" id="clientList">
+              <li *ngFor="let medicamento of medicamentos" [attr.data-client-id]="medicamento.id"
+                (click)="selectClient(medicamento)">{{medicamento.nombre}}</li>
+            </ul>
+            <input type="hidden" formControlName="medicamento" id="medicamento" name="medicamento" value="">
+          </div>
+        </div>
+
+
+
+        <div class="input-box wrapper2">
+          <p class="error"
+            *ngIf="(tratamientoForm.get('veterinario')?.touched || isSubmited ) && tratamientoForm.get('veterinario')?.invalid">
+            Escoja un Medicamento</p>
+          <label for="veterinario">Veterinario</label>
+          <div class="select-btn2" (click)="toggleWrapper2()">
+            <span>Selecciona un Veterinario:</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+
+          <div class="content">
+            <div class="search">
+              <input type="text" placeholder="Buscar" id="searchInput" (input)="filterOptionsList()">
+            </div>
+            <ul class="options" id="veterinarioList">
+              <li *ngFor="let medicamento of veterinarios" [attr.data-client-id]="medicamento.id"
+                (click)="selectVeterinario(medicamento)">{{medicamento.nombre}}</li>
+            </ul>
+            <input type="hidden" formControlName="veterinario" id="veterinario" name="veterinario" value="">
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label for="fecha">Fecha</label>
+          <input formControlName="fecha" type="date" class="form-control" id="fecha" placeholder="fecha" required>
+          <p class="error"
+            *ngIf="(tratamientoForm.get('fecha')?.touched || isSubmited) && tratamientoForm.get('fecha')?.invalid">Peso
+            no puede estar vacío.</p>
+        </div>
+
+        <div class="input-box">
+          <label for="precio">Precio</label>
+          <input formControlName="precio" type="number" class="form-control" id="precio" placeholder="precio">
+          <p class="error"
+            *ngIf="(tratamientoForm.get('precio')?.touched || isSubmited) && tratamientoForm.get('precio')?.invalid">
+            Precio debe ser diferente a cero.</p>
+        </div>
+
+
+
+      </div>
+      <div class="button">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>

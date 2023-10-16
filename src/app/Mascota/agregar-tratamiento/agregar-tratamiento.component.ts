@@ -5,6 +5,10 @@ import { Mascota } from 'src/app/Entities/mascota';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Tratamiento } from 'src/app/Entities/tratamiento';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Medicamento } from 'src/app/Entities/medicamento';
+import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
+import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
+import { Veterinario } from 'src/app/Entities/veterinario';
 
 @Component({
   selector: 'app-agregar-tratamiento',
@@ -21,18 +25,24 @@ export class AgregarTratamientoComponent {
 
   isSubmited : boolean = false
 
+  medicamentos!:Medicamento[];
+
+  veterinarios!:Veterinario[];
+
   constructor(
     private MascotaService: MascotaService,
     private route:ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private medicamentoServicio:MedicamentoServiceService,
+    private veterinarioServicio:VeterinarioServiceService
     ){
     this.tratamientoForm = this.fb.group({
       fecha:['', Validators.required],
       precio:[0, [Validators.required, Validators.min(0.01)]],
-      medicamento:[0 , Validators.required],
-      mascota:[0 , Validators.required],
-      veterinario:[0 , Validators.required],
+      medicamento:["" , Validators.required],
+      mascota:["" , Validators.required],
+      veterinario:["" , Validators.required],
     });
     }
 
@@ -51,6 +61,11 @@ export class AgregarTratamientoComponent {
           // this.errorMessageMascota = "Ocurrió un error en la solicitud de la mascota.";
         }
       })
+
+    this.medicamentoServicio.findAll().subscribe(data=> this.medicamentos = data);
+
+    this.veterinarioServicio.findAll().subscribe(data=>this.veterinarios = data)
+    
   }
 
   agregarTratamiento(){
@@ -86,6 +101,74 @@ export class AgregarTratamientoComponent {
         veterinario:tratamientoData.veterinario
       }
     }
+  }
+
+  toggleWrapper() {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper!.classList.toggle("active");
+  }
+
+  toggleWrapper2() {
+    const wrapper = document.querySelector(".wrapper2");
+    wrapper!.classList.toggle("active");
+  }
+
+  filterOptionsList() {
+    const optionsList = document.querySelector(".options") as HTMLUListElement;
+    const optionItems = optionsList.querySelectorAll("li") as NodeListOf<HTMLLIElement>;
+    const searchInput = document.getElementById("searchInput") as HTMLInputElement;
+  
+    const searchTerm = searchInput.value.toLowerCase();
+  
+    optionItems.forEach(function (item) {
+      const text = item.textContent!.toLowerCase();
+  
+      if (text.includes(searchTerm)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  selectClient(cliente: Medicamento) {
+    // Get the client ID from the selected client
+    const clientId = cliente.id;
+    const MedicamentoNombre = cliente.nombre
+
+    console.log(`la id del medicamento escogida es ${clientId}`);
+    console.log(`el nombre del medicamento escogida es ${MedicamentoNombre}`);
+
+    // Update the form control with the selected client's ID
+    this.tratamientoForm.patchValue({ clientId });
+
+    // Update the content of the <span> element
+    const selectedClientSpan = document.querySelector(".select-btn span");
+    selectedClientSpan!.textContent = "medicamento: " + cliente.nombre;
+
+    // Close the client list
+    const wrapper = document.querySelector(".wrapper");
+    wrapper!.classList.remove("active");
+  }
+
+  selectVeterinario(cliente: Veterinario) {
+    // Get the client ID from the selected client
+    const clientId = cliente.id;
+    const MedicamentoNombre = cliente.nombre
+
+    console.log(`la id del medicamento escogida es ${clientId}`);
+    console.log(`el nombre del medicamento escogida es ${MedicamentoNombre}`);
+
+    // Update the form control with the selected client's ID
+    this.tratamientoForm.patchValue({ clientId });
+
+    // Update the content of the <span> element
+    const selectedClientSpan = document.querySelector(".select-btn2 span");
+    selectedClientSpan!.textContent = "Veterinario: " + cliente.nombre;
+
+    // Close the client list
+    const wrapper = document.querySelector(".wrapper2");
+    wrapper!.classList.remove("active");
   }
 
 }

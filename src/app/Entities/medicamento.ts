@@ -2,7 +2,7 @@ import { Tratamiento } from "./tratamiento";
 
 export interface Medicamento {
     id: number;
-    Nombre: string;
+    nombre: string;
     Precio: number;
     tratamiento?: Tratamiento; 
     activo:boolean;
