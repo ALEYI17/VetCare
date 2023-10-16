@@ -20,15 +20,34 @@
             <button class="toggle-button" (click)="sidenav.toggle()">
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
-    
-            <div class="chart-container">
-                <div class="chart-header">
-                    <h2>Active/Inactive Veterinarians</h2>
+
+            <div class="tabla-center">
+                <h1 class="Titulo">Estadisticas</h1>
+
+                <div class="graficas">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h2>Active/Inactive Veterinaris</h2>
+                        </div>
+                        <div class="chart-content">
+                            <app-vet-activos></app-vet-activos>
+                        </div>
+                    </div>
+
+                    <div class="chart-container1">
+                        <div class="chart-header">
+                            <h2> medicamento - cantidad</h2>
+                        </div>
+                        <div class="chart-content">
+                            <app-medicamentos-tratemiento></app-medicamentos-tratemiento>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="chart-content">
-                    <app-vet-activos></app-vet-activos>
-                </div>
+
+
             </div>
+
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

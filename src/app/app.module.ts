@@ -36,6 +36,7 @@ import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos.component';
+import { MedicamentosTratemientoComponent } from './Admin/Estadistica/medicamentos-tratemiento/medicamentos-tratemiento.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos
     LoginAdminComponent,
     AdminDashboardComponent,
     VetActivosComponent,
+    MedicamentosTratemientoComponent,
   ],
   imports: [
     BrowserModule,
