@@ -9,6 +9,8 @@ import { Medicamento } from 'src/app/Entities/medicamento';
 import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
 import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 import { Veterinario } from 'src/app/Entities/veterinario';
+import { LoginClienteComponent } from 'src/app/Login/login-cliente/login-cliente.component';
+import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
 
 @Component({
   selector: 'app-agregar-tratamiento',
@@ -19,6 +21,9 @@ export class AgregarTratamientoComponent {
 
   mascota!:Mascota;
 
+  idMedicamento:number = -1;
+
+  idVeterinario:number = -1;
   idMascota:number = -1;
 
   tratamientoForm: FormGroup;
@@ -35,14 +40,15 @@ export class AgregarTratamientoComponent {
     private router: Router,
     private fb: FormBuilder,
     private medicamentoServicio:MedicamentoServiceService,
-    private veterinarioServicio:VeterinarioServiceService
+    private veterinarioServicio:VeterinarioServiceService,
+    private tratamientoServicio:TratamientoServiceService,
     ){
     this.tratamientoForm = this.fb.group({
       fecha:['', Validators.required],
       precio:[0, [Validators.required, Validators.min(0.01)]],
-      medicamento:["" , Validators.required],
-      mascota:["" , Validators.required],
-      veterinario:["" , Validators.required],
+      medicamento:[0 , Validators.required],
+      mascota:[0 , Validators.required],
+      veterinario:[0 , Validators.required],
     });
     }
 
@@ -71,21 +77,19 @@ export class AgregarTratamientoComponent {
   agregarTratamiento(){
     this.isSubmited = true;
     if(this.tratamientoForm.valid){
+      console.log("entro");
+      
       const tratamientoData = this.tratamientoForm.value;
 
-      if(tratamientoData.veterinarioId ===0){
+      if(this.idVeterinario === -1){
         this.tratamientoForm.get('veterinarioId')?.setErrors({ 'invalidVeterinario': true });
         this.isSubmited = false
         return;
       }
 
-      if(tratamientoData.MascotaId ===0){
-        this.tratamientoForm.get('MascotaId')?.setErrors({ 'invalidMascota': true });
-        this.isSubmited = false
-        return;
-      }
 
-      if(tratamientoData.MedicamentoId ===0){
+
+      if(this.idMedicamento ===-1){
         this.tratamientoForm.get('MedicamentoId')?.setErrors({ 'invalidMedicamento': true });
         this.isSubmited = false
         return;
@@ -96,10 +100,19 @@ export class AgregarTratamientoComponent {
         fecha: tratamientoData.fecha,
         precio: tratamientoData.precio,
         activo: true,
-        medicamentos:tratamientoData.medicamento,
-        mascota:this.mascota,
-        veterinario:tratamientoData.veterinario
       }
+
+      console.log(tratamiento);
+      this.tratamientoServicio.crearTratamiento(this.idMedicamento,this.idMascota,this.idVeterinario,tratamiento).subscribe(
+        data=>{
+          complete:{
+            this.tratamientoForm.reset(); // Optional: reset the form after adding the mascota
+            this.isSubmited = false
+            this.router.navigate(['/Mascotas/todas']);
+          }
+        }
+      );
+      
     }
   }
 
@@ -138,6 +151,7 @@ export class AgregarTratamientoComponent {
 
     console.log(`la id del medicamento escogida es ${clientId}`);
     console.log(`el nombre del medicamento escogida es ${MedicamentoNombre}`);
+    this.idMedicamento = clientId
 
     // Update the form control with the selected client's ID
     this.tratamientoForm.patchValue({ clientId });
@@ -158,7 +172,7 @@ export class AgregarTratamientoComponent {
 
     console.log(`la id del medicamento escogida es ${clientId}`);
     console.log(`el nombre del medicamento escogida es ${MedicamentoNombre}`);
-
+    this.idVeterinario = clientId
     // Update the form control with the selected client's ID
     this.tratamientoForm.patchValue({ clientId });
 
