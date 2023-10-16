@@ -9,7 +9,6 @@ import { Medicamento } from 'src/app/Entities/medicamento';
 import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
 import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 import { Veterinario } from 'src/app/Entities/veterinario';
-import { LoginClienteComponent } from 'src/app/Login/login-cliente/login-cliente.component';
 import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
 
 @Component({
@@ -82,7 +81,7 @@ export class AgregarTratamientoComponent {
       const tratamientoData = this.tratamientoForm.value;
 
       if(this.idVeterinario === -1){
-        this.tratamientoForm.get('veterinarioId')?.setErrors({ 'invalidVeterinario': true });
+        this.tratamientoForm.get('veterinario')?.setErrors({ 'invalidVeterinario': true });
         this.isSubmited = false
         return;
       }
@@ -90,7 +89,7 @@ export class AgregarTratamientoComponent {
 
 
       if(this.idMedicamento ===-1){
-        this.tratamientoForm.get('MedicamentoId')?.setErrors({ 'invalidMedicamento': true });
+        this.tratamientoForm.get('medicamento')?.setErrors({ 'invalidMedicamento': true });
         this.isSubmited = false
         return;
       }

@@ -33,20 +33,19 @@
       </div>
     </div>
   </div>
-  <table  class="mascotas">
+  <table  class="mascotas" *ngIf="tratamientos && tratamientos.length > 0">
     <thead>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Precio</th>
-        <th scope="col">Activo</th>
         <th scope="col">Fecha</th>
+        
       </tr>
     </thead>
     <tbody class="table-group-divider">
       <tr *ngFor="let item of tratamientos">
         <td>{{ item.id }}</td>
         <td>{{ item.precio }}</td>
-        <td>{{ item.activo }}</td>
         <td>{{ item.fecha  }}</td>
       </tr>
     </tbody>
