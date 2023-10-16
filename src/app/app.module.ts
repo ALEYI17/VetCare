@@ -37,6 +37,7 @@ import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos.component';
 import { MedicamentosTratemientoComponent } from './Admin/Estadistica/medicamentos-tratemiento/medicamentos-tratemiento.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { MedicamentosTratemientoComponent } from './Admin/Estadistica/medicament
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

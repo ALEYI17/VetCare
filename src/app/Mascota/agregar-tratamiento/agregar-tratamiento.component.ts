@@ -10,6 +10,7 @@ import { MedicamentoServiceService } from 'src/app/service/medicamento-service.s
 import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 import { Veterinario } from 'src/app/Entities/veterinario';
 import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
+import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-agregar-tratamiento',
@@ -17,7 +18,7 @@ import { TratamientoServiceService } from 'src/app/service/tratamiento-service.s
   styleUrls: ['./agregar-tratamiento.component.css']
 })
 export class AgregarTratamientoComponent {
-
+  miIcopno = faCaretDown;
   mascota!:Mascota;
 
   idMedicamento:number = -1;

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -188,4 +189,61 @@ table.mascotas th, table td{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.modificar-button,
+.delete-button,
+.tratamiento-button{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #000000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+
+.modificar-button i {
+    color: #fc981c;
+    transition: color 0.3s; /* Add a smooth transition for icon color change */
+}
+
+.modificar-button:hover {
+    background-color: #fc981c; /* Change the button background color on hover */
+}
+
+.modificar-button:hover i {
+    color: #000000; /* Change the icon color on hover */
+}
+
+.tratamiento-button i {
+    color: #007bff;
+    transition: color 0.3s;
+}
+.tratamiento-button:hover{
+    background-color: #007bff;
+}
+
+.tratamiento-button:hover i {
+    color: #000000;
+}
+
+
+
+.delete-button i {
+    color: #ff5a66;
+    transition: color 0.3s; /* Add a smooth transition for icon color change */
+    
+
+}
+
+.delete-button:hover {
+    background-color: #ff5a66; /* Change the button background color on hover */
+}
+
+.delete-button:hover i {
+    color: #000000; /* Change the icon color on hover */
 }

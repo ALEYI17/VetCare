@@ -8,6 +8,7 @@ import { MascotaService } from 'src/app/service/mascota.service';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
 import { ClienteServiceService } from 'src/app/service/cliente-service.service';
+import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -18,6 +19,7 @@ import { ClienteServiceService } from 'src/app/service/cliente-service.service';
 })
 
 export class CrearMascotaComponent {
+  miIcopno = faCaretDown;
 
   @Output()
   addMascotaEvent = new EventEmitter<Mascota>();
