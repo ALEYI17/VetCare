@@ -20,7 +20,9 @@ import { MostrarVeterinarioComponent } from './veterinario/mostrar-veterinario/m
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
 import { AgregarTratamientoComponent } from './Mascota/agregar-tratamiento/agregar-tratamiento.component';
+import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+
 
 
 const routes: Routes = [
@@ -43,6 +45,7 @@ const routes: Routes = [
   { path: 'Veterinarios/add', component: CrearVeterinarioComponent },
   { path: 'Veterinarios/update/:id', component: ActualizarVeterinarioComponent },
   { path: 'Mascota/agregarTratamiento/:id', component: AgregarTratamientoComponent },
+  { path: 'login/admin', component: LoginAdminComponent },
   { path: 'Admin/dashboard', component: AdminDashboardComponent },
   { path: '**', component: PaginaErrorComponent },
   
