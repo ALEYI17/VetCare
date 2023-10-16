@@ -35,6 +35,15 @@ mat-sidenav{
     width: 300px;
 }
 
+
+
+
+mat-list-item{
+    background-color: rgba(255, 255, 255, 0.479);
+}
+
+/* Existing styles... */
+
 .toggle-button {
     position: fixed;
     width: 50px;
@@ -48,3 +57,52 @@ mat-sidenav{
     border: none; /* Remove border if not needed */
     cursor: pointer;
 }
+
+
+
+
+
+.linksnav {
+  /* Add your styles here, for example: */
+  color: white; /* Blue color */
+  text-decoration: none; /* Remove underlines */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Style for the linksnav when hovered */
+.linksnav:hover {
+  color: #0056b3; /* Darker blue color on hover */
+}
+
+.chart-card {
+    width: 400px; /* Set your desired width */
+    margin: 20px; /* Add margin for spacing */
+}
+
+/* Add this to your component's CSS file or style section */
+.chart-container {
+    border: 1px solid #ccc; /* Add a border for a card-like appearance */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin: 20px; /* Add margin for spacing */
+    overflow: hidden; /* Ensure overflow doesn't affect the card appearance */
+    width: 500px; /* Set your desired width */
+    height: 350px; /* Set your desired height */
+}
+
+.chart-header {
+    background-color: #f5f5f5; /* Optional: Add a background color for the header */
+    padding: 10px;
+    text-align: center;
+}
+
+.chart-content {
+    padding: 20px;
+}
+
+#myChart {
+    max-width: 100%; /* Ensure the chart is responsive within the card */
+    max-height: 100%; /* Ensure the chart is responsive within the card */
+}
+
+/* Existing styles... */

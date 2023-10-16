@@ -32,6 +32,7 @@ import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterin
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
 import { AgregarTratamientoComponent } from './Mascota/agregar-tratamiento/agregar-tratamiento.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard
     CrearVeterinarioComponent,
     AgregarTratamientoComponent,
     AdminDashboardComponent,
+    VetActivosComponent,
   ],
   imports: [
     BrowserModule,
