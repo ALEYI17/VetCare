@@ -1,0 +1,31 @@
+<!-- src/app/app.component.html -->
+
+
+    
+<mat-sidenav-container class="sidenav-container">
+        
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened" >
+    <!-- Your sidenav content goes here -->
+    <mat-nav-list>
+        <a mat-list-item [routerLink]="['/Veterinarios/todos']">Veterinarios</a>
+        <a mat-list-item [routerLink]="['/Admin/dashboard']">Estadisticas</a>
+        <!-- Add other navigation items as needed -->
+    </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="fondo body">
+        <button class="toggle-button" (click)="sidenav.toggle()">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        
+        </div>
+
+
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
