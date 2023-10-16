@@ -3,9 +3,12 @@ import { Tratamiento } from "./tratamiento";
 export interface Medicamento {
     id: number;
     nombre: string;
-    Precio: number;
+    precioVenta: number;
+    precioCompra:number;
     tratamiento?: Tratamiento; 
-    activo:boolean;
+    unidadesDisponibles:number;
+    unidadesVendidas:number;
+
   }
   
   

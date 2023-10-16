@@ -208,6 +208,12 @@ form .button button:hover{
     font-size: 1.2em;
 }
 
+.disabled {
+    color: gray; /* Change text color to gray for disabled options */
+    cursor: not-allowed; /* Change cursor to not-allowed for disabled options */
+    pointer-events: none; /* Disable pointer events for disabled options */
+}
+
 .options li:hover {
     background-color: #f2f2f2;
 }

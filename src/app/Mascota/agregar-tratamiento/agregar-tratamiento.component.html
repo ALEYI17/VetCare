@@ -9,7 +9,7 @@
         <div class="input-box">
           <label for="Mascota">Mascota</label>
           <input formControlName="mascota" type="text" class="form-control" id="Mascota" [(ngModel)]="mascota.nombre"
-            required>
+            required readonly>
           <p class="error"
             *ngIf="(tratamientoForm.get('mascota')?.touched || isSubmited) && tratamientoForm.get('mascota')?.invalid">
             Mascota no puede estar vacío.</p>
@@ -32,6 +32,7 @@
             </div>
             <ul class="options" id="clientList">
               <li *ngFor="let medicamento of medicamentos" [attr.data-client-id]="medicamento.id"
+                [class.disabled]="medicamento.unidadesDisponibles === 0"
                 (click)="selectClient(medicamento)">{{medicamento.nombre}}</li>
             </ul>
             <input type="hidden" formControlName="medicamento" id="medicamento" name="medicamento" value="">
