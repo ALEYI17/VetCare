@@ -18,13 +18,10 @@ export class VetActivosComponent {
   }
 
   ngOnInit() {
-    this.estadisticasServicio.getVeterinariosActivos().subscribe(data => {
-      this.activeVeterinarios = data;
-
-    });
-    this.estadisticasServicio.getVeterinariosIncativos().subscribe(data => {
-      this.inactiveVeterinarios = data;
-      this.createGraph();
+    this.estadisticasServicio.getVeterinariosData().subscribe(data => {
+      this.activeVeterinarios= data.activos
+      this.inactiveVeterinarios=  data.inactivos
+      this.createGraph()
     });
   }
 
@@ -39,11 +36,34 @@ export class VetActivosComponent {
             label: 'Veterinarios',
             data: [this.activeVeterinarios, this.inactiveVeterinarios],
             backgroundColor: ['#36A2EB', '#FF6384'],
-            borderWidth: 1
+            borderWidth: 1,
+            
           }
         ]
+      },options:{
+        plugins :{
+          legend: {
+            labels: {
+              color: "black",
+              font: {
+                size: 14
+            }
+            },
+             // Position the legend below the chart
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: "black",
+              
+          }
+          }
+      }
+
       }
     });
+    
   }
   
 

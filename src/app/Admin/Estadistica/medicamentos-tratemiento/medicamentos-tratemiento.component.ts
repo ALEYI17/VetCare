@@ -32,16 +32,19 @@ export class MedicamentosTratemientoComponent {
     const myChart = new Chart(ctx, {
       type: 'polarArea',
       data: {
+        labels: this.data.map((item: any) => item[0]),
         datasets: [
           {
             data: this.data.map((item: any) => item[1]),
             backgroundColor: randomColors,
-            borderWidth: 1
+            borderWidth: 1,
+            
+            
           }
         ]
       },
       options: {
-        maintainAspectRatio: true, // Set to false to allow chart resizing
+        maintainAspectRatio: false, // Set to false to allow chart resizing
         responsive: true, // Set to true to enable responsiveness
         plugins: {
           tooltip: {
@@ -50,12 +53,26 @@ export class MedicamentosTratemientoComponent {
                 const label = this.data[context.dataIndex][0];
                 const value = this.data[context.dataIndex][1];
                 return `${label}: ${value}`;
-              }
+              },
+              
+            },
+          },
+          legend: {
+            labels: {
+              color: "black",
+              font: {
+                size: 14
             }
-          }
+            },
+            position: 'bottom', // Position the legend below the chart
+          },
+          
+          
         }
       }
     });
+
+    
   }
 
   getRandomColor() {

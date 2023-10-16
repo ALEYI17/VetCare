@@ -134,7 +134,7 @@ mat-list-item{
     margin: 20px; /* Add margin for spacing */
     overflow: hidden; /* Ensure overflow doesn't affect the card appearance */
     width: 900px; /* Set your desired width */
-    height: 750px; /* Set your desired height */
+    height: 650px; /* Set your desired height */
 }
 
 .chart-header {
