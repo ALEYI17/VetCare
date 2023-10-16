@@ -30,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterinario/actualizar-veterinario.component';
 import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear-veterinario.component';
+import { AgregarTratamientoComponent } from './Mascota/agregar-tratamiento/agregar-tratamiento.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { CrearVeterinarioComponent } from './veterinario/crear-veterinario/crear
     MostrarVeterinarioComponent,
     ActualizarVeterinarioComponent,
     CrearVeterinarioComponent,
+    AgregarTratamientoComponent,
   ],
   imports: [
     BrowserModule,

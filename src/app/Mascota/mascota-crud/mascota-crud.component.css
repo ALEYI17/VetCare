@@ -129,7 +129,8 @@ h1{
 
 
 .modificar-button,
-.delete-button {
+.delete-button,
+.tratamiento-button{
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
@@ -152,6 +153,18 @@ h1{
 
 .modificar-button:hover i {
     color: #000000; /* Change the icon color on hover */
+}
+
+.tratamiento-button i {
+    color: #007bff;
+    transition: color 0.3s;
+}
+.tratamiento-button:hover{
+    background-color: #007bff;
+}
+
+.tratamiento-button:hover i {
+    color: #000000;
 }
 
 
