@@ -6,6 +6,7 @@ import { Cliente } from 'src/app/Entities/cliente';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Tratamiento } from 'src/app/Entities/tratamiento';
 import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
+import {faMinus} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { TratamientoServiceService } from 'src/app/service/tratamiento-service.s
   styleUrls: ['./mascota-find-id.component.css']
 })
 export class MascotaFindIdComponent {
+
+  iconoMenos = faMinus
   @Input()
   Mascota!:Mascota
 

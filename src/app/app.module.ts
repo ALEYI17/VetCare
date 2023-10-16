@@ -36,6 +36,7 @@ import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { VetActivosComponent } from './Admin/Estadistica/vet-activos/vet-activos
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

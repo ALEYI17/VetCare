@@ -49,7 +49,7 @@
         <td>{{ item.precio }}</td>
         <td>{{ item.fecha  }}</td>
         <td>{{ item.activo  }}</td>
-        <td><a class="delete-button" (click)="eliminarTratamiento(item)"><i class="fa-solid fa-minus"></i></a></td>
+        <td><a class="delete-button" (click)="eliminarTratamiento(item)"><i><fa-icon [icon]="iconoMenos"></fa-icon></i></a></td>
       </tr>
     </tbody>
   </table>
