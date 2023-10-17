@@ -139,7 +139,7 @@ export class MascotaService {
   updateMascota(mascota:Mascota, clientId?: string):Observable<Object>{
     console.log(mascota)
     
-    return this.http.post("http://localhost:8090/Mascota/update/"+ mascota.id+ "?cliente.id="+clientId, mascota);
+    return this.http.put("http://localhost:8090/Mascota/update/"+ mascota.id+ "?cliente.id="+clientId, mascota);
   }
 
   findTratamientos(id:number):Observable<Tratamiento[]>{

@@ -24,7 +24,7 @@ export class VeterinarioServiceService {
   }
 
   updateVeterinario(veterinario:Veterinario):Observable<Object>{
-    return this.http.post('http://localhost:8090/Veterinario/update/'+ veterinario.id,veterinario);
+    return this.http.put('http://localhost:8090/Veterinario/update/'+ veterinario.id,veterinario);
   }
 
   agregarVeterinario(veterinario:Veterinario):Observable<Object>{
