@@ -30,7 +30,7 @@ export class ClienteServiceService {
   }
 
   updateCliente(cliente:Cliente):Observable<Object>{
-    return this.http.post('http://localhost:8090/Clientes/update/'+ cliente.cedula, cliente);
+    return this.http.put('http://localhost:8090/Clientes/update/'+ cliente.cedula, cliente);
   }
   
   getByCedula(){
