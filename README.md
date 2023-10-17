@@ -1,5 +1,17 @@
 # VetCare
 
+
+
+![VetCare Logo](https://github.com/ALEYI17/ProyectoWebVeterinaria/blob/main/src/main/resources/static/img/logovetcare.png)
+
+Bienvenido al repositorio de VetCare, una plataforma para la gestión de una veterinaria especializada en gatos. Aquí encontrarás información sobre cómo configurar y ejecutar el proyecto.
+## Características
+
+- Gestión de hospitalización y atención de mascotas.
+- Interfaz de usuario amigable desarrollada con Angular.
+- Backend robusto construido con el framework Spring.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
 ## Development server
