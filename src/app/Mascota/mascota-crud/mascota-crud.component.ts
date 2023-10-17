@@ -46,9 +46,31 @@ export class MascotaCrudComponent {
   ngOnInit(): void {
 
     this.mascotaServicio.findAll().subscribe(
-      mascotas => this.listaDeMascotas = mascotas
+      mascotas =>{ this.listaDeMascotas = mascotas
+      complete:{
+        this.buscar()
+      }
+      }
       );
 
+
+  }
+
+
+  scrollToBottom() {
+    const element = document.getElementById('abajo');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToTop() {
+    const element = document.getElementById('arriba');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  buscar(){
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const clientTable = document.getElementById('clientTable');
 
@@ -72,20 +94,6 @@ export class MascotaCrudComponent {
           }
         });
       }
-    }
-  }
-
-
-  scrollToBottom() {
-    const element = document.getElementById('abajo');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-  scrollToTop() {
-    const element = document.getElementById('arriba');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
