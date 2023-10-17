@@ -10,10 +10,12 @@ export class TratamientoServiceService {
 
   constructor(private http: HttpClient) { }
 
+   // Método para crear un tratamiento
   crearTratamiento(medicamentoId:number,MascotaId:number,VeterinarioId:number,tratamiento:Tratamiento):Observable<Object>{
     return this.http.post("http://localhost:8090/Tratamiento/add?MascotaId=" + MascotaId +"&VeterinarioId=  "+ VeterinarioId + "&MedicamentoId="+ medicamentoId,tratamiento)
   }
 
+   // Método para desactivar un tratamiento
   desactivar(tratamiento:Tratamiento):Observable<Tratamiento>{
     return this.http.post<Tratamiento>('http://localhost:8090/Tratamiento/Desactivar',tratamiento);
   }

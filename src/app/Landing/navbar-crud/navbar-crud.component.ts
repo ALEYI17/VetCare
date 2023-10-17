@@ -10,6 +10,8 @@ export class NavbarCrudComponent {
 
   currentRoute: string = ''; // Almacena la ruta actual
 
+
+  //mirar en que url se encuentra
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

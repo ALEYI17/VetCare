@@ -21,6 +21,7 @@ constructor(private veterinarioServicio:VeterinarioServiceService){}
     
     let para: HTMLCollectionOf<Element> = document.getElementsByClassName("Paralax");
     
+    //mover los arboles mientras scroll
     window.addEventListener("scroll", () => {
         let value: number = window.scrollY;
         
@@ -68,6 +69,7 @@ constructor(private veterinarioServicio:VeterinarioServiceService){}
         });
     });
 
+    //cargar veterinario de carousel
     this.veterinarioServicio.findAll().subscribe(
         veterinarios=> this.veterinarios = veterinarios
     )

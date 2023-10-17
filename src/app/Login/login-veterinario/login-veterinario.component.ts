@@ -12,14 +12,17 @@ export class LoginVeterinarioComponent {
 
   constructor(private loginservice: LoginServiceService,private router: Router){}
 
+// Objeto para almacenar las credenciales del veterinario
   veterinario: Veterinario = { id: 0,cedula: '', contrasena: '', especialidad: '', foto: '', nombre: '' };
+  // Propiedad para almacenar mensajes de error
   errorMessage: string | undefined;
+  // Propiedad para almacenar la respuesta de la autenticación
   respuesta!:boolean
 
   onSubmit() {
 
     console.log(this.veterinario);
-
+    // Llama al servicio de autenticación para verificar las credenciales del veterinario
     this.loginservice.authvet(this.veterinario).subscribe(
       res => {
         this.respuesta = res;

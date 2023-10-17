@@ -13,6 +13,8 @@ export class TratamientosUltimoMesComponent {
   constructor(private admisService: AdminService){}
 
   ngOnInit(){
+
+    // tratamientos en el ultimo mes
     this.admisService.getTratamientosUltimoMes().subscribe(
       data=> this.canTratamientosMes = data
     );

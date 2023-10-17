@@ -11,13 +11,19 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
 })
 export class MostrarVeterinarioComponent {
 
+  // Variable que contendrá la información del veterinario
   veterinario!:Veterinario;
+
+  // Constructor que inyecta el servicio de Veterinario, ActivatedRoute y Router
   constructor(private veterinarioServicio:VeterinarioServiceService,private route:ActivatedRoute,
     private router: Router){}
 
   ngOnInit(){
+
+     // Suscribe al paramMap del ActivatedRoute para obtener el ID del veterinario de la URL
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get("id"));
+      // Llama al servicio para obtener los detalles del veterinario por su ID
       this.veterinarioServicio.findByid(id).subscribe(
         (clienteget) => {
           // Lógica para manejar la respuesta exitosa

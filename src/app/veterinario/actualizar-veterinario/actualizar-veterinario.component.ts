@@ -10,10 +10,11 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
 })
 export class ActualizarVeterinarioComponent {
 
+  // Variables para manejar el formulario y el objeto Veterinario
   sendVeterinario!:Veterinario;
 
   formVeterinario!:Veterinario;
-
+ // Variable para rastrear si el formulario ha sido enviado
   isSubmited : boolean = false
 
   constructor(private veterinarioServicio:VeterinarioServiceService,
@@ -22,6 +23,8 @@ export class ActualizarVeterinarioComponent {
     ){}
 
     ngOnInit(){
+
+      // Suscribe al paramMap del ActivatedRoute para obtener el ID del veterinario de la URL
       this.route.paramMap.subscribe(params=>{
         const id = Number(params.get("id"));
         this.veterinarioServicio.findByid(id).subscribe(
@@ -32,6 +35,8 @@ export class ActualizarVeterinarioComponent {
     }
 
     updateVeterinario(){
+
+      // Llama al servicio para obtener los detalles del veterinario por su ID
       this.sendVeterinario = Object.assign({}, this.formVeterinario);
       console.log("Veterinario actualizado",this.sendVeterinario);
       this.veterinarioServicio.updateVeterinario(this.sendVeterinario).subscribe(

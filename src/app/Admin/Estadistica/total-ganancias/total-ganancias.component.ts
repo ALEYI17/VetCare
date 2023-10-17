@@ -13,6 +13,8 @@ export class TotalGananciasComponent {
   constructor(private admisService: AdminService){}
 
   ngOnInit(){
+
+    // cosneguir query ganancias
     this.admisService.getGananciasTotales().subscribe(
       data=> this.gananciasTotales = data
     );

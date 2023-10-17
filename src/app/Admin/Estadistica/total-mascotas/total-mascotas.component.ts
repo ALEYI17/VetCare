@@ -13,6 +13,7 @@ export class TotalMascotasComponent {
   constructor(private admisService: AdminService){}
 
   ngOnInit(){
+    //cosneguir query de mascotas totales en la veterianria
     this.admisService.getMascotasTotales().subscribe(
       data=> this.mascotasTotales = data
     );

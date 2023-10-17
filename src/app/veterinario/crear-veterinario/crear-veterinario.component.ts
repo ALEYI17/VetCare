@@ -10,7 +10,11 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
   styleUrls: ['./crear-veterinario.component.css']
 })
 export class CrearVeterinarioComponent {
+
+  // Variable para rastrear si el formulario ha sido enviado
   isSubmitted: boolean = false;
+
+  // Variable que representa el formulario y sus controles
   VeterinarioForm! :FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -26,12 +30,13 @@ export class CrearVeterinarioComponent {
     }
 
     ngOnInit(){}
-
+  // Método para crear un nuevo veterinario
     crearVeterinario(){
       this.isSubmitted=true;
       if(this.VeterinarioForm.valid){
         const VeterinarioData = this.VeterinarioForm.value;
 
+         // Crea un objeto Veterinario con los datos del formulario
         const veterinario:Veterinario={
           cedula: VeterinarioData.cedula,
           contrasena: VeterinarioData.contrasena,

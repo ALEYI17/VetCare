@@ -10,7 +10,9 @@ import { ClienteServiceService } from 'src/app/service/cliente-service.service';
   styleUrls: ['./crear-cliente.component.css']
 })
 export class CrearClienteComponent {
+  // Propiedad para verificar si el formulario ha sido enviado
   isSubmitted: boolean = false;
+   // Propiedad para el formulario del cliente
   clienteForm! :FormGroup;
 
 
@@ -31,7 +33,7 @@ export class CrearClienteComponent {
   ngonInit(){
 
   }
-
+ // Método para crear un nuevo cliente
   crearCliente(){
     this.isSubmitted = true;
     if(this.clienteForm.valid){
@@ -46,7 +48,7 @@ export class CrearClienteComponent {
       }
 
       console.log(cliente)
-
+ // Llama al servicio para agregar el nuevo cliente
       this.clienteServicio.agregarCliente(cliente).subscribe(
         data=>{
           complete:{

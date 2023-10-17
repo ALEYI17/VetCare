@@ -12,6 +12,7 @@ export class LoginClienteComponent {
 
   constructor(private loginservice: LoginServiceService,private router: Router){}
   
+  
   cliente: Cliente = {cedula :'',nombre:'',corre:'',celular:'',id:0,misMascotas:undefined}; // Define your client object here
   errorMessage: string | null = null; // Use string or null for errorMessage
   respuesta!: Cliente
@@ -19,7 +20,7 @@ export class LoginClienteComponent {
   onSubmit() {
 
     console.log(this.cliente);
-    
+     // Llama al servicio de autenticación para verificar las credenciales del cliente
     this.loginservice.authcliente(this.cliente).subscribe(resp => {
           
       this.respuesta=resp

@@ -10,7 +10,7 @@ import { Medicamento } from 'src/app/Entities/medicamento';
 })
 export class TopMedicamentosComponent {
 
-
+// recibir la query
   topMedicamentos!:Medicamento[]
 
   constructor(private estadisticasServicio:AdminService){
@@ -23,7 +23,7 @@ export class TopMedicamentosComponent {
       this.createGraph()
     });
   }
-
+//crear grafica
   createGraph() {
     const ctx = document.getElementById('myChart3') as HTMLCanvasElement;
 

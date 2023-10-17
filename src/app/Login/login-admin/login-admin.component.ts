@@ -11,13 +11,15 @@ import { LoginServiceService } from 'src/app/service/login-service.service';
 export class LoginAdminComponent {
 
   constructor(private loginservice: LoginServiceService,private router: Router){}
-  
+    // Propiedad para almacenar mensajes de error
   errorMessage: string | undefined;
+   // Objeto para almacenar las credenciales del administrador
   admin:admin = {usuario:'',contrasena:''};
+   // Propiedad para almacenar la respuesta de la autenticación
   respuesta!:boolean
   onSubmit(){
     console.log(this.admin);
-
+// Llama al servicio de autenticación para verificar las credenciales del administrador
     this.loginservice.authAdmin(this.admin).subscribe(
       res=>{
         this.respuesta = res;

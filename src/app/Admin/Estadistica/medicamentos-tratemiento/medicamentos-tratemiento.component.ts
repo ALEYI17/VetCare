@@ -9,7 +9,7 @@ import Chart from 'chart.js/auto';
 })
 export class MedicamentosTratemientoComponent {
 
-
+//recibir la query
   data! :any
 
   @ViewChild('myChart1') myChart!: ElementRef;
@@ -23,7 +23,7 @@ export class MedicamentosTratemientoComponent {
     });
 
   }
-
+//crear grafica
   createGraph() {
     const ctx = this.myChart.nativeElement.getContext('2d');
 

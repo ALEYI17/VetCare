@@ -11,6 +11,7 @@ import Chart from 'chart.js/auto';
 })
 export class VetActivosComponent {
 
+  //recibir la query
   activeVeterinarios!: number;
   inactiveVeterinarios!: number;
 
@@ -24,7 +25,7 @@ export class VetActivosComponent {
       this.createGraph()
     });
   }
-
+//crear grafica
   createGraph() {
     const ctx = document.getElementById('myChart') as HTMLCanvasElement;
     const myChart = new Chart(ctx, {

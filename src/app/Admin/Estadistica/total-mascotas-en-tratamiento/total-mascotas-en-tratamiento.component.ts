@@ -13,6 +13,7 @@ export class TotalMascotasEnTratamientoComponent {
   constructor(private admisService: AdminService){}
 
   ngOnInit(){
+    //conseguir query de tratamintos activos
     this.admisService.getTratemientosActivos().subscribe(
       data=> this.TratamientosActivos = data
     );

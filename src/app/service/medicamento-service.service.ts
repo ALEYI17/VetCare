@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class MedicamentoServiceService {
 
   constructor(private http: HttpClient) { }
-
+// Método para obtener todos los medicamentos
   findAll():Observable<Medicamento[]>{
     return this.http.get<Medicamento[]>("http://localhost:8090/Medicamentos/todos");
   }

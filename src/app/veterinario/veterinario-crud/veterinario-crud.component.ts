@@ -8,21 +8,24 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
   styleUrls: ['./veterinario-crud.component.css']
 })
 export class VeterinarioCrudComponent {
-
+ // Variable para controlar el estado del componente (abierto o cerrado)
   opened = false
-
+// Arreglo que contendrá la lista de veterinarios
   veterinarios!:Veterinario[];
 
   constructor(private veteriarioServicio:VeterinarioServiceService){}
 
   ngOnInit(){
+    // Llama al método findAll del servicio para obtener la lista de veterinarios
     this.veteriarioServicio.findAll().subscribe(
       veterinarios=> this.veterinarios = veterinarios
     );
 
+ // Obtiene referencias a elementos del DOM
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const clientTable = document.getElementById('clientTable');
 
+     // Verifica si los elementos existen
     if (searchInput && clientTable) {
       const rows = clientTable.getElementsByTagName('tbody')[0]?.getElementsByTagName('tr');
 

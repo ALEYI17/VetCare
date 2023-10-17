@@ -16,7 +16,7 @@ export class DashboardClienteComponent {
   constructor(private router: Router,private clienteservice:ClienteServiceService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-
+// Obtiene el parámetro de la ruta (id) usando ActivatedRoute
     this.route.paramMap.subscribe(params=>{
       const id = Number(params.get("id"));
       this.clienteservice.findById(id).subscribe(

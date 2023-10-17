@@ -11,9 +11,9 @@ import { ClienteServiceService } from 'src/app/service/cliente-service.service';
   styleUrls: ['./mostrar-cliente.component.css']
 })
 export class MostrarClienteComponent {
-
+ // Propiedad para almacenar la información del cliente
   cliente! :Cliente;
-
+// Propiedad para almacenar las mascotas del cliente
   pets!: Mascota[];
 
   constructor(private clienteServicio:ClienteServiceService,
@@ -21,6 +21,7 @@ export class MostrarClienteComponent {
     private router: Router){}
 
   ngOnInit(){
+     // Suscribe a los cambios en los parámetros de la ruta
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get("id"));
       this.clienteServicio.findById(id).subscribe(
