@@ -7,7 +7,7 @@
     <mat-sidenav #sidenav mode="over" [(opened)]="opened" >
     <!-- Your sidenav content goes here -->
     <mat-nav-list>
-        <img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority>
+        <a [routerLink]="['/Home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority></a>
         <mat-list-item  mat-list-item [routerLink]="['/Veterinarios/todos']"> Veterinarios</mat-list-item>
         <mat-list-item  mat-list-item [routerLink]="['/Admin/dashboard']">Estadisticas</mat-list-item>
         <!-- Add other navigation items as needed -->
@@ -20,6 +20,7 @@
             <button class="toggle-button" (click)="sidenav.toggle()">
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
+
 
             <div class="tabla-center">
                 <h1 class="Titulo">Estadisticas</h1>

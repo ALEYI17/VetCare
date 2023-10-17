@@ -7,7 +7,7 @@
         <mat-sidenav #sidenav mode="over" [(opened)]="opened" >
         <!-- Your sidenav content goes here -->
         <mat-nav-list>
-            <img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority>
+            <a [routerLink]="['/Home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority></a>
             <mat-list-item  mat-list-item [routerLink]="['/Veterinarios/todos']"> Veterinarios</mat-list-item>
             <mat-list-item  mat-list-item [routerLink]="['/Admin/dashboard']">Estadisticas</mat-list-item>
             <!-- Add other navigation items as needed -->
