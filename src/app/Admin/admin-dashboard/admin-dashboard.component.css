@@ -39,7 +39,8 @@ html{
 }
 
 .fondo{
-    background-image:  url(src/assets/img/20828158_6329024.jpg);
+
+    background-image: linear-gradient(180deg, rgba(5, 50, 71, 0.5) 0%, rgba(5, 50, 71, 0.5) 100%),url(src/assets/img/20828158_6329024.jpg);
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,8 +123,8 @@ mat-list-item{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
     margin: 20px; /* Add margin for spacing */
     overflow: hidden; /* Ensure overflow doesn't affect the card appearance */
-    width: 500px; /* Set your desired width */
-    height: 350px; /* Set your desired height */
+    width: 700px; /* Set your desired width */
+    height: 450px; /* Set your desired height */
     
 }
 
@@ -157,6 +158,8 @@ mat-list-item{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 /* Existing styles... */
 

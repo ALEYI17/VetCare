@@ -43,6 +43,7 @@ import { TotalMascotasEnTratamientoComponent } from './Admin/Estadistica/total-m
 import { TotalAventasComponent } from './Admin/Estadistica/total-aventas/total-aventas.component';
 import { TotalGananciasComponent } from './Admin/Estadistica/total-ganancias/total-ganancias.component';
 import { TratamientosUltimoMesComponent } from './Admin/Estadistica/tratamientos-ultimo-mes/tratamientos-ultimo-mes.component';
+import { TopMedicamentosComponent } from './Admin/Estadistica/top-medicamentos/top-medicamentos.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { TratamientosUltimoMesComponent } from './Admin/Estadistica/tratamientos
     TotalAventasComponent,
     TotalGananciasComponent,
     TratamientosUltimoMesComponent,
+    TopMedicamentosComponent,
   ],
   imports: [
     BrowserModule,
