@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Tratamiento } from '../Entities/tratamiento';
 import { Observable } from 'rxjs';
+import { Medicamento } from '../Entities/medicamento';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,10 @@ export class TratamientoServiceService {
    // Método para desactivar un tratamiento
   desactivar(tratamiento:Tratamiento):Observable<Tratamiento>{
     return this.http.post<Tratamiento>('http://localhost:8090/Tratamiento/Desactivar',tratamiento);
+  }
+
+  getMedicamentosDelTratamiento(id:number):Observable<Medicamento>{
+    return this.http.get<Medicamento>('http://localhost:8090/Tratamiento/'+ id +'/medicamento');
+
   }
 }

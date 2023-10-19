@@ -13,4 +13,8 @@ export class MedicamentoServiceService {
   findAll():Observable<Medicamento[]>{
     return this.http.get<Medicamento[]>("http://localhost:8090/Medicamentos/todos");
   }
+
+  findById(id:number):Observable<Medicamento>{
+    return this.http.get<Medicamento>("http://localhost:8090/Medicamentos/find"+ id);
+  }
 }

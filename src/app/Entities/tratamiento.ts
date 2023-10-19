@@ -6,7 +6,7 @@ export interface Tratamiento {
     id: number; 
     fecha: string;
     precio: number;
-    medicamentos?: Medicamento[]; 
+    medicamentos?: Medicamento | undefined; 
     mascota?: Mascota; 
     veterinario?: Veterinario; 
     activo:boolean;

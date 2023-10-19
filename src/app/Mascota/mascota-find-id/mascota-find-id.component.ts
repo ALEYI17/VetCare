@@ -7,12 +7,18 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Tratamiento } from 'src/app/Entities/tratamiento';
 import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
 import {faMinus} from '@fortawesome/free-solid-svg-icons';
+import { DatePipe } from '@angular/common';
+import { Medicamento } from 'src/app/Entities/medicamento';
+import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
+import { map } from 'rxjs';
+
 
 
 @Component({
   selector: 'app-mascota-find-id',
   templateUrl: './mascota-find-id.component.html',
-  styleUrls: ['./mascota-find-id.component.css']
+  styleUrls: ['./mascota-find-id.component.css'],
+  providers: [DatePipe]
 })
 export class MascotaFindIdComponent {
 
@@ -24,11 +30,14 @@ export class MascotaFindIdComponent {
 
   tratamientos!:Tratamiento[];
 
+  medicamento!:Medicamento;
+
   constructor(
     private MascotaService: MascotaService,
     private route:ActivatedRoute,
     private router: Router,
-    private tratamientoServicio:TratamientoServiceService
+    private tratamientoServicio:TratamientoServiceService,
+    
     ){}
 
     
@@ -54,6 +63,12 @@ export class MascotaFindIdComponent {
         this.MascotaService.findTratamientos(id).subscribe(
           tratamientGet=> this.tratamientos = tratamientGet
         )
+
+        
+
+        
+
+        
     
         // Suscripción para obtener información del dueño
         this.MascotaService.findDuenoCompleto(id).subscribe(
