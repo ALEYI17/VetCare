@@ -33,6 +33,7 @@ export class AgregarTratamientoComponent {
   medicamentos!:Medicamento[];
 
   veterinarios!:Veterinario[];
+  precio!:number;
 
   constructor(
     private MascotaService: MascotaService,
@@ -163,6 +164,7 @@ export class AgregarTratamientoComponent {
     // Close the client list
     const wrapper = document.querySelector(".wrapper");
     wrapper!.classList.remove("active");
+    this.precio = cliente.precioVenta;
   }
 
   selectVeterinario(cliente: Veterinario) {

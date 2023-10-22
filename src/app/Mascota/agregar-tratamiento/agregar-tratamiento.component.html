@@ -27,9 +27,9 @@
           </div>
 
           <div class="content">
-            <div class="search">
+            
               <input type="text" placeholder="Buscar" id="searchInput" (input)="filterOptionsList()">
-            </div>
+            
             <ul class="options" id="clientList">
               <li *ngFor="let medicamento of medicamentos" [attr.data-client-id]="medicamento.id"
                 [class.disabled]="medicamento.unidadesDisponibles === 0"
@@ -73,7 +73,7 @@
 
         <div class="input-box">
           <label for="precioo">Precio</label>
-          <input formControlName="precio" type="number" class="form-control" id="precioo" placeholder="precio">
+          <input formControlName="precio" type="number" class="form-control" id="precioo" placeholder="precio"  [(ngModel)]="precio">
           <p class="error"
             *ngIf="(tratamientoForm.get('precio')?.touched || isSubmited) && tratamientoForm.get('precio')?.invalid">
             Precio debe ser diferente a cero.</p>

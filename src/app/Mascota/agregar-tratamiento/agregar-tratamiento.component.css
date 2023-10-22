@@ -181,8 +181,28 @@ form .button button:hover{
 
 .wrapper.active  .content{
     display: block;
+    position: absolute;
+    
 }
-
+.input-box.wrapper {
+    position: relative; /* Add relative positioning to the wrapper */
+  }
+  
+  .input-box.wrapper .content {
+    position: absolute; /* Use absolute positioning for the list */
+    top: 100%; /* Position the list below the input box */
+    left: 0; /* Align with the left edge of the input box */
+    width: 100%; /* Make the list as wide as the input box */
+    z-index: 1; /* Ensure the list is above other elements */
+    background: #fff; /* Set a background color for the list */
+    border: 1px solid #000; /* Add a border for styling */
+    display: none; /* Hide the list by default */
+  }
+  
+  .input-box.wrapper.active .content {
+    display: block; /* Show the list when the wrapper is active */
+  }
+  
 .wrapper2.active  .content{
     display: block;
 }
@@ -193,7 +213,7 @@ form .button button:hover{
 }
 .content .options{
 
-    margin-top: 10px;
+    
     max-height: 150px;
     overflow-y: auto;
 
