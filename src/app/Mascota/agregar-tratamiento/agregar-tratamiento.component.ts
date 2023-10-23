@@ -51,19 +51,16 @@ export class AgregarTratamientoComponent {
       medicamento:[0 , Validators.required],
       mascota:[0 , Validators.required],
       veterinario:[0 , Validators.required],
-    });
-
-    const state = this.router.getCurrentNavigation()?.extras.state;
-    if (state) {
-      this.veterinario = state['veterinario'];
-      this.idVeterinario = this.veterinario.id
-      console.log(this.veterinario);
-      
-    }
-    
+    });    
     }
 
   ngOnInit(){
+    const localVeterinario = localStorage.getItem('veterinario');
+    if (localVeterinario) {
+      // Parse and assign the 'veterinario' object
+      this.veterinario = JSON.parse(localVeterinario);
+      this.idVeterinario = this.veterinario.id;
+    }
     this.route.paramMap.subscribe(params=>{
       this.idMascota = Number(params.get("id"));
     })

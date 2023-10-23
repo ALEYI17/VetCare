@@ -31,8 +31,8 @@ export class LoginVeterinarioComponent {
           this.errorMessage = 'Credenciales de inicio de sesión no válidas';
         }else{
           console.log(this.veterinario);
-          
-          this.router.navigate(['/Mascotas/todas'], { state: { veterinario: this.veterinario } });
+          localStorage.setItem('veterinario', JSON.stringify(this.veterinario));
+          this.router.navigate(['/Mascotas/todas']);
         }
       }
     );

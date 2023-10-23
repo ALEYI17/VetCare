@@ -17,14 +17,7 @@ export class MascotaCrudComponent {
   veterinario!: Veterinario;
 
 
-  constructor(private mascotaServicio: MascotaService,private router: Router) {
-    const state = this.router.getCurrentNavigation()?.extras.state;
-    if (state) {
-      this.veterinario = state['veterinario'];
-      console.log(this.veterinario);
-      
-    }
-  }
+  constructor(private mascotaServicio: MascotaService) {}
 
   // mostrarMascota(mascota: Mascota) {
   //   this.selectedMascota = mascota;
