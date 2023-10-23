@@ -60,7 +60,7 @@
 
         <div class="input-box">
           <label for="precioo">Precio</label>
-          <input formControlName="precio" type="number" class="form-control" id="precioo" placeholder="precio"  [(ngModel)]="precio">
+          <input formControlName="precio" type="number" class="form-control" id="precioo" placeholder="precio"  [(ngModel)]="precio" readonly>
           <p class="error"
             *ngIf="(tratamientoForm.get('precio')?.touched || isSubmited) && tratamientoForm.get('precio')?.invalid">
             Precio debe ser diferente a cero.</p>

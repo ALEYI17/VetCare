@@ -10,7 +10,7 @@ import {faMinus} from '@fortawesome/free-solid-svg-icons';
 import { DatePipe } from '@angular/common';
 import { Medicamento } from 'src/app/Entities/medicamento';
 import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
-import { map } from 'rxjs';
+import { forkJoin, map, switchMap } from 'rxjs';
 
 
 
@@ -29,8 +29,9 @@ export class MascotaFindIdComponent {
   dueno!:Cliente;
 
   tratamientos!:Tratamiento[];
+  
 
-  medicamento!:Medicamento;
+  medicamento!:Medicamento[];
 
   constructor(
     private MascotaService: MascotaService,
@@ -63,6 +64,31 @@ export class MascotaFindIdComponent {
         this.MascotaService.findTratamientos(id).subscribe(
           tratamientGet=> this.tratamientos = tratamientGet
         )
+
+        this.MascotaService.findTratamientos(id).pipe(
+          switchMap(tratamientos => {
+            // tratamientos is an array of treatments
+            const observables = tratamientos.map(tratamiento => {
+              // For each treatment, fetch the corresponding medications
+              return this.tratamientoServicio.getMedicamentosDelTratamiento(tratamiento.id);
+            });
+        
+            // Use forkJoin to wait for all medication requests to complete
+            return forkJoin(observables);
+          })
+        ).subscribe(
+          medicamentosPorTratamiento => {
+            // medicamentosPorTratamiento is an array containing medications for each treatment
+            for(let i=0; i<this.tratamientos.length ;i++)
+            this.tratamientos[i].medicamentos = medicamentosPorTratamiento[i]
+            console.log('Medicamentos por tratamiento:', medicamentosPorTratamiento);
+            // Do something with the data
+          },
+          error => {
+            console.error('Error fetching data:', error);
+            // Handle error
+          }
+        );
 
         
 
