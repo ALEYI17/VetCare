@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Mascota } from '../../Entities/mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Veterinario } from 'src/app/Entities/veterinario';
 @Component({
   selector: 'app-mascota-crud',
   templateUrl: './mascota-crud.component.html',
@@ -12,10 +14,16 @@ export class MascotaCrudComponent {
   mostrarforman2: boolean = false;
 
   listaDeMascotas!: Mascota[];
+  veterinario!: Veterinario;
 
 
-  constructor(private mascotaServicio: MascotaService) {
-
+  constructor(private mascotaServicio: MascotaService,private router: Router) {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state) {
+      this.veterinario = state['veterinario'];
+      console.log(this.veterinario);
+      
+    }
   }
 
   // mostrarMascota(mascota: Mascota) {

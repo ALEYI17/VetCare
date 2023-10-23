@@ -33,6 +33,7 @@ export class AgregarTratamientoComponent {
   medicamentos!:Medicamento[];
 
   veterinarios!:Veterinario[];
+  veterinario!:Veterinario;
   precio!:number;
 
   constructor(
@@ -51,6 +52,15 @@ export class AgregarTratamientoComponent {
       mascota:[0 , Validators.required],
       veterinario:[0 , Validators.required],
     });
+
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state) {
+      this.veterinario = state['veterinario'];
+      this.idVeterinario = this.veterinario.id
+      console.log(this.veterinario);
+      
+    }
+    
     }
 
   ngOnInit(){

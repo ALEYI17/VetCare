@@ -13,9 +13,9 @@ export class LoginServiceService {
   constructor(private http: HttpClient) { }
 
 // Método para autenticar a un veterinario
-  authvet(veterinario:Veterinario): Observable<boolean>{
+  authvet(veterinario:Veterinario): Observable<Veterinario>{
 
-    return this.http.post<boolean>('http://localhost:8090/Veterinariologin',veterinario)
+    return this.http.post<Veterinario>('http://localhost:8090/Veterinariologin',veterinario)
 
   }
  // Método para autenticar a un cliente

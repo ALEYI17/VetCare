@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Veterinario } from 'src/app/Entities/veterinario';
 import { LoginServiceService } from 'src/app/service/login-service.service';
 
@@ -10,7 +10,7 @@ import { LoginServiceService } from 'src/app/service/login-service.service';
 })
 export class LoginVeterinarioComponent {
 
-  constructor(private loginservice: LoginServiceService,private router: Router){}
+  constructor(private loginservice: LoginServiceService,private router: Router,private route: ActivatedRoute){}
 
 // Objeto para almacenar las credenciales del veterinario
   veterinario: Veterinario = { id: 0,cedula: '', contrasena: '', especialidad: '', foto: '', nombre: '' };
@@ -25,12 +25,14 @@ export class LoginVeterinarioComponent {
     // Llama al servicio de autenticación para verificar las credenciales del veterinario
     this.loginservice.authvet(this.veterinario).subscribe(
       res => {
-        this.respuesta = res;
+        this.veterinario = res;
         // Verificar la respuesta y mostrar el mensaje de error si es necesario
-        if (!this.respuesta) {
+        if (!this.veterinario) {
           this.errorMessage = 'Credenciales de inicio de sesión no válidas';
         }else{
-          this.router.navigate(['/Mascotas/todas']);
+          console.log(this.veterinario);
+          
+          this.router.navigate(['/Mascotas/todas'], { state: { veterinario: this.veterinario } });
         }
       }
     );

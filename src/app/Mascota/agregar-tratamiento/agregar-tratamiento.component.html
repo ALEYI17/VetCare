@@ -41,26 +41,13 @@
 
 
 
-        <div class="input-box wrapper2">
+        <div class="input-box">
+          <label for="Veterinario">Veterinario</label>
+          <input formControlName="veterinario" type="text" class="form-control" id="Veterinario" [(ngModel)]="veterinario.nombre"
+            required readonly>
           <p class="error"
-            *ngIf="(tratamientoForm.get('veterinario')?.touched || isSubmited ) && tratamientoForm.get('veterinario')?.invalid">
-            Escoja un Medicamento</p>
-          <label for="veterinario">Veterinario</label>
-          <div class="select-btn2" (click)="toggleWrapper2()">
-            <span>Selecciona un Veterinario:</span>
-            <i><fa-icon [icon]="miIcopno"></fa-icon></i>
-          </div>
-
-          <div class="content">
-            <div class="search">
-              <input type="text" placeholder="Buscar" id="searchInput" (input)="filterOptionsList()">
-            </div>
-            <ul class="options" id="veterinarioList">
-              <li *ngFor="let medicamento of veterinarios" [attr.data-client-id]="medicamento.id"
-                (click)="selectVeterinario(medicamento)">{{medicamento.nombre}}</li>
-            </ul>
-            <input type="hidden" formControlName="veterinario" id="veterinario" name="veterinario" value="">
-          </div>
+            *ngIf="(tratamientoForm.get('Veterinario')?.touched || isSubmited) && tratamientoForm.get('Veterinario')?.invalid">
+            Veterinario no puede estar vacío.</p>
         </div>
 
         <div class="input-box">
