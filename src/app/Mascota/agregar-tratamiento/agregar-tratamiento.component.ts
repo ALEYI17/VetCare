@@ -116,7 +116,7 @@ export class AgregarTratamientoComponent {
           complete:{
             this.tratamientoForm.reset(); // Optional: reset the form after adding the mascota
             this.isSubmited = false
-            this.router.navigate(['/Mascotas/todas']);
+            this.router.navigate(['/mascotas/todas']);
           }
         }
       );

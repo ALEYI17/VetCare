@@ -53,7 +53,7 @@ export class CrearVeterinarioComponent {
             complete:{
               this.VeterinarioForm.reset();
               this.isSubmitted=false;
-              this.router.navigate(['/Veterinarios/todos']);
+              this.router.navigate(['/veterinarios/todos']);
             }
           }
         )

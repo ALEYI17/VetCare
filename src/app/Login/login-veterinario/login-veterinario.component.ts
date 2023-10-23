@@ -32,7 +32,7 @@ export class LoginVeterinarioComponent {
         }else{
           console.log(this.veterinario);
           localStorage.setItem('veterinario', JSON.stringify(this.veterinario));
-          this.router.navigate(['/Mascotas/todas']);
+          this.router.navigate(['/mascotas/todas']);
         }
       }
     );

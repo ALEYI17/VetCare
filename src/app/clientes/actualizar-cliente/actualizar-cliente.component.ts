@@ -37,7 +37,7 @@ export class ActualizarClienteComponent {
     this.clienteServicio.updateCliente(this.sendCliente).subscribe(
       data=>{
         complete:{
-          this.router.navigate(['/Clientes/todos']);
+          this.router.navigate(['/clientes/todos']);
         }
       }
     );

@@ -7,9 +7,9 @@
         <mat-sidenav #sidenav mode="over" [(opened)]="opened" >
         <!-- Your sidenav content goes here -->
         <mat-nav-list>
-            <a [routerLink]="['/Home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority></a>
-            <mat-list-item  mat-list-item [routerLink]="['/Veterinarios/todos']"> Veterinarios</mat-list-item>
-            <mat-list-item  mat-list-item [routerLink]="['/Admin/dashboard']">Estadisticas</mat-list-item>
+            <a [routerLink]="['/home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority></a>
+            <mat-list-item  mat-list-item [routerLink]="['/veterinarios/todos']"> Veterinarios</mat-list-item>
+            <mat-list-item  mat-list-item [routerLink]="['/admin/dashboard']">Estadisticas</mat-list-item>
             <!-- Add other navigation items as needed -->
         </mat-nav-list>
 
@@ -33,7 +33,7 @@
                         <div class="search-bar">
                             <input type="text" id="searchInput" placeholder="Buscar veterinarios">
                         </div>
-                        <a class="btn btn-success agregar" [routerLink]="['/Veterinarios/add']"><i class="fa-solid fa-plus"></i></a>
+                        <a class="btn btn-success agregar" [routerLink]="['/veterinarios/add']"><i class="fa-solid fa-plus"></i></a>
                     </div>
                     <table class="mascotas" id="clientTable">
                         <thead>
@@ -47,14 +47,14 @@
                         </thead>
                         <tbody class="table-group-divider">
                             <tr *ngFor="let veterinario of veterinarios">
-                                <th><a [routerLink]="['/Veterinarios/find', veterinario.id]">{{ veterinario.nombre }}</a></th>
+                                <th><a [routerLink]="['/veterinarios/find', veterinario.id]">{{ veterinario.nombre }}</a></th>
                                 <td>{{ veterinario.cedula }}</td>
                                 <td>{{ veterinario.especialidad }}</td>
                                 <!-- <td>
                                     <img [src]="veterinario.foto" alt="Foto del Veterinario" width="100">
                                 </td> -->
                                 <td>
-                                    <a routerLink="/Veterinarios/update/{{ veterinario.id }}" class="modificar-button"><i class="far fa-edit"></i></a>
+                                    <a routerLink="/veterinarios/update/{{ veterinario.id }}" class="modificar-button"><i class="far fa-edit"></i></a>
                                     <a  (click)="eliminarVeterinario(veterinario.id)" class="delete-button"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>

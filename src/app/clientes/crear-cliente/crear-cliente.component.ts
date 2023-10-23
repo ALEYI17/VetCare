@@ -54,7 +54,7 @@ export class CrearClienteComponent {
           complete:{
             this.clienteForm.reset(); // Optional: reset the form after adding the mascota
             this.isSubmitted = false
-            this.router.navigate(['/Clientes/todos']);
+            this.router.navigate(['/clientes/todos']);
           }
         }
       );
