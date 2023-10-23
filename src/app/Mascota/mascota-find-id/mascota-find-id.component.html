@@ -2,6 +2,9 @@
 
 <div class="fondo">
   <div class="container">
+    <button class="toggle-button" (click)="goBack()">
+      <i class="fa-solid fa-arrow-left"></i>
+  </button>
     <div class="title"><h1>Información mascota</h1></div>
     <div class="image-box">
       <img [ngSrc]="Mascota.foto" alt="Foto de la mascota" width="540" height="370" priority>

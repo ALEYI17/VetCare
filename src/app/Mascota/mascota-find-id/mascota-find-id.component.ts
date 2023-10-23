@@ -115,4 +115,9 @@ export class MascotaFindIdComponent {
       this.tratamientoServicio.desactivar(tratamiento).subscribe();
       this.ngOnInit()
     }
+
+    
+  goBack(){
+    this.router.navigate(['/']);
+  }
 }
