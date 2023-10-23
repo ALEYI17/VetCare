@@ -1,13 +1,13 @@
 <header class="Navbar hidden" id="arriba">
     <div class="Logo">
-      <a [routerLink]="['/Home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="893" height=" 206"
+      <a [routerLink]="['/home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="893" height=" 206"
           priority></a>
       <!-- <b>VetCare</b> -->
     </div>
     <nav>
       <ul class="nav-links">
-        <li><a [routerLink]="['/Mascotas/todas']" [ngClass]="{'pagination-pointed-button': currentRoute.includes('/Mascotas')}">Mascotas</a></li>
-        <li><a [routerLink]="['/Clientes/todos']" [ngClass]="{'pagination-pointed-button': currentRoute.includes('/Clientes')}">Clientes</a></li>
+        <li><a [routerLink]="['/mascotas/todas']" [ngClass]="{'pagination-pointed-button': currentRoute.includes('/mascotas')}">Mascotas</a></li>
+        <li><a [routerLink]="['/clientes/todos']" [ngClass]="{'pagination-pointed-button': currentRoute.includes('/clientes')}">Clientes</a></li>
       </ul>
     </nav>
   </header>

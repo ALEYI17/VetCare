@@ -43,7 +43,7 @@ export class ActualizarVeterinarioComponent {
         data=>{
           complete:{
             this.isSubmited = false
-            this.router.navigate(['/Veterinarios/todos']);
+            this.router.navigate(['/veterinarios/todos']);
           }
         }
       )

@@ -19,7 +19,7 @@
       <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Buscar mascotas">
       </div>
-      <a class="btn btn-success agregar" [routerLink]="['/Mascotas/add']"><i class="fa-solid fa-plus"></i></a>
+      <a class="btn btn-success agregar" [routerLink]="['/mascotas/add']"><i class="fa-solid fa-plus"></i></a>
     </div>
     <div style="width: 80%;"></div>
     <table class="mascotas" id="clientTable">
@@ -35,15 +35,15 @@
       </thead>
       <tbody class="table-group-divider">
         <tr *ngFor="let mascota of listaDeMascotas">
-          <th><a [routerLink]="['/Mascota/find', mascota.id]">{{ mascota.nombre }}</a></th>
+          <th><a [routerLink]="['/mascota/find', mascota.id]">{{ mascota.nombre }}</a></th>
           <td>{{ mascota.raza }}</td>
           <td>{{ mascota.edad }}</td>
           <td>{{ mascota.peso }}</td>
           <td>{{ mascota.enfermedad }}</td>
           <td>
-            <a class="modificar-button " [routerLink]="['/Mascota/update', mascota.id]"><i class="far fa-edit"></i></a>
+            <a class="modificar-button " [routerLink]="['/mascota/update', mascota.id]"><i class="far fa-edit"></i></a>
             <a class="delete-button" (click)="eliminarMascota(mascota.id)"><i class="far fa-trash-alt"></i></a>
-            <a class="tratamiento-button" [routerLink]="['/Mascota/agregarTratamiento', mascota.id]" [state]="{ veterinario: veterinario }"><i class="fa-solid fa-file-waveform"></i></a>
+            <a class="tratamiento-button" [routerLink]="['/mascota/agregarTratamiento', mascota.id]" [state]="{ veterinario: veterinario }"><i class="fa-solid fa-file-waveform"></i></a>
           </td>
         </tr>
       </tbody>

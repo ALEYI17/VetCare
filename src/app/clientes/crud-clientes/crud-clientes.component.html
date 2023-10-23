@@ -18,7 +18,7 @@
         <div class="search-bar">
           <input type="text" id="searchInput" placeholder="Buscar clientes">
         </div>
-        <a class="btn btn-success agregar" [routerLink]="['/Clientes/add']"><i class="fa-solid fa-plus"></i></a>
+        <a class="btn btn-success agregar" [routerLink]="['/clientes/add']"><i class="fa-solid fa-plus"></i></a>
       </div>
       <div style="width: 80%;"></div>
       <table class="mascotas" id="clientTable">
@@ -33,12 +33,12 @@
         </thead>    
         <tbody class="table-group-divider">
           <tr *ngFor="let cliente of listaclientes">
-            <th><a [routerLink]="['/Clientes/find', cliente.cedula]">{{ cliente.nombre }}</a></th>
+            <th><a [routerLink]="['/clientes/find', cliente.cedula]">{{ cliente.nombre }}</a></th>
             <td>{{ cliente.cedula }}</td>
             <td>{{ cliente.corre }}</td>
             <td>{{ cliente.celular }}</td>
             <td>
-                <a routerLink="/Clientes/update/{{ cliente.cedula }}" class="modificar-button"><i class="far fa-edit"></i></a>
+                <a routerLink="/clientes/update/{{ cliente.cedula }}" class="modificar-button"><i class="far fa-edit"></i></a>
                 <a  (click)="eliminarMascota(cliente.cedula)" class="delete-button"><i class="far fa-trash-alt"></i></a>
             </td>
           </tr>

@@ -9,7 +9,7 @@
     <div class="separardeltitulo">
     <h2 class="mismascotas">Mis Mascotas:</h2>
     <div class="container">
-        <a class="cardclik" *ngFor="let pet of cliente.misMascotas" [routerLink]="['/Mascota/find', pet.id]">
+        <a class="cardclik" *ngFor="let pet of cliente.misMascotas" [routerLink]="['/mascota/find', pet.id]">
         <div class="card">
             <img [src]="pet.foto" alt="foto mascotas">
             <div class="contenido">

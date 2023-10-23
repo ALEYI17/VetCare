@@ -52,7 +52,7 @@ export class ActualizarMascotaComponent {
         complete:{
           
           this.isSubmited = false
-          this.router.navigate(['/Mascotas/todas']);
+          this.router.navigate(['/mascotas/todas']);
         }
       }
     );

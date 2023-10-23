@@ -26,7 +26,7 @@ export class LoginAdminComponent {
         if(!this.respuesta){
           this.errorMessage = 'Credenciales de inicio de sesión no válidas';
         }else{
-          this.router.navigate(['/Veterinarios/todos']);
+          this.router.navigate(['/veterinarios/todos']);
         }
       }
     )
