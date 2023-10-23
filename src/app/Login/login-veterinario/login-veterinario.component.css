@@ -13,6 +13,7 @@
     background-size: cover;
     background-position: center;
     font-family: 'Oswald', sans-serif;
+    flex-direction: column;
 }
 .wrapper{
     width: 420px;
@@ -118,4 +119,10 @@
     margin-top: 10px;      /* Spacing from the form fields */
     font-weight: 600px;
     text-align: center;
+}
+.logodashboard{
+    align-self: flex-start;
+    height: 3em;
+    width: auto;
+    margin-left: 2em;
 }

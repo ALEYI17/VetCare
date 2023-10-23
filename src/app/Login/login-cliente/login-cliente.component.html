@@ -1,5 +1,6 @@
 <!-- login.component.html -->
 <div class="body">
+    <a [routerLink]="['/Home']"><img src="assets/img/logovetcare.png" alt="un lindo gato" class="logodashboard"></a>
     <div class="wrapper">
         <form (ngSubmit)="onSubmit()">
         <h1>¡Bienvenido de nuevo!</h1>
@@ -12,6 +13,9 @@
             <i class="fas fa-user"></i>
         </div>
         <button type="submit" class="btn">log in</button>
+        <div class="logincliente">
+            <p>Log in veterinario <a [routerLink]="['/login']">Veterinario</a></p>
+          </div>
         </form>
     </div>
 </div>

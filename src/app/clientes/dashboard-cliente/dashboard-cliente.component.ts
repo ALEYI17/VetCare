@@ -25,4 +25,8 @@ export class DashboardClienteComponent {
     })
   }
 
+  logOut(){
+    this.router.navigate(['/login/cliente']);
+  }
+
 }
