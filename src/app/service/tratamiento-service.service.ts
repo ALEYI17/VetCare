@@ -16,11 +16,6 @@ export class TratamientoServiceService {
     return this.http.post("http://localhost:8090/Tratamiento/add?MascotaId=" + MascotaId +"&VeterinarioId=  "+ VeterinarioId + "&MedicamentoId="+ medicamentoId,tratamiento)
   }
 
-   // Método para desactivar un tratamiento
-  desactivar(tratamiento:Tratamiento):Observable<Tratamiento>{
-    return this.http.post<Tratamiento>('http://localhost:8090/Tratamiento/Desactivar',tratamiento);
-  }
-
   getMedicamentosDelTratamiento(id:number):Observable<Medicamento>{
     return this.http.get<Medicamento>('http://localhost:8090/Tratamiento/'+ id +'/medicamento');
 

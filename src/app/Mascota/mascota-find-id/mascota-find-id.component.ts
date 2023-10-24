@@ -112,10 +112,7 @@ export class MascotaFindIdComponent {
       });
     }
 
-    eliminarTratamiento(tratamiento:Tratamiento){
-      this.tratamientoServicio.desactivar(tratamiento).subscribe();
-      this.ngOnInit()
-    }
+
 
     
   goBack(){

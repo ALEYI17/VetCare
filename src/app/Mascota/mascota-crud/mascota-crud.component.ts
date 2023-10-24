@@ -3,6 +3,9 @@ import { Mascota } from '../../Entities/mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Veterinario } from 'src/app/Entities/veterinario';
+import { HttpResponse } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-mascota-crud',
   templateUrl: './mascota-crud.component.html',
@@ -13,11 +16,12 @@ export class MascotaCrudComponent {
   mostrarforman: boolean = false;
   mostrarforman2: boolean = false;
 
+
   listaDeMascotas!: Mascota[];
   veterinario!: Veterinario;
 
 
-  constructor(private mascotaServicio: MascotaService) {}
+  constructor(private mascotaServicio: MascotaService,private snackBar: MatSnackBar) {}
 
   // mostrarMascota(mascota: Mascota) {
   //   this.selectedMascota = mascota;
@@ -96,6 +100,35 @@ export class MascotaCrudComponent {
         });
       }
     }
+  }
+
+  toggleMascotaTratamiento(mascota: Mascota) {
+    console.log("Entro");
+    
+    
+    console.log(mascota.id);
+    console.log(mascota.mascotaTratamiento);
+    
+    
+    // Call the service method to update the mascota's state on the server
+    this.mascotaServicio.cambiarEstado(mascota.id, mascota.mascotaTratamiento).subscribe(
+      response  => {
+        if (response === false) {
+          this.showError("Acción denegada")
+          mascota.mascotaTratamiento = false;
+        } 
+      },
+
+    );
+    
+    
+  }
+
+  showError(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      panelClass: ['error-toast'],
+    });
   }
 
 }

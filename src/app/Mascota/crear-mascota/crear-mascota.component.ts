@@ -78,6 +78,7 @@ export class CrearMascotaComponent {
         enfermedad: mascotaData.enfermedad,
         foto: mascotaData.foto,
         id: 0 ,
+        mascotaTratamiento:false
         
       };  
       console.log(mascota);

@@ -11,7 +11,7 @@ export interface Mascota {
     enfermedad: string;
     foto: string;
     id: number;
-    cliente? :Cliente
-    tratamientos? : Tratamiento[]
-    
+    cliente? :Cliente;
+    tratamientos? : Tratamiento[];
+    mascotaTratamiento:Boolean;
 }

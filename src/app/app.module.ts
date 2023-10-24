@@ -44,6 +44,7 @@ import { TotalAventasComponent } from './Admin/Estadistica/total-aventas/total-a
 import { TotalGananciasComponent } from './Admin/Estadistica/total-ganancias/total-ganancias.component';
 import { TratamientosUltimoMesComponent } from './Admin/Estadistica/tratamientos-ultimo-mes/tratamientos-ultimo-mes.component';
 import { TopMedicamentosComponent } from './Admin/Estadistica/top-medicamentos/top-medicamentos.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { TopMedicamentosComponent } from './Admin/Estadistica/top-medicamentos/t
     MatIconModule,
     MatListModule,
     FontAwesomeModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,6 @@
   <!-- <a href="#abajo" class="Go-down"> <i class="fa-solid fa-chevron-down"></i></a> -->
   <a (click)="scrollToBottom()" class="Go-down"><i class="fa-solid fa-chevron-down"></i></a>
 
-
   <div class="tabla-center">
     <div class="annadidos">
       <div class="search-bar">
@@ -31,6 +30,7 @@
           <th scope="col">Peso</th>
           <th scope="col">Enfermedad</th>
           <th scope="col">Acciones</th>
+          <th scope="col">En tratamiento </th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
@@ -44,11 +44,20 @@
             <a class="modificar-button " [routerLink]="['/mascota/update', mascota.id]"><i class="far fa-edit"></i></a>
             <a class="delete-button" (click)="eliminarMascota(mascota.id)"><i class="far fa-trash-alt"></i></a>
             <a class="tratamiento-button" [routerLink]="['/mascota/agregarTratamiento', mascota.id]" [state]="{ veterinario: veterinario }"><i class="fa-solid fa-file-waveform"></i></a>
+            
+          </td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" [(ngModel)]="mascota.mascotaTratamiento" (change)="toggleMascotaTratamiento(mascota)" >
+              <span class="checkbox-custom"></span>
+            </label>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  
   <div id="abajo"></div>
 
 </div>

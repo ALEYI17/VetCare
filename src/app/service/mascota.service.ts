@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Mascota } from '../Entities/mascota';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cliente } from '../Entities/cliente';
 import { Tratamiento } from '../Entities/tratamiento';
@@ -54,5 +54,9 @@ export class MascotaService {
   findTratamientos(id:number):Observable<Tratamiento[]>{
     const tratamientos = this.http.get<Tratamiento[]>('http://localhost:8090/Mascota/find/'+id+ "/tratamientos");
     return tratamientos;
+  }
+
+  cambiarEstado(id: number, estado: Boolean): Observable<Boolean> {
+    return this.http.put<Boolean>("http://localhost:8090/Mascota/cambiarestado/" + id, estado);
   }
 }
