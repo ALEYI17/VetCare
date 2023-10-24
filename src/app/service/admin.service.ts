@@ -51,8 +51,8 @@ export class AdminService {
     return this.http.get<number>('http://localhost:8090/estadisticas/totalventas')
   }
 // Obtiene los tratamientos activos
-  getTratemientosActivos():Observable<object[]>{
-    return this.http.get<object[]>('http://localhost:8090/estadisticas/TratamientosActivos')
+  getTratemientosActivos():Observable<number>{
+    return this.http.get<number>('http://localhost:8090/estadisticas/TratamientosActivos')
   }
 // Obtiene el top 3 de medicamentos
   getTop3Medicamneto():Observable<Medicamento[]>{

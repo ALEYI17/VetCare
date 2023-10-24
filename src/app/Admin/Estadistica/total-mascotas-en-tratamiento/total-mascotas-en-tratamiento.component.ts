@@ -8,7 +8,7 @@ import { AdminService } from 'src/app/service/admin.service';
 })
 export class TotalMascotasEnTratamientoComponent {
 
-  TratamientosActivos!:object[];
+  TratamientosActivos!:number;
 
   constructor(private admisService: AdminService){}
 

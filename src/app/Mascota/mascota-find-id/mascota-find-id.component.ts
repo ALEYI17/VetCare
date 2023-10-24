@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 import { Medicamento } from 'src/app/Entities/medicamento';
 import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
 import { forkJoin, map, switchMap } from 'rxjs';
+import { Location } from '@angular/common';
 
 
 
@@ -38,7 +39,7 @@ export class MascotaFindIdComponent {
     private route:ActivatedRoute,
     private router: Router,
     private tratamientoServicio:TratamientoServiceService,
-    
+    private location: Location
     ){}
 
     
@@ -118,6 +119,6 @@ export class MascotaFindIdComponent {
 
     
   goBack(){
-    this.router.navigate(['/']);
+    this.location.back();
   }
 }
