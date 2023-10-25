@@ -12,23 +12,23 @@
     <div class="user-details">
       <div class="input-box">
         <h2>Nombre:</h2>
-        <p>{{ Mascota.nombre }}</p>
+        <p id="nombre">{{ Mascota.nombre }}</p>
       </div>
       <div class="input-box">
         <h2>Raza:</h2>
-        <p>{{ Mascota.raza }}</p>
+        <p id="raza">{{ Mascota.raza }}</p>
       </div>
       <div class="input-box">
         <h2>Edad:</h2>
-        <p>{{ Mascota.edad }}</p>
+        <p id="edad">{{ Mascota.edad }}</p>
       </div>
       <div class="input-box">
         <h2>Peso:</h2>
-        <p>{{ Mascota.peso }}</p>
+        <p id="peso">{{ Mascota.peso }}</p>
       </div>
       <div class="input-box">
         <h2>Enfermedad:</h2>
-        <p>{{ Mascota.enfermedad }}</p>
+        <p id="enfermedad">{{ Mascota.enfermedad }}</p>
       </div>
       <div *ngIf="dueno != null" class="input-box">
         <h2>Dueño:</h2>
