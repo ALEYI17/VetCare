@@ -8,13 +8,13 @@
             <p>{{ errorMessage }}</p>
         </div>
         <div class="input-box">
-            <input type="password" [(ngModel)]="cliente.cedula" name="cedula" placeholder="Cedula" required>
+            <input type="password" [(ngModel)]="cliente.cedula" name="cedula" placeholder="Cedula" id="ContrasnaLogInCli" required>
             <!-- Assuming you have Font Awesome installed in your project -->
             <i class="fas fa-user"></i>
         </div>
         <button type="submit" class="btn">log in</button>
         <div class="logincliente">
-            <p>Log in veterinario <a [routerLink]="['/login']">Veterinario</a></p>
+            <p>Log in veterinario <a [routerLink]="['/login']" id="loginVet">Veterinario</a></p>
           </div>
         </form>
     </div>

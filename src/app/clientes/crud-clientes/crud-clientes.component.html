@@ -33,7 +33,7 @@
         </thead>    
         <tbody class="table-group-divider">
           <tr *ngFor="let cliente of listaclientes">
-            <th><a [routerLink]="['/clientes/find', cliente.cedula]">{{ cliente.nombre }}</a></th>
+            <th class="nombresClientes"><a [routerLink]="['/clientes/find', cliente.cedula]">{{ cliente.nombre }}</a></th>
             <td>{{ cliente.cedula }}</td>
             <td>{{ cliente.corre }}</td>
             <td>{{ cliente.celular }}</td>

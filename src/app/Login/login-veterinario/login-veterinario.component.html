@@ -4,19 +4,19 @@
         <form (ngSubmit)="onSubmit()" #veterinarioForm="ngForm">
           <h1>Login</h1>
           <div *ngIf="errorMessage" class="error-message">
-            <p>{{ errorMessage }}</p>
+            <p id="errorcito">{{ errorMessage }}</p>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Username" name="cedula" [(ngModel)]="veterinario.cedula" required>
+            <input type="text" placeholder="Username" name="cedula" id="cedulaLogIn" [(ngModel)]="veterinario.cedula" required>
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Password" name="contrasena" [(ngModel)]="veterinario.contrasena" required>
+            <input type="password" placeholder="Password" name="contrasena"  id="ContrasnaLogIn" [(ngModel)]="veterinario.contrasena" required>
             <i class="fa-solid fa-lock"></i>
           </div>
           <button type="submit" class="btn">Log in</button>
           <div class="logincliente">
-            <p>Encuentra tu mascota <a [routerLink]="['/login/cliente']">Cliente</a></p>
+            <p>Encuentra tu mascota <a [routerLink]="['/login/cliente']" id="loginCli">Cliente</a></p>
           </div>
         </form>
       </div>

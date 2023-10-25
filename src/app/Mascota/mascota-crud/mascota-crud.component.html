@@ -35,7 +35,7 @@
       </thead>
       <tbody class="table-group-divider">
         <tr *ngFor="let mascota of listaDeMascotas">
-          <th><a [routerLink]="['/mascota/find', mascota.id]">{{ mascota.nombre }}</a></th>
+          <th class="nombresMascotas"><a [routerLink]="['/mascota/find', mascota.id]">{{ mascota.nombre }}</a></th>
           <td>{{ mascota.raza }}</td>
           <td>{{ mascota.edad }}</td>
           <td>{{ mascota.peso }}</td>

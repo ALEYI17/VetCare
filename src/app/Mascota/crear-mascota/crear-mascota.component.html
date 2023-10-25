@@ -54,7 +54,7 @@
               <input type="text" placeholder="Buscar" id="searchInput" (input)="filterOptionsList()">
             </div>
             <ul class="options" id="clientList">
-              <li *ngFor="let cliente of clientes" [attr.data-client-id]="cliente.id" (click)="selectClient(cliente)">{{cliente.nombre}}</li>
+              <li *ngFor="let cliente of clientes" [attr.data-client-id]="cliente.id" (click)="selectClient(cliente)" class="nombresClientes">{{cliente.nombre}}</li>
             </ul>
             <input type="hidden" formControlName="clientId" id="clientId" name="clientId" value="">
           </div>
@@ -62,7 +62,7 @@
                 
             </div>
             <div class="button">
-                <button type="submit">Enviar</button>
+                <button type="submit" id="enviarForm">Enviar</button>
             </div>
         </form>
     </div>
