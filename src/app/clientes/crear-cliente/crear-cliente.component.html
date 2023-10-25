@@ -1,5 +1,8 @@
 <!-- agregar-cliente.component.html -->
 <div class="body">
+  <button class="toggle-button" (click)="goBack()">
+    <i><fa-icon [icon]="iconoMenos"></fa-icon></i>
+</button>
     <div class="container">
         <div class="title"><h1>Agregar cliente</h1></div>
         <form [formGroup]="clienteForm" (ngSubmit)="crearCliente()">

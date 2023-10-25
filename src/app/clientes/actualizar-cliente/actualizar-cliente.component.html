@@ -1,5 +1,8 @@
 <!-- editar-cliente.component.html -->
 <div class="body">
+  <button class="toggle-button" (click)="goBack()">
+    <i><fa-icon [icon]="iconoMenos"></fa-icon></i>
+</button>
   <div class="container">
     <div class="title"><h1>Editar cliente</h1></div>
     <form #ClienteForm="ngForm" (ngSubmit)="editarCliente()">

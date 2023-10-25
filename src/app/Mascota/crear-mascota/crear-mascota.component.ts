@@ -10,6 +10,9 @@ import { Cliente } from 'src/app/Entities/cliente';
 import { ClienteServiceService } from 'src/app/service/cliente-service.service';
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
+
 
 
 @Component({
@@ -33,8 +36,10 @@ export class CrearMascotaComponent {
 
   clientes!: Cliente[];
 
+  iconoMenos = faArrowLeft
 
-  constructor(private fb: FormBuilder,private mascotaService: MascotaService,private router: Router,private clienteService : ClienteServiceService) {
+
+  constructor(private fb: FormBuilder,private mascotaService: MascotaService,private router: Router,private clienteService : ClienteServiceService,private location: Location) {
     this.mascotaForm = this.fb.group({
       nombre: ['', Validators.required],
       raza: ['', Validators.required],
@@ -140,7 +145,9 @@ export class CrearMascotaComponent {
     });
   }
 
-
+  goBack(){
+    this.location.back();
+  }
   
   
 }

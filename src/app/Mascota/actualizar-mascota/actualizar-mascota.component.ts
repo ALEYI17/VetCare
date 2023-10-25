@@ -3,6 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { Mascota } from '../../Entities/mascota';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MascotaService } from 'src/app/service/mascota.service';
+import { Location } from '@angular/common';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-actualizar-mascota',
@@ -10,6 +12,8 @@ import { MascotaService } from 'src/app/service/mascota.service';
   styleUrls: ['./actualizar-mascota.component.css']
 })
 export class ActualizarMascotaComponent {
+
+  iconoMenos = faArrowLeft
   
   @Output()
   addMascotaEvent = new EventEmitter<Mascota>();
@@ -26,7 +30,8 @@ export class ActualizarMascotaComponent {
   constructor(
     private MascotaService: MascotaService,
     private route:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
     ){}
 
   ngOnInit():void{
@@ -61,5 +66,7 @@ export class ActualizarMascotaComponent {
   findById(mascota:Mascota){
     this.formMascota = mascota
   }
-  
+  goBack(){
+    this.location.back();
+  }
 }

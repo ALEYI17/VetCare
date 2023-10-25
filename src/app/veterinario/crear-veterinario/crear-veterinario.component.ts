@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Veterinario } from 'src/app/Entities/veterinario';
 import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
-
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-crear-veterinario',
   templateUrl: './crear-veterinario.component.html',
@@ -17,9 +18,13 @@ export class CrearVeterinarioComponent {
   // Variable que representa el formulario y sus controles
   VeterinarioForm! :FormGroup;
 
+  iconoMenos = faArrowLeft
+
+  
   constructor(private fb: FormBuilder,
     private veterinarioServivcio:VeterinarioServiceService,
-    private router: Router){
+    private router: Router,
+    private location: Location){
       this.VeterinarioForm = this.fb.group({
         cedula: ['', Validators.required],
         nombre: ['', Validators.required],
@@ -59,5 +64,8 @@ export class CrearVeterinarioComponent {
         )
         
       }
+    }
+    goBack(){
+      this.location.back();
     }
 }

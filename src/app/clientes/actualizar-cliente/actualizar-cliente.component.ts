@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
 import { ClienteServiceService } from 'src/app/service/cliente-service.service';
-
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-actualizar-cliente',
   templateUrl: './actualizar-cliente.component.html',
@@ -15,9 +16,12 @@ export class ActualizarClienteComponent {
    // Propiedad para almacenar los datos del cliente a enviar al servidor
   sendCliente!:Cliente;
 
+  iconoMenos = faArrowLeft
+
   constructor(private route:ActivatedRoute,
     private router: Router,
-    private clienteServicio:ClienteServiceService){}
+    private clienteServicio:ClienteServiceService,
+    private location: Location){}
 
   ngOnInit(){
 // Obtiene el parámetro de la URL que representa el ID del cliente
@@ -43,4 +47,9 @@ export class ActualizarClienteComponent {
     );
 
   }
+
+  goBack(){
+    this.location.back();
+  }
+
 }

@@ -12,7 +12,7 @@ import { Medicamento } from 'src/app/Entities/medicamento';
 import { MedicamentoServiceService } from 'src/app/service/medicamento-service.service';
 import { forkJoin, map, switchMap } from 'rxjs';
 import { Location } from '@angular/common';
-
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -23,7 +23,7 @@ import { Location } from '@angular/common';
 })
 export class MascotaFindIdComponent {
 
-  iconoMenos = faMinus
+  iconoMenos = faArrowLeft
   @Input()
   Mascota!:Mascota
 

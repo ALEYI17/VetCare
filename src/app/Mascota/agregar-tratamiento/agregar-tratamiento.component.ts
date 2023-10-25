@@ -11,7 +11,8 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
 import { Veterinario } from 'src/app/Entities/veterinario';
 import { TratamientoServiceService } from 'src/app/service/tratamiento-service.service';
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
-
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-agregar-tratamiento',
   templateUrl: './agregar-tratamiento.component.html',
@@ -20,6 +21,7 @@ import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 export class AgregarTratamientoComponent {
   miIcopno = faCaretDown;
   mascota!:Mascota;
+  iconoMenos = faArrowLeft
 
   idMedicamento:number = -1;
 
@@ -44,6 +46,7 @@ export class AgregarTratamientoComponent {
     private medicamentoServicio:MedicamentoServiceService,
     private veterinarioServicio:VeterinarioServiceService,
     private tratamientoServicio:TratamientoServiceService,
+    private location: Location
     ){
     this.tratamientoForm = this.fb.group({
       fecha:['', Validators.required],
@@ -192,6 +195,10 @@ export class AgregarTratamientoComponent {
     // Close the client list
     const wrapper = document.querySelector(".wrapper2");
     wrapper!.classList.remove("active");
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

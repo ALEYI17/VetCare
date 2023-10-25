@@ -24,56 +24,50 @@ export class MedicamentosTratemientoComponent {
 
   }
 //crear grafica
-  createGraph() {
-    const ctx = this.myChart.nativeElement.getContext('2d');
+createGraph() {
+  const ctx = this.myChart.nativeElement.getContext('2d');
 
-    const randomColors = this.data.map(() => this.getRandomColor());
+  const randomColors = this.data.map(() => this.getRandomColor());
 
-    const myChart = new Chart(ctx, {
-      type: 'polarArea',
-      data: {
-        labels: this.data.map((item: any) => item[0]),
-        datasets: [
-          {
-            data: this.data.map((item: any) => item[1]),
-            backgroundColor: randomColors,
-            borderWidth: 1,
-            
-            
-          }
-        ]
-      },
-      options: {
-        maintainAspectRatio: false, // Set to false to allow chart resizing
-        responsive: true, // Set to true to enable responsiveness
-        plugins: {
-          tooltip: {
-            callbacks: {
-              label: (context: any) => {
-                const label = this.data[context.dataIndex][0];
-                const value = this.data[context.dataIndex][1];
-                return `${label}: ${value}`;
-              },
-              
-            },
-          },
-          legend: {
-            labels: {
-              color: "black",
-              font: {
-                size: 14
-            }
-            },
-            position: 'bottom', // Position the legend below the chart
-          },
-          
-          
+  const myChart = new Chart(ctx, {
+    type: 'bar', // Cambiado a tipo de gráfico de barras
+    data: {
+      labels: this.data.map((item: any) => item[0]),
+      datasets: [
+        {
+          data: this.data.map((item: any) => item[1]),
+          backgroundColor: randomColors,
+          borderWidth: 1,
         }
-      }
-    });
-
-    
-  }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false,
+      responsive: true,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context: any) => {
+              const label = this.data[context.dataIndex][0];
+              const value = this.data[context.dataIndex][1];
+              return `${label}: ${value}`;
+            },
+          },
+        },
+        legend: {
+          display: false, // Ocultar la leyenda para gráficos de barras
+        },
+      },scales: {
+        x: {
+          ticks: {
+            color: "black",
+            
+        }
+        }
+    }
+    }
+  });
+}
 
   getRandomColor() {
     // Generate a random hex color code
