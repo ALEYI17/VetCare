@@ -27,7 +27,8 @@ export class LoginVeterinarioComponent {
       res => {
         this.veterinario = res;
         // Verificar la respuesta y mostrar el mensaje de error si es necesario
-        if (!this.veterinario) {
+        if (this.veterinario.nombre == "mal") {
+          this.veterinario = { id: 0,cedula: '', contrasena: '', especialidad: '', foto: '', nombre: '' };
           this.errorMessage = 'Credenciales de inicio de sesión no válidas';
         }else{
           console.log(this.veterinario);

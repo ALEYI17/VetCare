@@ -48,7 +48,8 @@ export class CrearVeterinarioComponent {
           especialidad: VeterinarioData.especialidad,
           foto: VeterinarioData.foto,
           nombre: VeterinarioData.nombre,
-          id: 0
+          id: 0,
+          
         }
 
         console.log(veterinario);

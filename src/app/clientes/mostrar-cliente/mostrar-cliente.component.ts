@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/Entities/cliente';
 import { Mascota } from 'src/app/Entities/mascota';
 import { ClienteServiceService } from 'src/app/service/cliente-service.service';
+import { Location } from '@angular/common';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-mostrar-cliente',
@@ -11,6 +13,7 @@ import { ClienteServiceService } from 'src/app/service/cliente-service.service';
   styleUrls: ['./mostrar-cliente.component.css']
 })
 export class MostrarClienteComponent {
+  iconoMenos = faArrowLeft
  // Propiedad para almacenar la información del cliente
   cliente! :Cliente;
 // Propiedad para almacenar las mascotas del cliente
@@ -18,7 +21,8 @@ export class MostrarClienteComponent {
 
   constructor(private clienteServicio:ClienteServiceService,
     private route:ActivatedRoute,
-    private router: Router){}
+    private router: Router,
+    private location: Location){}
 
   ngOnInit(){
      // Suscribe a los cambios en los parámetros de la ruta
@@ -42,6 +46,9 @@ export class MostrarClienteComponent {
       );
     });
  
+  }
+  goBack(){
+    this.location.back();
   }
 
 }
