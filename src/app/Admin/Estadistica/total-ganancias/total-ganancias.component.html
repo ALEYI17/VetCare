@@ -2,7 +2,7 @@
     <h1 class="titulo">Total de Ganancias</h1>
     <div *ngIf="gananciasTotales !== undefined">
       <p class="parrafo">El monto total de ganancias es:</p>
-      <h2 class="numero-total">{{ gananciasTotales | currency: 'USD' }}</h2>
+      <h2 id="ganancias" class="numero-total">{{ gananciasTotales | currency: 'USD' }}</h2>
     </div>
   </div>
   

@@ -3,7 +3,7 @@
 <div class="fondo">
   <div class="container">
     <button class="toggle-button" (click)="goBack()">
-      <i><fa-icon [icon]="iconoMenos"></fa-icon></i>
+      <i><fa-icon [icon]="iconoMenos" id="botonAtras"></fa-icon></i>
   </button>
     <div class="title"><h1>Información mascota</h1></div>
     <div class="image-box">
@@ -46,10 +46,8 @@
     </thead>
     <tbody class="table-group-divider">
       <tr *ngFor="let item of tratamientos">
-        
-
         <td>{{ item.fecha  | date:'dd/MM/yyyy'}}</td>
-        <td>{{ item.medicamentos?.nombre }}</td>
+        <td class="medicamentos">{{ item.medicamentos?.nombre }}</td>
       </tr>
     </tbody>
   </table>

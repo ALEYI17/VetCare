@@ -9,7 +9,7 @@
         <mat-nav-list>
             <a [routerLink]="['/home']"><img ngSrc="assets/img/logovetcare.png" alt="un lindo gato" width="265" height="60" priority></a>
             <mat-list-item  mat-list-item [routerLink]="['/veterinarios/todos']"> Veterinarios</mat-list-item>
-            <mat-list-item  mat-list-item [routerLink]="['/admin/dashboard']">Estadisticas</mat-list-item>
+            <mat-list-item  mat-list-item [routerLink]="['/admin/dashboard']" id="Estadisticas">Estadisticas</mat-list-item>
             <!-- Add other navigation items as needed -->
         </mat-nav-list>
 
@@ -18,7 +18,7 @@
         <mat-sidenav-content>
 
             <div class="fondo body">
-                <button class="toggle-button" (click)="sidenav.toggle()">
+                <button class="toggle-button" (click)="sidenav.toggle()" id="buttonSidenav">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
                 <div class="tabla-center">
