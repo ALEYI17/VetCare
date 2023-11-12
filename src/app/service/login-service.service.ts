@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Veterinario } from '../Entities/veterinario';
 import { Cliente } from '../Entities/cliente';
 import { admin } from '../Entities/admin';
+import { User } from '../Entities/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +14,19 @@ export class LoginServiceService {
   constructor(private http: HttpClient) { }
 
 // Método para autenticar a un veterinario
-  authvet(veterinario:Veterinario): Observable<Veterinario>{
+  authvet(use:User): Observable<String>{
 
-    return this.http.post<Veterinario>('http://localhost:8090/Veterinariologin',veterinario)
+    return this.http.post('http://localhost:8090/Veterinariologin',use,{
+      responseType: 'text'
+    });
 
   }
  // Método para autenticar a un cliente
-  authcliente(cliente:Cliente): Observable<Cliente>{
+  authcliente(use:User): Observable<String>{
 
-    return this.http.post<Cliente>('http://localhost:8090/clientelogin',cliente)
+    return this.http.post('http://localhost:8090/clientelogin',use,{
+      responseType: 'text'
+    });
 
   }
 // Método para autenticar a un administrador

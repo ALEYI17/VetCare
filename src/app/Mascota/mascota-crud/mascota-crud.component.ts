@@ -6,6 +6,7 @@ import { Veterinario } from 'src/app/Entities/veterinario';
 import { HttpResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Injectable } from '@angular/core';
+import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 @Component({
   selector: 'app-mascota-crud',
   templateUrl: './mascota-crud.component.html',
@@ -21,7 +22,7 @@ export class MascotaCrudComponent {
   veterinario!: Veterinario;
 
 
-  constructor(private mascotaServicio: MascotaService,private snackBar: MatSnackBar) {}
+  constructor(private mascotaServicio: MascotaService,private snackBar: MatSnackBar,private VeterinarioService: VeterinarioServiceService) {}
 
   // mostrarMascota(mascota: Mascota) {
   //   this.selectedMascota = mascota;
@@ -50,13 +51,20 @@ export class MascotaCrudComponent {
   }
   ngOnInit(): void {
 
+    this.VeterinarioService.veterinarioHome().subscribe(res => {
+      this.veterinario = res;
+      localStorage.setItem('veterinario', JSON.stringify(this.veterinario));
+    })
+
     this.mascotaServicio.findAll().subscribe(
       mascotas =>{ this.listaDeMascotas = mascotas
-      complete:{
-        this.buscar()
-      }
+        complete:{
+          this.buscar()
+        }
       }
       );
+
+      
 
 
   }

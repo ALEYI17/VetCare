@@ -12,7 +12,7 @@ import { ActualizarMascotaComponent } from './Mascota/actualizar-mascota/actuali
 import { DashboardClienteComponent } from './clientes/dashboard-cliente/dashboard-cliente.component';
 import { LoginComponent } from './Landing/login/login.component';
 import { NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CrudClientesComponent } from './clientes/crud-clientes/crud-clientes.component';
 import { ActualizarClienteComponent } from './clientes/actualizar-cliente/actualizar-cliente.component';
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
@@ -45,6 +45,7 @@ import { TotalGananciasComponent } from './Admin/Estadistica/total-ganancias/tot
 import { TratamientosUltimoMesComponent } from './Admin/Estadistica/tratamientos-ultimo-mes/tratamientos-ultimo-mes.component';
 import { TopMedicamentosComponent } from './Admin/Estadistica/top-medicamentos/top-medicamentos.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthInterceptor } from './auxiliar/auth.interceptor';
 
 
 @NgModule({
@@ -96,7 +97,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FontAwesomeModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

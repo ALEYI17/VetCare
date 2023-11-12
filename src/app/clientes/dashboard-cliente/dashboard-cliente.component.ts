@@ -17,11 +17,15 @@ export class DashboardClienteComponent {
 
   ngOnInit(): void {
 // Obtiene el parámetro de la ruta (id) usando ActivatedRoute
-    this.route.paramMap.subscribe(params=>{
+    /*this.route.paramMap.subscribe(params=>{
       const id = Number(params.get("id"));
       this.clienteservice.findById(id).subscribe(
         cliente => this.cliente = cliente
       )
+    })*/
+
+    this.clienteservice.clienteHome().subscribe(cliente=>{
+      this.cliente = cliente
     })
   }
 

@@ -40,6 +40,7 @@ const routes: Routes = [
   { path: 'clientes/add', component: CrearClienteComponent },
   { path: 'clientes/update/:id', component: ActualizarClienteComponent },
   { path: 'cliente/:id', component: DashboardClienteComponent },
+  { path: 'cliente/home', component: DashboardClienteComponent },
   { path: 'veterinarios/todos', component: VeterinarioCrudComponent },
   { path: 'veterinarios/find/:id', component: MostrarVeterinarioComponent },
   { path: 'veterinarios/add', component: CrearVeterinarioComponent },

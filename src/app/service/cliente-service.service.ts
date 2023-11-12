@@ -45,4 +45,9 @@ export class ClienteServiceService {
   removerClienteByCedula(id:string){
     this.http.delete('http://localhost:8090/Clientes/delete/' + id).subscribe();
   }
+
+  clienteHome():Observable<Cliente>{
+    return this.http.get<Cliente>('http://localhost:8090/Clientes/details');
+  }
+  
 }
