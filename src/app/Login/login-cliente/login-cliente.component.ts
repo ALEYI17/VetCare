@@ -16,6 +16,27 @@ export class LoginClienteComponent {
   
   cliente: User = {cedula :'',contrasena:''}; // Define your client object here
   errorMessage: string | null = null; // Use string or null for errorMessage
+  role!: string; 
+
+  ngOnInit(){
+    this.loginservice.getRole().subscribe((res) => {
+        
+      this.role = res[0];
+      console.log(this.role);
+
+      if(this.role == "VETERINARIO"){
+
+        this.router.navigate([`/mascotas/todas`]);
+
+      }
+      if(this.role == "CLIENTE"){
+        this.router.navigate([`cliente/home`]);
+      }
+      
+    
+  });
+
+  }
 
   onSubmit() {
 

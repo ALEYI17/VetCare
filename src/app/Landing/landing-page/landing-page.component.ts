@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Veterinario } from 'src/app/Entities/veterinario';
+import { LoginServiceService } from 'src/app/service/login-service.service';
 import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 
 @Component({
@@ -9,11 +11,14 @@ import { VeterinarioServiceService } from 'src/app/service/veterinario-service.s
 })
 export class LandingPageComponent {
 
-constructor(private veterinarioServicio:VeterinarioServiceService){}
+constructor(private veterinarioServicio:VeterinarioServiceService,private loginService:LoginServiceService,private router: Router){}
 
     veterinarios!:Veterinario[];
 
+    
+
   ngOnInit() {
+    
     let arbolderecho: HTMLElement | null = document.getElementById("hola4");
     let arbolizquierdo: HTMLElement | null = document.getElementById("hola3");
     
@@ -73,6 +78,11 @@ constructor(private veterinarioServicio:VeterinarioServiceService){}
     this.veterinarioServicio.findAll().subscribe(
         veterinarios=> this.veterinarios = veterinarios
     )
+
+
+
+
+
     
   }
 

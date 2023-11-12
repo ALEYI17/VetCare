@@ -30,6 +30,7 @@ export class DashboardClienteComponent {
   }
 
   logOut(){
+    localStorage.removeItem('token');
     this.router.navigate(['/login/cliente']);
   }
 

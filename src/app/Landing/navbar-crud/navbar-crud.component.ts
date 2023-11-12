@@ -8,6 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarCrudComponent {
 
+
   currentRoute: string = ''; // Almacena la ruta actual
 
 
@@ -18,6 +19,11 @@ export class NavbarCrudComponent {
         this.currentRoute = event.url;
       }
     });
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
   

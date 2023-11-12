@@ -8,6 +8,9 @@
       <ul class="nav-links">
         <li><a [routerLink]="['/mascotas/todas']" [ngClass]="{'pagination-pointed-button': currentRoute.includes('/mascotas')}" id="crudMascotas">Mascotas</a></li>
         <li><a [routerLink]="['/clientes/todos']" [ngClass]="{'pagination-pointed-button': currentRoute.includes('/clientes')}" id="crudClientes">Clientes</a></li>
+        <button class="toggle-button" (click)="logOut()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
       </ul>
     </nav>
   </header>

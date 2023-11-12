@@ -33,4 +33,8 @@ export class LoginServiceService {
   authAdmin(admin:admin):Observable<boolean>{
     return this.http.post<boolean>('http://localhost:8090/AdminLogin',admin);
   }
+
+  getRole():Observable<string[]>{
+    return this.http.get<string[]>('http://localhost:8090/authority');
+  }
 }
