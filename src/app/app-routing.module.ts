@@ -22,30 +22,32 @@ import { ActualizarVeterinarioComponent } from './veterinario/actualizar-veterin
 import { AgregarTratamientoComponent } from './Mascota/agregar-tratamiento/agregar-tratamiento.component';
 import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { guardiaClienteGuard } from './auxiliar/guardia-cliente.guard';
+import { guardiaVeterinarioGuard } from './auxiliar/guardia-veterinario.guard';
 
 
 
 const routes: Routes = [
   
   { path: 'mascota/find/:id', component: MascotaFindIdComponent },
-  { path: 'mascotas/todas', component: MascotaCrudComponent },
+  { path: 'mascotas/todas', component: MascotaCrudComponent,canActivate:[guardiaVeterinarioGuard] },
   { path: 'home', component: LandingPageComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'mascota/update/:id', component: ActualizarMascotaComponent },
-  { path: 'mascotas/add', component: CrearMascotaComponent }, 
+  { path: 'mascota/update/:id', component: ActualizarMascotaComponent ,canActivate:[guardiaVeterinarioGuard] },
+  { path: 'mascotas/add', component: CrearMascotaComponent,canActivate:[guardiaVeterinarioGuard]  }, 
   { path: 'login', component: LoginVeterinarioComponent },
-  { path: 'clientes/todos', component: CrudClientesComponent },
+  { path: 'clientes/todos', component: CrudClientesComponent,canActivate:[guardiaVeterinarioGuard]  },
   { path: 'clientes/find/:id', component: MostrarClienteComponent },
   { path: 'login/cliente', component: LoginClienteComponent },
-  { path: 'clientes/add', component: CrearClienteComponent },
-  { path: 'clientes/update/:id', component: ActualizarClienteComponent },
-  { path: 'cliente/:id', component: DashboardClienteComponent },
-  { path: 'cliente/home', component: DashboardClienteComponent },
+  { path: 'clientes/add', component: CrearClienteComponent ,canActivate:[guardiaVeterinarioGuard] },
+  { path: 'clientes/update/:id', component: ActualizarClienteComponent ,canActivate:[guardiaVeterinarioGuard] },
+  { path: 'cliente/:id', component: DashboardClienteComponent,canActivate:[guardiaClienteGuard] },
+  { path: 'cliente/home', component: DashboardClienteComponent ,canActivate:[guardiaClienteGuard] },
   { path: 'veterinarios/todos', component: VeterinarioCrudComponent },
   { path: 'veterinarios/find/:id', component: MostrarVeterinarioComponent },
   { path: 'veterinarios/add', component: CrearVeterinarioComponent },
   { path: 'veterinarios/update/:id', component: ActualizarVeterinarioComponent },
-  { path: 'mascota/agregarTratamiento/:id', component: AgregarTratamientoComponent },
+  { path: 'mascota/agregarTratamiento/:id', component: AgregarTratamientoComponent ,canActivate:[guardiaVeterinarioGuard] },
   { path: 'login/admin', component: LoginAdminComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: '**', component: PaginaErrorComponent },
