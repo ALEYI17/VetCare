@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Veterinario } from 'src/app/Entities/veterinario';
 import { VeterinarioServiceService } from 'src/app/service/veterinario-service.service';
 
@@ -13,7 +14,12 @@ export class VeterinarioCrudComponent {
 // Arreglo que contendrá la lista de veterinarios
   veterinarios!:Veterinario[];
 
-  constructor(private veteriarioServicio:VeterinarioServiceService){}
+  constructor(private veteriarioServicio:VeterinarioServiceService,private router: Router){}
+
+  logOut(){
+    localStorage.removeItem('token');
+    this.router.navigate(['home']);
+  }
 
   ngOnInit(){
     // Llama al método findAll del servicio para obtener la lista de veterinarios

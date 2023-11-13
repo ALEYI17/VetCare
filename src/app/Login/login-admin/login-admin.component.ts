@@ -20,14 +20,24 @@ export class LoginAdminComponent {
   onSubmit(){
     console.log(this.admin);
 // Llama al servicio de autenticación para verificar las credenciales del administrador
-    this.loginservice.authAdmin(this.admin).subscribe(
+    // this.loginservice.authAdmin(this.admin).subscribe(
+    //   res=>{
+    //     this.respuesta = res;
+    //     if(!this.respuesta){
+    //       this.errorMessage = 'Credenciales de inicio de sesión no válidas';
+    //     }else{
+    //       this.router.navigate(['/veterinarios/todos']);
+    //     }
+    //   }
+    // )
+
+      this.loginservice.authAdmin(this.admin).subscribe(
       res=>{
-        this.respuesta = res;
-        if(!this.respuesta){
-          this.errorMessage = 'Credenciales de inicio de sesión no válidas';
-        }else{
-          this.router.navigate(['/veterinarios/todos']);
-        }
+        localStorage.setItem('token', String(res));
+        this.router.navigate([`veterinarios/todos`]);
+      },(error) => {
+        console.error('Error during login', error);
+        this.errorMessage = 'Credenciales de inicio de sesión no válidas';
       }
     )
     

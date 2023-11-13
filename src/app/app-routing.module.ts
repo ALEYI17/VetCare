@@ -24,6 +24,7 @@ import { LoginAdminComponent } from './Login/login-admin/login-admin.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { guardiaClienteGuard } from './auxiliar/guardia-cliente.guard';
 import { guardiaVeterinarioGuard } from './auxiliar/guardia-veterinario.guard';
+import { guardiaAdminGuard } from './auxiliar/guardia-admin.guard';
 
 
 
@@ -43,13 +44,13 @@ const routes: Routes = [
   { path: 'clientes/update/:id', component: ActualizarClienteComponent ,canActivate:[guardiaVeterinarioGuard] },
   { path: 'cliente/:id', component: DashboardClienteComponent,canActivate:[guardiaClienteGuard] },
   { path: 'cliente/home', component: DashboardClienteComponent ,canActivate:[guardiaClienteGuard] },
-  { path: 'veterinarios/todos', component: VeterinarioCrudComponent },
+  { path: 'veterinarios/todos', component: VeterinarioCrudComponent ,canActivate:[guardiaAdminGuard]},
   { path: 'veterinarios/find/:id', component: MostrarVeterinarioComponent },
-  { path: 'veterinarios/add', component: CrearVeterinarioComponent },
-  { path: 'veterinarios/update/:id', component: ActualizarVeterinarioComponent },
+  { path: 'veterinarios/add', component: CrearVeterinarioComponent ,canActivate:[guardiaAdminGuard]},
+  { path: 'veterinarios/update/:id', component: ActualizarVeterinarioComponent ,canActivate:[guardiaAdminGuard]},
   { path: 'mascota/agregarTratamiento/:id', component: AgregarTratamientoComponent ,canActivate:[guardiaVeterinarioGuard] },
   { path: 'login/admin', component: LoginAdminComponent },
-  { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent ,canActivate:[guardiaAdminGuard]},
   { path: '**', component: PaginaErrorComponent },
   
   

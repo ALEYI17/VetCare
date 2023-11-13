@@ -30,8 +30,10 @@ export class LoginServiceService {
 
   }
 // Método para autenticar a un administrador
-  authAdmin(admin:admin):Observable<boolean>{
-    return this.http.post<boolean>('http://localhost:8090/AdminLogin',admin);
+  authAdmin(admin:admin):Observable<String>{
+    return this.http.post('http://localhost:8090/AdminLogin',admin,{
+      responseType: 'text'
+    });
   }
 
   getRole():Observable<string[]>{

@@ -23,6 +23,7 @@ export class NavbarCrudComponent {
 
   logOut() {
     localStorage.removeItem('token');
+    localStorage.removeItem('veterinario');
     this.router.navigate(['/login']);
   }
 
