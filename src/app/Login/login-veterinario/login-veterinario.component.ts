@@ -19,25 +19,36 @@ export class LoginVeterinarioComponent {
   errorMessage: string | undefined;
   // Propiedad para almacenar la respuesta de la autenticación
   respuesta!:boolean
+  //saber el rol de la persona autentificada
+  role!: string; 
+
+  ngOnInit(){
+
+    // saber el rol del ususrio si tiene tiene token valdio enviarlo a su pagina
+    this.loginservice.getRole().subscribe((res) => {
+        
+      this.role = res[0];
+      console.log(this.role);
+
+      if(this.role == "VETERINARIO"){
+
+        this.router.navigate([`/mascotas/todas`]);
+
+      }
+      if(this.role == "CLIENTE"){
+        this.router.navigate([`cliente/home`]);
+      }
+      
+    
+  });
+
+  }
 
   onSubmit() {
 
     console.log(this.veterinario);
     // Llama al servicio de autenticación para verificar las credenciales del veterinario
-    // this.loginservice.authvet(this.veterinario).subscribe(
-    //   res => {
-    //     this.veterinario = res;
-    //     // Verificar la respuesta y mostrar el mensaje de error si es necesario
-    //     if (this.veterinario.nombre == "mal") {
-    //       this.veterinario = { id: 0,cedula: '', contrasena: '', especialidad: '', foto: '', nombre: '' };
-    //       this.errorMessage = 'Credenciales de inicio de sesión no válidas';
-    //     }else{
-    //       console.log(this.veterinario);
-    //       localStorage.setItem('veterinario', JSON.stringify(this.veterinario));
-    //       this.router.navigate(['/mascotas/todas']);
-    //     }
-    //   }
-    // );
+
 
       this.loginservice.authvet(this.veterinario).subscribe(
         (resp) => {

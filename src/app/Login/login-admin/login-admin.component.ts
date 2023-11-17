@@ -17,19 +17,31 @@ export class LoginAdminComponent {
   admin:admin = {usuario:'',contrasena:''};
    // Propiedad para almacenar la respuesta de la autenticación
   respuesta!:boolean
+  role!: string; //saber el rol de la persona autentificada
+
+  ngOnInit(){
+    // saber el rol del ususrio si tiene tiene token valdio enviarlo a su pagina
+    
+    this.loginservice.getRole().subscribe((res) => {
+        
+      this.role = res[0];
+      console.log(this.role);
+
+      if(this.role == "ADMINISTRADOR"){
+
+        this.router.navigate([`/veterinarios/todos`]);
+
+      }
+
+      
+    
+  });
+
+  }
+
   onSubmit(){
     console.log(this.admin);
 // Llama al servicio de autenticación para verificar las credenciales del administrador
-    // this.loginservice.authAdmin(this.admin).subscribe(
-    //   res=>{
-    //     this.respuesta = res;
-    //     if(!this.respuesta){
-    //       this.errorMessage = 'Credenciales de inicio de sesión no válidas';
-    //     }else{
-    //       this.router.navigate(['/veterinarios/todos']);
-    //     }
-    //   }
-    // )
 
       this.loginservice.authAdmin(this.admin).subscribe(
       res=>{

@@ -16,9 +16,11 @@ export class LoginClienteComponent {
   
   cliente: User = {cedula :'',contrasena:''}; // Define your client object here
   errorMessage: string | null = null; // Use string or null for errorMessage
-  role!: string; 
+  role!: string; //saber el rol de la persona autentificada
 
   ngOnInit(){
+    // saber el rol del ususrio si tiene tiene token valdio enviarlo a su pagina
+    
     this.loginservice.getRole().subscribe((res) => {
         
       this.role = res[0];
@@ -41,21 +43,9 @@ export class LoginClienteComponent {
   onSubmit() {
 
     console.log(this.cliente);
+
+
      // Llama al servicio de autenticación para verificar las credenciales del cliente
-    // this.loginservice.authcliente(this.cliente).subscribe(resp => {
-      
-    //   localStorage.setItem('token',String(resp))
-
-    //   if(this.respuesta.cedula == "invalid"){
-    //     this.errorMessage = 'Credenciales de inicio de sesión no válidas';
-    //   }else{
-    //     console.log(`/cliente/${this.respuesta.cedula}`);
-    //     this.router.navigate([`/cliente/${this.respuesta.cedula}`]);
-        
-    //   }
-  
-    // })
-
     this.loginservice.authcliente(this.cliente).subscribe(
       (resp) => {
         console.log('entre aqui')
